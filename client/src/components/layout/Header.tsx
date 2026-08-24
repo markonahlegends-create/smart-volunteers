@@ -24,8 +24,7 @@ export default function Header({ title }: HeaderProps) {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/');
-    setTimeout(() => window.location.reload(), 50);
+    window.location.href = '/';
   };
 
   return (

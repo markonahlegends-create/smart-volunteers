@@ -11,6 +11,9 @@ import {
   AlertTriangle,
   ClipboardList,
   RefreshCcw,
+  FileSpreadsheet,
+  FileText,
+  Plus,
 } from 'lucide-react';
 import {
   BarChart,
@@ -303,6 +306,7 @@ function SmallCircularStat({ value, maxValue, color }: { value: number; maxValue
 export default function Dashboard() {
   const [memberModalOpen, setMemberModalOpen] = useState(false);
   const [unitModalOpen, setUnitModalOpen] = useState(false);
+  const [laporanModalOpen, setLaporanModalOpen] = useState(false);
   const [syncing, setSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<string | null>(null);
 
@@ -410,6 +414,12 @@ export default function Dashboard() {
     { label: 'Tambah Unit PMR', path: '/units/pmr/mula/add', icon: Building2 },
     { label: 'Tambah Unit KSR', path: '/units/ksr/add', icon: Building2 },
     { label: 'Tambah Unit TSR', path: '/units/tsr/add', icon: Building2 },
+  ];
+
+  const laporanOptions = [
+    { label: 'Laporan Semester', path: '/api/kegiatan/download/semester', icon: FileSpreadsheet },
+    { label: 'Laporan Kegiatan', path: '/api/kegiatan/download/kegiatan', icon: FileText },
+    { label: 'Tambah Kegiatan', path: '/laporan', icon: Plus },
   ];
 
   const horizontalBars = [
@@ -542,13 +552,13 @@ export default function Dashboard() {
             <AlertTriangle className="h-6 w-6 text-primary-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
             <p className="font-medium text-primary-700 text-sm lg:text-base">Laporan Bencana</p>
           </a>
-          <a
-            href="/laporan"
+          <button
+            onClick={() => setLaporanModalOpen(true)}
             className="p-4 bg-primary-50 hover:bg-primary-100 rounded-lg transition-colors text-center group"
           >
             <ClipboardList className="h-6 w-6 text-primary-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-            <p className="font-medium text-primary-700 text-sm lg:text-base">Daftar Roster</p>
-          </a>
+            <p className="font-medium text-primary-700 text-sm lg:text-base">Download Laporan</p>
+          </button>
         </div>
       </motion.div>
 
@@ -699,6 +709,12 @@ export default function Dashboard() {
         onClose={() => setUnitModalOpen(false)}
         title="Tambah Unit"
         items={unitOptions}
+      />
+      <QuickAccessModal
+        isOpen={laporanModalOpen}
+        onClose={() => setLaporanModalOpen(false)}
+        title="Download Laporan"
+        items={laporanOptions}
       />
     </div>
   );
