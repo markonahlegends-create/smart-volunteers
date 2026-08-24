@@ -20,6 +20,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
   const [search, setSearch] = useState('');
   const [importFile, setImportFile] = useState<File | null>(null);
   const [importing, setImporting] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [modalProvinsi, setModalProvinsi] = useState('BANTEN');
   const [modalKabupaten, setModalKabupaten] = useState('KOTA CILEGON');
@@ -34,12 +35,11 @@ export default function MembersPage({ title, type }: MembersPageProps) {
     }
   }, [editingMember]);
 
-  const { data: membersData } = useQuery({
-    queryKey: ['members', type],
-    queryFn: () => {
-      if (type === 'pmr') return membersApi.getPMR();
-      if (type === 'ksr') return membersApi.getKSR();
-      return membersApi.getTSR();
+  const { data: membersData, refetch: refetchMembers } = useQuery({
+    queryKey: ['members', type, currentPage],
+    queryFn: async () => {
+      const response = await api.get(`/members/${type}`, { params: { page: currentPage, limit: 10 } });
+      return response.data;
     },
   });
 
@@ -276,6 +276,33 @@ export default function MembersPage({ title, type }: MembersPageProps) {
               </tbody>
             </table>
           </div>
+
+          {membersData && membersData.totalPages > 1 && (
+            <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-t border-gray-200">
+              <div className="text-sm text-gray-600">
+                Menampilkan {((currentPage - 1) * 10) + 1} - {Math.min(currentPage * 10, membersData.total)} dari {membersData.total} data
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Sebelumnya
+                </button>
+                <span className="text-sm text-gray-600">
+                  Halaman {currentPage} dari {membersData.totalPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(p => Math.min(membersData.totalPages, p + 1))}
+                  disabled={currentPage === membersData.totalPages}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Selanjutnya
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

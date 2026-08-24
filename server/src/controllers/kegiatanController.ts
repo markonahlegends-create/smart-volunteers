@@ -8,18 +8,33 @@ const prisma = new PrismaClient();
 
 export const getKegiatan = async (req: Request, res: Response) => {
   try {
-    const { semester, tahun, bidang } = req.query;
+    const { semester, tahun, bidang, page, limit } = req.query;
     const where: any = {};
     if (semester) where.semester = parseInt(semester as string);
     if (tahun) where.tahun = parseInt(tahun as string);
     if (bidang) where.bidang = bidang;
 
-    const kegiatan = await prisma.kegiatan.findMany({
-      where,
-      orderBy: [{ bulan: 'asc' }, { id: 'asc' }],
-    });
+    const hasPagination = page !== undefined || limit !== undefined;
+    const limitNum = hasPagination ? (Number(limit) || 10) : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
 
-    res.json({ data: kegiatan, total: kegiatan.length });
+    const [kegiatan, total] = await Promise.all([
+      prisma.kegiatan.findMany({
+        where,
+        skip,
+        take: limitNum,
+        orderBy: [{ bulan: 'asc' }, { id: 'asc' }],
+      }),
+      prisma.kegiatan.count({ where }),
+    ]);
+
+    res.json({
+      data: kegiatan,
+      total,
+      page: hasPagination ? Number(page) : 1,
+      limit: limitNum,
+      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
+    });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data kegiatan' });
   }

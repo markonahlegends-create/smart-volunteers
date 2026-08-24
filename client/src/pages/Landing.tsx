@@ -332,9 +332,9 @@ export default function Landing() {
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-red-400" /> +62 254 123456</span>
-              <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-red-400" /> info@pmi-cilegon.or.id</span>
-              <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-red-400" /> Kota Cilegon, Banten</span>
+              <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-red-400" /> 0254 394617</span>
+              <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-red-400" /> humaspmicilegon@gmail.com</span>
+              <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-red-400" /> Jl. Belibis Raya Blok E21 No.1 Perumnas Cibeber Kencana, Kecamatan Cibeber - Kota Cilegon Provinsi Banten</span>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">

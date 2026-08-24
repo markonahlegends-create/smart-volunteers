@@ -10,10 +10,14 @@ export default function Bencana() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingBencana, setEditingBencana] = useState<any>(null);
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { data: bencanaData } = useQuery({
-    queryKey: ['bencana'],
-    queryFn: () => bencanaApi.get(),
+    queryKey: ['bencana', currentPage],
+    queryFn: async () => {
+      const response = await api.get('/bencana', { params: { page: currentPage, limit: 10 } });
+      return response.data;
+    },
   });
 
   const bencanas = bencanaData?.data?.filter((bencana: any, index: number, self: any[]) =>
@@ -150,6 +154,33 @@ export default function Bencana() {
               </tbody>
             </table>
           </div>
+
+          {bencanaData && bencanaData.totalPages > 1 && (
+            <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-t border-gray-200">
+              <div className="text-sm text-gray-600">
+                Menampilkan {((currentPage - 1) * 10) + 1} - {Math.min(currentPage * 10, bencanaData.total)} dari {bencanaData.total} data
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Sebelumnya
+                </button>
+                <span className="text-sm text-gray-600">
+                  Halaman {currentPage} dari {bencanaData.totalPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(p => Math.min(bencanaData.totalPages, p + 1))}
+                  disabled={currentPage === bencanaData.totalPages}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Selanjutnya
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

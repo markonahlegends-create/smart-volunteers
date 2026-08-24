@@ -35,10 +35,14 @@ export default function Laporan() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingKegiatan, setEditingKegiatan] = useState<KegiatanItem | null>(null);
   const [search, setSearch] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { data: kegiatanData } = useQuery({
-    queryKey: ['kegiatan', semester, tahun, bidang],
-    queryFn: () => kegiatanApi.get({ semester, tahun, bidang }),
+    queryKey: ['kegiatan', semester, tahun, bidang, currentPage],
+    queryFn: async () => {
+      const response = await api.get('/kegiatan', { params: { semester, tahun, bidang, page: currentPage, limit: 10 } });
+      return response.data;
+    },
   });
 
   const kegiatanList = kegiatanData?.data?.filter((kegiatan: any, index: number, self: any[]) =>
@@ -310,6 +314,33 @@ export default function Laporan() {
               </tbody>
             </table>
           </div>
+
+          {kegiatanData && kegiatanData.totalPages > 1 && (
+            <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-t border-gray-200">
+              <div className="text-sm text-gray-600">
+                Menampilkan {((currentPage - 1) * 10) + 1} - {Math.min(currentPage * 10, kegiatanData.total)} dari {kegiatanData.total} data
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Sebelumnya
+                </button>
+                <span className="text-sm text-gray-600">
+                  Halaman {currentPage} dari {kegiatanData.totalPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(p => Math.min(kegiatanData.totalPages, p + 1))}
+                  disabled={currentPage === kegiatanData.totalPages}
+                  className="px-3 py-1 text-sm border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Selanjutnya
+                </button>
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
 
