@@ -8,8 +8,8 @@ export const getRelawan = async (req: Request, res: Response) => {
   try {
     const { page, limit, jenis, nama_unit, search } = req.query;
     const hasPagination = page !== undefined || limit !== undefined;
-    const limitNum = hasPagination ? Number(limit) || 10 : undefined;
-    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
+    const limitNum = hasPagination ? (Number(limit) || 10) : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * (limitNum as number) : undefined;
     const where: any = {};
     if (jenis) where.jenis = jenis;
     if (nama_unit) where.nama_unit = nama_unit;
@@ -22,7 +22,7 @@ export const getRelawan = async (req: Request, res: Response) => {
     }
 
     const [data, total] = await Promise.all([
-      prisma.relawan.findMany({ skip, take: limitNum, orderBy: { id: 'desc' }, where }),
+      prisma.relawan.findMany({ skip, take: limitNum as any, orderBy: { id: 'desc' }, where }),
       prisma.relawan.count({ where }),
     ]);
     res.json({
@@ -30,7 +30,7 @@ export const getRelawan = async (req: Request, res: Response) => {
       total,
       page: hasPagination ? Number(page) : 1,
       limit: limitNum,
-      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
+      totalPages: hasPagination ? Math.ceil(total / (limitNum as number)) : 1,
     });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data relawan' });

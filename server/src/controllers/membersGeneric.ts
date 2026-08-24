@@ -65,22 +65,22 @@ export const getMembers = async (req: Request, res: Response, type: MemberType) 
     const { page, limit } = req.query;
     const model = getModel(type);
     const hasPagination = page !== undefined || limit !== undefined;
-    const limitNum = hasPagination ? Number(limit) || 10 : undefined;
-    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
+    const limitNum = hasPagination ? (Number(limit) || 10) : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * (limitNum as number) : undefined;
     const [data, total] = await Promise.all([
-      prisma[model].findMany({
+      (prisma as any)[model].findMany({
         skip,
-        take: limitNum,
+        take: limitNum as any,
         orderBy: { id: 'desc' },
       }),
-      prisma[model].count(),
+      (prisma as any)[model].count(),
     ]);
     res.json({
       data,
       total,
       page: hasPagination ? Number(page) : 1,
       limit: limitNum,
-      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
+      totalPages: hasPagination ? Math.ceil(total / (limitNum as number)) : 1,
     });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data' });

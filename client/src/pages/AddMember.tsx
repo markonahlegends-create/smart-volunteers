@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Upload, X, CheckCircle2, RefreshCw } from 'lucide-react';
 import api from '../services/api';
-import { membersApi, unitsApi } from '../services/resources';
+import { membersApi } from '../services/resources';
 import { PROVINSI_OPTIONS, KABUPATEN_OPTIONS, getKecamatanOptions, getDesaOptions } from '../data/regions';
 import Header from '../components/layout/Header';
 
