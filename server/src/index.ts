@@ -39,6 +39,12 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Smart Volunteers PMI Kota Cilegon API' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const isVercel = process.env.VERCEL === '1';
+
+if (!isVercel) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+export default app;
