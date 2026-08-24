@@ -62,14 +62,26 @@ function validateRequired(body: any): string | null {
 
 export const getMembers = async (req: Request, res: Response, type: MemberType) => {
   try {
-    const { page = 1, limit = 10 } = req.query;
-    const skip = (Number(page) - 1) * Number(limit);
+    const { page, limit } = req.query;
     const model = getModel(type);
+    const hasPagination = page !== undefined || limit !== undefined;
+    const limitNum = hasPagination ? Number(limit) || 10 : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
     const [data, total] = await Promise.all([
-      prisma[model].findMany({ skip, take: Number(limit), orderBy: { id: 'desc' } }),
+      prisma[model].findMany({
+        skip,
+        take: limitNum,
+        orderBy: { id: 'desc' },
+      }),
       prisma[model].count(),
     ]);
-    res.json({ data, total, page: Number(page), limit: Number(limit), totalPages: Math.ceil(total / Number(limit)) });
+    res.json({
+      data,
+      total,
+      page: hasPagination ? Number(page) : 1,
+      limit: limitNum,
+      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
+    });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data' });
   }

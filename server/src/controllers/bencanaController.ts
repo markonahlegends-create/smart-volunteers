@@ -6,13 +6,14 @@ const prisma = new PrismaClient();
 
 export const getBencana = async (req: Request, res: Response) => {
   try {
-    const { page = 1, limit = 10 } = req.query;
-    const skip = (Number(page) - 1) * Number(limit);
-
+    const { page, limit } = req.query;
+    const hasPagination = page !== undefined || limit !== undefined;
+    const limitNum = hasPagination ? Number(limit) || 10 : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
     const [bencanas, total] = await Promise.all([
       prisma.bencana.findMany({
         skip,
-        take: Number(limit),
+        take: limitNum,
         orderBy: { id: 'desc' },
       }),
       prisma.bencana.count(),
@@ -21,9 +22,9 @@ export const getBencana = async (req: Request, res: Response) => {
     res.json({
       data: bencanas,
       total,
-      page: Number(page),
-      limit: Number(limit),
-      totalPages: Math.ceil(total / Number(limit)),
+      page: hasPagination ? Number(page) : 1,
+      limit: limitNum,
+      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
     });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data' });
