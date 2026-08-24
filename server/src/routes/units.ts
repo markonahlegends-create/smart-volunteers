@@ -24,6 +24,7 @@ import {
   uploadUnitSKPMR,
   uploadUnitSKTSR,
   upload,
+  getAllUnits,
 } from '../controllers/unitsController';
 import { authenticate } from '../middleware/auth';
 
@@ -43,6 +44,7 @@ router.get('/tsr/:id/anggota/:kategori', authenticate, getMembersByUnitTSR);
 router.get('/pmr/:id', authenticate, getUnitPMRById);
 router.get('/pmr/:id/anggota', authenticate, getMembersByUnitPMR);
 router.get('/pmr/:id/anggota/:kategori', authenticate, getMembersByUnitPMR);
+router.get('/autocomplete', authenticate, getAllUnits);
 
 router.post('/pmr', authenticate, createUnitPMR);
 router.put('/pmr/:id', authenticate, updateUnitPMR);

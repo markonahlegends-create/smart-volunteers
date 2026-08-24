@@ -1,7 +1,8 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Upload, X, CheckCircle2, RefreshCw } from 'lucide-react';
+import api from '../services/api';
 import { membersApi } from '../services/resources';
 import { PROVINSI_OPTIONS, KABUPATEN_OPTIONS, getKecamatanOptions, getDesaOptions } from '../data/regions';
 import Header from '../components/layout/Header';
@@ -296,6 +297,14 @@ export default function AddMemberKSR() {
     });
   };
 
+  const { data: unitOptions = [] } = useQuery({
+    queryKey: ['units', 'autocomplete'],
+    queryFn: async () => {
+      const response = await api.get('/units/autocomplete');
+      return response.data;
+    },
+  });
+
   const createMutation = useMutation({
     mutationFn: (data: any) => membersApi.createKSR(data),
     onSuccess: () => {
@@ -380,7 +389,21 @@ export default function AddMemberKSR() {
               </div>
               <div>
                 <label className={labelClass}>Nama Unit{requiredIndicator}</label>
-                <input type="text" name="nama_unit" value={form.nama_unit} onChange={(e) => setForm({ ...form, nama_unit: e.target.value })} className={inputClass} placeholder="Nama unit" required />
+                <input
+                  type="text"
+                  name="nama_unit"
+                  value={form.nama_unit}
+                  onChange={(e) => setForm({ ...form, nama_unit: e.target.value })}
+                  className={inputClass}
+                  placeholder="Nama unit"
+                  list="unit-list"
+                  required
+                />
+                <datalist id="unit-list">
+                  {unitOptions.map((unit: string) => (
+                    <option key={unit} value={unit} />
+                  ))}
+                </datalist>
               </div>
               <div>
                 <label className={labelClass}>Angkatan{requiredIndicator}</label>

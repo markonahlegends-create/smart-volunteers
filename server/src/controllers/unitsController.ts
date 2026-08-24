@@ -240,7 +240,24 @@ export const createUnitPMR = async (req: Request, res: Response) => {
     res.json(unit);
     triggerUnitSync().catch(console.error);
   } catch (error) {
-    res.status(500).json({ message: 'Gagal membuat unit' });
+    res.status(500).json({ message: 'Gagal upload SK' });
+  }
+};
+
+export const getAllUnits = async (req: Request, res: Response) => {
+  try {
+    const [pmr, ksr, tsr] = await Promise.all([
+      prisma.unitPMR.findMany({ select: { nama_unit: true } }),
+      prisma.unitKSR.findMany({ select: { nama_unit: true } }),
+      prisma.unitTSR.findMany({ select: { nama_unit: true } }),
+    ]);
+    const units = [...pmr, ...ksr, ...tsr]
+      .map(u => u.nama_unit)
+      .filter((name): name is string => Boolean(name));
+    const uniqueUnits = Array.from(new Set(units));
+    res.json(uniqueUnits);
+  } catch (error) {
+    res.status(500).json({ message: 'Gagal memuat data unit' });
   }
 };
 

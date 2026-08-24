@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../components/ui/Modal';
 import { PROVINSI_OPTIONS, KABUPATEN_OPTIONS } from '../data/regions';
 import { membersApi } from '../services/resources';
+import api from '../services/api';
 import Header from '../components/layout/Header';
 
 interface MembersPageProps {
@@ -39,6 +40,14 @@ export default function MembersPage({ title, type }: MembersPageProps) {
       if (type === 'pmr') return membersApi.getPMR();
       if (type === 'ksr') return membersApi.getKSR();
       return membersApi.getTSR();
+    },
+  });
+
+  const { data: unitOptions = [] } = useQuery({
+    queryKey: ['units', 'autocomplete'],
+    queryFn: async () => {
+      const response = await api.get('/units/autocomplete');
+      return response.data;
     },
   });
 
@@ -348,7 +357,13 @@ export default function MembersPage({ title, type }: MembersPageProps) {
               name="nama_unit"
               defaultValue={editingMember?.nama_unit || ''}
               className="input-field"
+              list="unit-list"
             />
+            <datalist id="unit-list">
+              {unitOptions.map((unit: string) => (
+                <option key={unit} value={unit} />
+              ))}
+            </datalist>
             </div>
             <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Jenis<span className="text-red-500 ml-1">*</span></label>

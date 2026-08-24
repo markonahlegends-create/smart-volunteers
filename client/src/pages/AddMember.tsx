@@ -1,8 +1,9 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Upload, X, CheckCircle2, RefreshCw } from 'lucide-react';
-import { membersApi } from '../services/resources';
+import api from '../services/api';
+import { membersApi, unitsApi } from '../services/resources';
 import { PROVINSI_OPTIONS, KABUPATEN_OPTIONS, getKecamatanOptions, getDesaOptions } from '../data/regions';
 import Header from '../components/layout/Header';
 
@@ -353,6 +354,14 @@ export default function AddMember() {
 
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  const { data: unitOptions = [] } = useQuery({
+    queryKey: ['units', 'autocomplete'],
+    queryFn: async () => {
+      const response = await api.get('/units/autocomplete');
+      return response.data;
+    },
+  });
+
   const createMutation = useMutation({
     mutationFn: (data: any) => createFn(data),
     onSuccess: () => {
@@ -455,8 +464,21 @@ export default function AddMember() {
               </div>
               <div>
                  <label className={labelClass}>Nama Unit{requiredIndicator}</label>
-                <input type="text" name="nama_unit" value={form.nama_unit} onChange={(e) => setForm({ ...form, nama_unit: e.target.value })} className={inputClass} placeholder="Nama unit" />
-              </div>
+                 <input
+                   type="text"
+                   name="nama_unit"
+                   value={form.nama_unit}
+                   onChange={(e) => setForm({ ...form, nama_unit: e.target.value })}
+                   className={inputClass}
+                   placeholder="Nama unit"
+                   list="unit-list"
+                 />
+                 <datalist id="unit-list">
+                   {unitOptions.map((unit: string) => (
+                     <option key={unit} value={unit} />
+                   ))}
+                 </datalist>
+               </div>
               <div>
                 <label className={labelClass}>Angkatan</label>
                 <input type="number" name="angkatan" value={form.angkatan} onChange={(e) => setForm({ ...form, angkatan: parseInt(e.target.value) || new Date().getFullYear() })} className={inputClass} placeholder="Tahun angkatan" />
