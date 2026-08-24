@@ -1,0 +1,133 @@
+- generic [ref=e36]:
+  - complementary [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - img "PMI Logo" [ref=e41]
+          - generic [ref=e42]:
+            - heading "Smart Volunteers" [level=1] [ref=e43]
+            - paragraph [ref=e44]: PMI Kota Cilegon
+        - navigation [ref=e45]:
+          - link "Dashboard" [ref=e46] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=e53] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=e59] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=e66] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=e73] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=e80] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=e87] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=e94] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=e101] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=e108] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=e115] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=e119] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=e124] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=e131] [cursor=pointer]
+    - button [ref=e136] [cursor=pointer]
+  - main [ref=e139]:
+    - generic [ref=e142]:
+      - generic [ref=e144]:
+        - generic [ref=e146]:
+          - heading "Tambah Unit KSR" [level=1] [ref=e147]
+          - paragraph [ref=e148]: PMI Kota Cilegon
+        - generic [ref=e149]:
+          - generic [ref=e150]: Admin PMI Kota Cilegon
+          - generic [ref=e151]: A
+      - generic [ref=e153]:
+        - button "Kembali" [ref=e155] [cursor=pointer]
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]: Unit
+              - combobox [ref=e162]:
+                - option "PERGURUAN TINGGI" [selected]
+                - option "SMA"
+                - option "SMK"
+                - option "SEDERAJAT"
+            - generic [ref=e163]:
+              - generic [ref=e164]: Kode Unit
+              - textbox "Masukkan kode unit" [ref=e165]: PT-001
+            - generic [ref=e166]:
+              - generic [ref=e167]: Nama Unit
+              - textbox [ref=e168]: Politeknik Test
+            - generic [ref=e169]:
+              - generic [ref=e170]: Email
+              - textbox [ref=e171]: test@example.com
+            - generic [ref=e172]:
+              - generic [ref=e173]: No Telpon
+              - textbox [ref=e174]: "081234567890"
+            - generic [ref=e175]:
+              - generic [ref=e176]: Status
+              - combobox [ref=e177]:
+                - option "Active" [selected]
+                - option "Tidak Aktif"
+            - generic [ref=e178]:
+              - generic [ref=e179]: Catatan
+              - textbox [ref=e180]
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: Data Lokasi
+              - iframe [ref=e185]:
+                - generic [ref=f1e2]:
+                  - generic:
+                    - region "Map" [ref=f1e3]
+                    - button "[missing \"en-US.javascripts.map.marker.title\" translation]" [ref=f1e4]
+                  - generic:
+                    - generic [ref=f1e8]:
+                      - button "Zoom In" [ref=f1e9] [cursor=pointer]
+                      - button "Zoom Out" [ref=f1e11] [cursor=pointer]
+                    - group [ref=f1e13]:
+                      - generic [ref=f1e14]:
+                        - link "Report a problem" [ref=f1e15] [cursor=pointer]:
+                          - /url: /fixthemap?lat=-6.05000&lon=106.10000&zoom=13
+                        - text: "| ©"
+                        - link "OpenStreetMap contributors" [ref=f1e16] [cursor=pointer]:
+                          - /url: /copyright
+                        - text: ♥️
+                        - link "Make a Donation" [ref=f1e17] [cursor=pointer]:
+                          - /url: https://supporting.openstreetmap.org
+                        - text: .
+                        - link "Website and API terms" [ref=f1e18] [cursor=pointer]:
+                          - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use
+              - generic [ref=e186]:
+                - generic [ref=e187]: Cari Lokasi
+                - generic [ref=e188]:
+                  - textbox "Cari nama gedung, kantor, instansi, rumah, toko, pabrik..." [ref=e189]
+                  - button "Cari" [ref=e190] [cursor=pointer]
+            - generic [ref=e191]:
+              - generic [ref=e192]: Provinsi
+              - combobox [ref=e193]:
+                - option "Pilih Regional"
+                - option "BANTEN" [selected]
+            - generic [ref=e194]:
+              - generic [ref=e195]: Kabupaten
+              - combobox [ref=e196]:
+                - option "Pilih Kabupaten/Kota"
+                - option "KOTA CILEGON" [selected]
+                - option "LEBAK"
+                - option "PANDEGLANG"
+                - option "SERANG"
+                - option "KABUPATEN SERANG"
+            - generic [ref=e197]:
+              - generic [ref=e198]: Alamat
+              - textbox [active] [ref=e199]: Jl. Test No. 1, Cilegon
+            - generic [ref=e200]:
+              - generic [ref=e201]: Upload SK
+              - generic [ref=e202] [cursor=pointer]:
+                - paragraph [ref=e206]: Klik untuk upload atau drag file ke sini
+                - paragraph [ref=e207]: Hanya file PDF yang diizinkan
+          - generic [ref=e208]:
+            - button "Create" [ref=e209] [cursor=pointer]
+            - button "Batal" [ref=e210] [cursor=pointer]

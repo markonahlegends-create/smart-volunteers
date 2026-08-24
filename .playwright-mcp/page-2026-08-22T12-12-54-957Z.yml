@@ -1,0 +1,103 @@
+- generic [active] [ref=f21e1]:
+  - generic: 17%
+  - banner [ref=f21e4]:
+    - navigation [ref=f21e5]:
+      - generic [ref=f21e6]:
+        - link [ref=f21e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f21e10]:
+          - listitem [ref=f21e11]:
+            - link "Markas PMI" [ref=f21e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f21e13]:
+            - link "Relawan" [ref=f21e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f21e16]:
+            - link "Layanan PMI" [ref=f21e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f21e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f21e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f21e22]:
+    - paragraph [ref=f21e23]:
+      - link "Buat Unit TSR" [ref=f21e24] [cursor=pointer]:
+        - /url: /index.php?r=pmi%2Funit%2Fcreate&id=7
+    - generic [ref=f21e26]:
+      - generic [ref=f21e27]: Showing 1-1 of 1 item.
+      - table [ref=f21e36]:
+        - rowgroup [ref=f21e37]:
+          - row [ref=f21e38]:
+            - columnheader "#" [ref=f21e39]
+            - columnheader [ref=f21e40]:
+              - link "Nama Provinsi" [ref=f21e41] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=id_provinsi
+            - columnheader [ref=f21e42]:
+              - link "Nama Kabupten" [ref=f21e43] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=id_kabupaten
+            - columnheader [ref=f21e44]:
+              - link "Nama Unit" [ref=f21e45] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=nama
+            - columnheader [ref=f21e46]:
+              - link "Alamat" [ref=f21e47] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=alamat
+            - columnheader [ref=f21e48]:
+              - link "Email" [ref=f21e49] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=email
+            - columnheader [ref=f21e50]:
+              - link "No Telpon" [ref=f21e51] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Ftsr%2Findex&sort=no_telpon
+            - columnheader [ref=f21e52]
+          - row [ref=f21e53]:
+            - cell [ref=f21e54]
+            - cell [ref=f21e55]:
+              - combobox [ref=f21e58] [cursor=pointer]
+            - cell [ref=f21e59]:
+              - combobox [ref=f21e62] [cursor=pointer]
+            - cell [ref=f21e63]:
+              - textbox [ref=f21e64]
+            - cell [ref=f21e65]:
+              - textbox [ref=f21e66]
+            - cell [ref=f21e67]:
+              - textbox [ref=f21e68]
+            - cell [ref=f21e69]:
+              - textbox [ref=f21e70]
+            - cell [ref=f21e71]
+        - rowgroup [ref=f21e72]:
+          - row [ref=f21e73]:
+            - cell "1" [ref=f21e74]
+            - cell "BANTEN" [ref=f21e75]
+            - cell "KOTA CILEGON" [ref=f21e76]
+            - cell "TSR PMI KOTA CILEGON" [ref=f21e77]
+            - cell "Jl. Belibis Raya Blok E21 No.1 Perumnas Cibeber" [ref=f21e78]
+            - cell [ref=f21e79]
+            - cell "0254394617" [ref=f21e80]
+            - cell [ref=f21e81]:
+              - link "" [ref=f21e82] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=60308
+              - link "✏" [ref=f21e84] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=60308
+  - contentinfo [ref=f21e86]:
+    - generic [ref=f21e90]:
+      - heading "MARKAS PUSAT PALANG MERAH INDONESIA" [level=4] [ref=f21e91]
+      - generic [ref=f21e92]: JL. Jend. Gatot Subroto Kav. 96 Jakarta 12790 - Indonesia
+      - paragraph [ref=f21e93]:
+        - generic [ref=f21e94]: 
+        - text: (021) 7992325
+        - generic [ref=f21e95]: 
+        - text: (021) 7995188
+        - generic [ref=f21e96]: 
+        - text: pmi.or.id
+    - generic [ref=f21e99]:
+      - paragraph [ref=f21e102]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f21e104]:
+        - listitem [ref=f21e105]:
+          - link "" [ref=f21e106] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f21e108]:
+          - link "" [ref=f21e109] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f21e111]:
+          - link "" [ref=f21e112] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f21e114] [cursor=pointer]:
+    - /url: "#"

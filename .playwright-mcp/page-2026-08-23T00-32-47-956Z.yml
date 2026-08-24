@@ -1,0 +1,108 @@
+- generic [ref=f3e3]:
+  - complementary [ref=f3e4]:
+    - generic [ref=f3e5]:
+      - generic [ref=f3e6]:
+        - generic [ref=f3e7]:
+          - img "PMI Logo" [ref=f3e8]
+          - generic [ref=f3e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f3e10]
+            - paragraph [ref=f3e11]: PMI Kota Cilegon
+        - navigation [ref=f3e12]:
+          - link "Dashboard" [ref=f3e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f3e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f3e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f3e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f3e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f3e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f3e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f3e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f3e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f3e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f3e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f3e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f3e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f3e98] [cursor=pointer]
+    - button [ref=f3e103] [cursor=pointer]
+  - main [ref=f3e106]:
+    - generic [ref=f3e158]:
+      - generic [ref=f3e160]:
+        - generic [ref=f3e162]:
+          - heading "Unit PMR Madya" [level=1] [ref=f3e163]
+          - paragraph [ref=f3e164]: PMI Kota Cilegon
+        - generic [ref=f3e165]:
+          - generic [ref=f3e166]: Admin PMI Kota Cilegon
+          - generic [ref=f3e167]: A
+      - generic [ref=f3e169]:
+        - generic [ref=f3e170]:
+          - paragraph [ref=f3e171]: "Total: 4 unit"
+          - button "Tambah Unit" [ref=f3e172] [cursor=pointer]
+        - generic [ref=f3e175]:
+          - textbox "Cari unit..." [ref=f3e181]
+          - table [ref=f3e183]:
+            - rowgroup [ref=f3e184]:
+              - row [ref=f3e185]:
+                - columnheader "#" [ref=f3e186]
+                - columnheader "Nama Unit" [ref=f3e187]
+                - columnheader "Tingkat" [ref=f3e188]
+                - columnheader "Provinsi" [ref=f3e189]
+                - columnheader "Kabupaten" [ref=f3e190]
+                - columnheader "Status" [ref=f3e191]
+                - columnheader "Aksi" [ref=f3e192]
+            - rowgroup [ref=f3e193]:
+              - row [ref=f3e194] [cursor=pointer]:
+                - cell "2" [ref=f3e195]
+                - cell "SMP Negeri 5 Kota Cilegon" [ref=f3e196]
+                - cell "MADYA" [ref=f3e197]
+                - cell "BANTEN" [ref=f3e198]
+                - cell "KOTA CILEGON" [ref=f3e199]
+                - cell "Aktif" [ref=f3e200]
+                - cell [ref=f3e202]:
+                  - generic [ref=f3e203]:
+                    - button "Edit" [ref=f3e204]
+                    - button "Hapus" [ref=f3e208]
+              - row [ref=f3e212] [cursor=pointer]:
+                - cell "5" [ref=f3e213]
+                - cell "SMP Negeri 5 Kota Cilegon" [ref=f3e214]
+                - cell "MADYA" [ref=f3e215]
+                - cell "BANTEN" [ref=f3e216]
+                - cell "KOTA CILEGON" [ref=f3e217]
+                - cell "Aktif" [ref=f3e218]
+                - cell [ref=f3e220]:
+                  - generic [ref=f3e221]:
+                    - button "Edit" [ref=f3e222]
+                    - button "Hapus" [ref=f3e226]
+              - row [ref=f3e230] [cursor=pointer]:
+                - cell "8" [ref=f3e231]
+                - cell "SMP Negeri 5 Kota Cilegon" [ref=f3e232]
+                - cell "MADYA" [ref=f3e233]
+                - cell "BANTEN" [ref=f3e234]
+                - cell "KOTA CILEGON" [ref=f3e235]
+                - cell "Aktif" [ref=f3e236]
+                - cell [ref=f3e238]:
+                  - generic [ref=f3e239]:
+                    - button "Edit" [ref=f3e240]
+                    - button "Hapus" [ref=f3e244]
+              - row [ref=f3e248] [cursor=pointer]:
+                - cell "12" [ref=f3e249]
+                - cell "Unit PMR Madya Test" [ref=f3e250]
+                - cell "MADYA" [ref=f3e251]
+                - cell "BANTEN" [ref=f3e252]
+                - cell "KOTA CILEGON" [ref=f3e253]
+                - cell "Aktif" [ref=f3e254]
+                - cell [ref=f3e256]:
+                  - generic [ref=f3e257]:
+                    - button "Edit" [ref=f3e258]
+                    - button "Hapus" [ref=f3e262]

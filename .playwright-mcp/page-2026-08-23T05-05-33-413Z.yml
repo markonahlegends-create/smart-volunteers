@@ -1,0 +1,362 @@
+- generic [ref=f60e3]:
+  - complementary [ref=f60e4]:
+    - generic [ref=f60e5]:
+      - generic [ref=f60e6]:
+        - generic [ref=f60e7]:
+          - img "PMI Logo" [ref=f60e8]
+          - generic [ref=f60e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f60e10]
+            - paragraph [ref=f60e11]: PMI Kota Cilegon
+        - navigation [ref=f60e12]:
+          - link "Dashboard" [ref=f60e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f60e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f60e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f60e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f60e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f60e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f60e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f60e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f60e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f60e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f60e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Laporan" [ref=f60e86] [cursor=pointer]:
+            - /url: /laporan
+          - link "Profile" [ref=f60e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f60e98] [cursor=pointer]
+    - button [ref=f60e103] [cursor=pointer]
+  - main [ref=f60e106]:
+    - generic [ref=f60e109]:
+      - generic [ref=f60e111]:
+        - generic [ref=f60e113]:
+          - heading "Tambah Anggota PMR" [level=1] [ref=f60e114]
+          - paragraph [ref=f60e115]: PMI Kota Cilegon
+        - button [ref=f60e117] [cursor=pointer]:
+          - generic [ref=f60e122]:
+            - paragraph [ref=f60e123]: Admin PMI Kota Cilegon
+            - paragraph [ref=f60e124]: Administrator
+      - generic [ref=f60e127]:
+        - button "Kembali" [ref=f60e129] [cursor=pointer]
+        - generic [ref=f60e132]:
+          - generic [ref=f60e133]:
+            - heading "Informasi Anggota" [level=3] [ref=f60e134]
+            - generic [ref=f60e135]:
+              - generic [ref=f60e136]:
+                - generic [ref=f60e137]: Kode Anggota*
+                - textbox "Kode anggota" [ref=f60e138]
+              - generic [ref=f60e139]:
+                - generic [ref=f60e140]: Nama Unit*
+                - textbox "Nama unit" [ref=f60e141]
+              - generic [ref=f60e142]:
+                - generic [ref=f60e143]: Angkatan*
+                - spinbutton "Tahun angkatan" [ref=f60e144]: "2026"
+          - generic [ref=f60e145]:
+            - heading "Informasi Pribadi" [level=3] [ref=f60e146]
+            - generic [ref=f60e147]:
+              - generic [ref=f60e148]:
+                - generic [ref=f60e149]: Jenis Identitas
+                - combobox [ref=f60e150]:
+                  - option "Pilih Jenis Identitas" [selected]
+                  - option "KTP"
+                  - option "Kartu Pelajar"
+                  - option "SIM"
+                  - option "Paspor"
+                  - option "Lainnya"
+              - generic [ref=f60e151]:
+                - generic [ref=f60e152]: No Induk Kependudukan*
+                - textbox "Nomor NIK" [ref=f60e153]
+              - generic [ref=f60e154]:
+                - generic [ref=f60e155]: Nama Lengkap*
+                - textbox [ref=f60e156]
+              - generic [ref=f60e157]:
+                - generic [ref=f60e158]: Tempat Lahir
+                - textbox "Tempat lahir" [ref=f60e160]
+              - generic [ref=f60e161]:
+                - generic [ref=f60e162]: Tanggal Lahir
+                - textbox [ref=f60e164]
+              - generic [ref=f60e165]:
+                - generic [ref=f60e166]: Jenis Kelamin*
+                - combobox [ref=f60e167]:
+                  - option "Laki-laki" [selected]
+                  - option "Wanita"
+              - generic [ref=f60e168]:
+                - generic [ref=f60e169]: Agama
+                - combobox [ref=f60e170]:
+                  - option "Pilih Agama" [selected]
+                  - option "Islam"
+                  - option "Kristen"
+                  - option "Katolik"
+                  - option "Hindu"
+                  - option "Buddha"
+                  - option "Konghucu"
+                  - option "Lainnya"
+              - generic [ref=f60e171]:
+                - generic [ref=f60e172]: Golongan Darah
+                - combobox [ref=f60e173]:
+                  - option "Pilih Golongan Darah" [selected]
+                  - option "A"
+                  - option "B"
+                  - option "AB"
+                  - option "O"
+                  - option "A+"
+                  - option "A-"
+                  - option "B+"
+                  - option "B-"
+                  - option "AB+"
+                  - option "AB-"
+                  - option "O+"
+                  - option "O-"
+              - generic [ref=f60e174]:
+                - generic [ref=f60e175]: Email
+                - textbox "email@example.com" [ref=f60e176]
+              - generic [ref=f60e177]:
+                - generic [ref=f60e178]: No HP
+                - textbox "08123456789" [ref=f60e179]
+              - generic [ref=f60e180]:
+                - generic [ref=f60e181]: Kategori
+                - combobox [ref=f60e182]:
+                  - option "Koordinator"
+                  - option "Anggota" [selected]
+                  - option "Calon Anggota"
+                  - option "Anggota Tidak Aktif"
+              - generic [ref=f60e183]:
+                - generic [ref=f60e184]: Status
+                - combobox [ref=f60e185]:
+                  - option "Aktif" [selected]
+                  - option "Tidak Aktif"
+                  - option "Suspend"
+          - generic [ref=f60e186]:
+            - heading "Alamat Sesuai KTP" [level=3] [ref=f60e187]
+            - generic [ref=f60e188]:
+              - generic [ref=f60e189]:
+                - generic [ref=f60e190]: Alamat*
+                - textbox "Alamat sesuai KTP" [ref=f60e191]
+              - generic [ref=f60e192]:
+                - generic [ref=f60e193]: Provinsi*
+                - combobox [ref=f60e194]:
+                  - option "Pilih Provinsi" [selected]
+                  - option "Aceh"
+                  - option "Sumatera Utara"
+                  - option "Sumatera Barat"
+                  - option "Riau"
+                  - option "Jambi"
+                  - option "Sumatera Selatan"
+                  - option "Bengkulu"
+                  - option "Lampung"
+                  - option "Kepulauan Bangka Belitung"
+                  - option "Kepulauan Riau"
+                  - option "DKI Jakarta"
+                  - option "Jawa Barat"
+                  - option "Jawa Tengah"
+                  - option "DI Yogyakarta"
+                  - option "Jawa Timur"
+                  - option "Banten"
+                  - option "Bali"
+                  - option "Nusa Tenggara Barat"
+                  - option "Nusa Tenggara Timur"
+                  - option "Kalimantan Barat"
+                  - option "Kalimantan Tengah"
+                  - option "Kalimantan Selatan"
+                  - option "Kalimantan Timur"
+                  - option "Kalimantan Utara"
+                  - option "Sulawesi Utara"
+                  - option "Sulawesi Tengah"
+                  - option "Sulawesi Selatan"
+                  - option "Sulawesi Tenggara"
+                  - option "Gorontalo"
+                  - option "Sulawesi Barat"
+                  - option "Maluku"
+                  - option "Maluku Utara"
+                  - option "Papua"
+                  - option "Papua Barat"
+                  - option "Papua Selatan"
+                  - option "Papua Tengah"
+                  - option "Papua Pegunungan"
+                  - option "Papua Barat Daya"
+              - generic [ref=f60e195]:
+                - generic [ref=f60e196]: Kabupaten/Kota*
+                - combobox [ref=f60e197]:
+                  - option "Pilih Kabupaten/Kota" [selected]
+              - generic [ref=f60e198]:
+                - generic [ref=f60e199]: Kecamatan*
+                - combobox [ref=f60e200]:
+                  - option "Pilih Kecamatan" [selected]
+              - generic [ref=f60e201]:
+                - generic [ref=f60e202]: Desa/Kelurahan*
+                - combobox [ref=f60e203]:
+                  - option "Pilih Desa/Kelurahan" [selected]
+              - generic [ref=f60e205] [cursor=pointer]:
+                - checkbox "Alamat KTP termasuk Domisili" [checked] [ref=f60e206]
+                - generic [ref=f60e207]: Alamat KTP termasuk Domisili
+          - generic [ref=f60e208]:
+            - heading "Foto Anggota" [level=3] [ref=f60e209]
+            - generic [ref=f60e210]:
+              - generic [ref=f60e211]: "?"
+              - generic [ref=f60e214]:
+                - generic [ref=f60e215]: Upload Foto
+                - generic [ref=f60e216]: Browse
+          - generic [ref=f60e221]:
+            - heading "Kontak Darurat" [level=3] [ref=f60e222]
+            - generic [ref=f60e223]:
+              - generic [ref=f60e224]:
+                - generic [ref=f60e225]: Nama Kontak Darurat
+                - textbox "Nama kontak darurat" [ref=f60e226]
+              - generic [ref=f60e227]:
+                - generic [ref=f60e228]: Hubungan
+                - textbox "Hubungan" [ref=f60e229]
+              - generic [ref=f60e230]:
+                - generic [ref=f60e231]: No HP
+                - textbox "No HP" [ref=f60e232]
+              - generic [ref=f60e233]:
+                - generic [ref=f60e234]: Alamat
+                - textbox "Alamat kontak darurat" [ref=f60e235]
+          - generic [ref=f60e236]:
+            - heading "Riwayat Keanggotaan" [level=3] [ref=f60e237]
+            - generic [ref=f60e238]:
+              - generic [ref=f60e239]:
+                - generic [ref=f60e240]: Tahun Bergabung
+                - textbox "Tahun bergabung" [ref=f60e241]
+              - generic [ref=f60e242]:
+                - generic [ref=f60e243]: Unit Asal
+                - textbox "Unit asal" [ref=f60e244]
+              - generic [ref=f60e245]:
+                - generic [ref=f60e246]: Riwayat Jabatan
+                - textbox "Jabatan" [ref=f60e247]
+              - generic [ref=f60e248]:
+                - generic [ref=f60e249]: Keterangan
+                - textbox "Keterangan riwayat keanggotaan" [ref=f60e250]
+          - generic [ref=f60e251]:
+            - heading "Pendidikan Formal" [level=3] [ref=f60e252]
+            - generic [ref=f60e253]:
+              - generic [ref=f60e254]:
+                - generic [ref=f60e255]: Tingkat Pendidikan
+                - combobox [ref=f60e256]:
+                  - option "Pilih Tingkat" [selected]
+                  - option "SD"
+                  - option "SMP"
+                  - option "SMA"
+                  - option "D3"
+                  - option "S1"
+                  - option "S2"
+                  - option "S3"
+              - generic [ref=f60e257]:
+                - generic [ref=f60e258]: Nama Institusi
+                - textbox "Nama institusi" [ref=f60e259]
+              - generic [ref=f60e260]:
+                - generic [ref=f60e261]: Jurusan
+                - textbox "Jurusan" [ref=f60e262]
+              - generic [ref=f60e263]:
+                - generic [ref=f60e264]: Tahun Lulus
+                - textbox "Tahun lulus" [ref=f60e265]
+              - generic [ref=f60e266]:
+                - generic [ref=f60e267]: Ijazah
+                - textbox "Nomor ijazah / deskripsi" [ref=f60e268]
+          - generic [ref=f60e269]:
+            - heading "Diklat PMI" [level=3] [ref=f60e270]
+            - generic [ref=f60e271]:
+              - generic [ref=f60e272]:
+                - generic [ref=f60e273]: Nama Diklat
+                - textbox "Nama diklat" [ref=f60e274]
+              - generic [ref=f60e275]:
+                - generic [ref=f60e276]: Penyelenggara
+                - textbox "Penyelenggara" [ref=f60e277]
+              - generic [ref=f60e278]:
+                - generic [ref=f60e279]: Tempat
+                - textbox "Tempat" [ref=f60e280]
+              - generic [ref=f60e281]:
+                - generic [ref=f60e282]: Tahun
+                - textbox "Tahun" [ref=f60e283]
+              - generic [ref=f60e284]:
+                - generic [ref=f60e285]: Sertifikat
+                - textbox "Nomor / deskripsi sertifikat" [ref=f60e286]
+          - generic [ref=f60e287]:
+            - heading "Sertifikasi" [level=3] [ref=f60e288]
+            - generic [ref=f60e289]:
+              - generic [ref=f60e290]:
+                - generic [ref=f60e291]: Nama Sertifikasi
+                - textbox "Nama sertifikasi" [ref=f60e292]
+              - generic [ref=f60e293]:
+                - generic [ref=f60e294]: Penerbit
+                - textbox "Penerbit" [ref=f60e295]
+              - generic [ref=f60e296]:
+                - generic [ref=f60e297]: Nomor
+                - textbox "Nomor" [ref=f60e298]
+              - generic [ref=f60e299]:
+                - generic [ref=f60e300]: Tahun
+                - textbox "Tahun" [ref=f60e301]
+              - generic [ref=f60e302]:
+                - generic [ref=f60e303]: Berlaku Sampai
+                - textbox "Berlaku sampai" [ref=f60e304]
+          - generic [ref=f60e305]:
+            - heading "Keahlian / Keterampilan" [level=3] [ref=f60e306]
+            - generic [ref=f60e307]:
+              - generic [ref=f60e308]:
+                - generic [ref=f60e309]: Keahlian
+                - textbox "Keahlian" [ref=f60e310]
+              - generic [ref=f60e311]:
+                - generic [ref=f60e312]: Keterampilan
+                - textbox "Keterampilan" [ref=f60e313]
+              - generic [ref=f60e314]:
+                - generic [ref=f60e315]: Kategori
+                - textbox "Kategori" [ref=f60e316]
+          - generic [ref=f60e317]:
+            - heading "Riwayat Organisasi" [level=3] [ref=f60e318]
+            - generic [ref=f60e319]:
+              - generic [ref=f60e320]:
+                - generic [ref=f60e321]: Nama Organisasi
+                - textbox "Nama organisasi" [ref=f60e322]
+              - generic [ref=f60e323]:
+                - generic [ref=f60e324]: Jabatan
+                - textbox "Jabatan" [ref=f60e325]
+              - generic [ref=f60e326]:
+                - generic [ref=f60e327]: Periode
+                - textbox "Periode" [ref=f60e328]
+              - generic [ref=f60e329]:
+                - generic [ref=f60e330]: Keterangan
+                - textbox "Keterangan" [ref=f60e331]
+          - generic [ref=f60e332]:
+            - heading "Riwayat Penghargaan" [level=3] [ref=f60e333]
+            - generic [ref=f60e334]:
+              - generic [ref=f60e335]:
+                - generic [ref=f60e336]: Nama Penghargaan
+                - textbox "Nama penghargaan" [ref=f60e337]
+              - generic [ref=f60e338]:
+                - generic [ref=f60e339]: Pemberi
+                - textbox "Pemberi" [ref=f60e340]
+              - generic [ref=f60e341]:
+                - generic [ref=f60e342]: Tahun
+                - textbox "Tahun" [ref=f60e343]
+              - generic [ref=f60e344]:
+                - generic [ref=f60e345]: Keterangan
+                - textbox "Keterangan" [ref=f60e346]
+          - generic [ref=f60e347]:
+            - heading "Verifikasi" [level=3] [ref=f60e348]
+            - generic [ref=f60e349]:
+              - generic [ref=f60e350]:
+                - generic [ref=f60e351]: Kode Verifikasi
+                - generic [ref=f60e352]:
+                  - generic [ref=f60e353]: QQGC8W
+                  - button "Refresh kode" [ref=f60e354] [cursor=pointer]
+              - generic [ref=f60e360]:
+                - generic [ref=f60e361]: Masukkan Kode
+                - textbox "Masukkan kode verifikasi" [ref=f60e362]
+              - button "Verifikasi" [ref=f60e364] [cursor=pointer]
+          - generic [ref=f60e365]:
+            - button "Daftar Anggota" [disabled] [ref=f60e366]
+            - button "Batal" [ref=f60e367] [cursor=pointer]
+  - contentinfo [ref=f60e368]:
+    - generic [ref=f60e369]:
+      - paragraph [ref=f60e370]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link "Oleh Fadil Advertising" [ref=f60e371] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

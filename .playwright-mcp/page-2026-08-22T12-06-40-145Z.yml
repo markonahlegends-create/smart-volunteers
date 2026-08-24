@@ -1,0 +1,61 @@
+- generic [ref=f6e1]:
+  - generic: 81%
+  - generic [ref=f6e2]:
+    - navigation [ref=f6e3]:
+      - generic [ref=f6e4]:
+        - link [ref=f6e6] [cursor=pointer]:
+          - /url: /index.php
+        - generic [ref=f6e7]:
+          - list
+    - generic [ref=f6e11]:
+      - generic [ref=f6e12]: Sign In
+      - generic [ref=f6e13]:
+        - generic [ref=f6e15]:
+          - generic [ref=f6e16]:
+            - generic [ref=f6e17]: Login
+            - textbox "Login" [active] [ref=f6e18]:
+              - /placeholder: Username
+          - generic [ref=f6e19]:
+            - generic [ref=f6e20]:
+              - text: Password (
+              - link "Forgot password?" [ref=f6e21] [cursor=pointer]:
+                - /url: /index.php?r=user%2Frecovery%2Frequest
+              - text: )
+            - textbox "Password (Forgot password?)" [ref=f6e22]:
+              - /placeholder: Password
+          - generic [ref=f6e23]:
+            - paragraph [ref=f6e25]: Verification (Please click on the image to get new code)
+            - textbox "Verification (Please click on the image to get new code)" [ref=f6e26]
+          - button "Sign in" [ref=f6e27] [cursor=pointer]
+        - paragraph [ref=f6e30]:
+          - link "Didn't receive confirmation message?" [ref=f6e31] [cursor=pointer]:
+            - /url: /index.php?r=user%2Fregistration%2Fresend
+        - generic:
+          - list
+  - generic [ref=f6e33]:
+    - img "Error" [ref=f6e34]
+    - heading [level=1] [ref=f6e35]:
+      - text: PHP Core Warning –
+      - link "yii\\base\\ErrorException" [ref=f6e36] [cursor=pointer]:
+        - /url: http://www.yiiframework.com/doc-2.0/yii-base-errorexception.html
+    - 'heading "PHP Startup: Unable to load dynamic library ''/usr/lib/php/20160303/mysqli.so'' - /usr/lib/php/20160303/mysqli.so: undefined symbol: mysqlnd_global_stats" [level=2] [ref=f6e37]'
+  - list [ref=f6e39]:
+    - listitem [ref=f6e40]:
+      - generic [ref=f6e42] [cursor=pointer]:
+        - generic [ref=f6e43]: "2."
+        - generic [ref=f6e45]:
+          - link "yii\\base\\ErrorHandler::handleFatalError" [ref=f6e46]:
+            - /url: http://www.yiiframework.com/doc-2.0/yii-base-errorhandler.html#handleFatalError()-detail
+          - text: ()
+  - generic [ref=f6e49]:
+    - img "Yii Framework" [ref=f6e50]
+    - paragraph [ref=f6e51]: 2026-08-22, 19:06:41
+    - paragraph [ref=f6e52]:
+      - link "Apache/2.4.52 (Ubuntu)" [ref=f6e53] [cursor=pointer]:
+        - /url: http://httpd.apache.org/
+    - paragraph [ref=f6e54]:
+      - link "Yii Framework" [ref=f6e55] [cursor=pointer]:
+        - /url: http://yiiframework.com/
+      - text: /
+      - link "2.0.12" [ref=f6e56] [cursor=pointer]:
+        - /url: https://github.com/yiisoft/yii2/

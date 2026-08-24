@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - generic: 90%
+  - banner [ref=e4]:
+    - navigation [ref=e5]:
+      - generic [ref=e6]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Markas PMI" [ref=e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=e13]:
+            - link "Relawan" [ref=e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=e16]:
+            - link "Layanan PMI" [ref=e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=e22]:
+    - iframe [ref=e25]:
+      - generic [ref=f1e1]:
+        - generic [ref=f1e4]:
+          - generic:
+            - generic [ref=f1e12]:
+              - generic "Homepage" [ref=f1e18]:
+                - application [ref=f1e19]:
+                  - list [ref=f1e21]:
+                    - listitem [ref=f1e22]:
+                      - button "Show keyboard shortcuts" [ref=f1e23] [cursor=pointer]
+                    - listitem [ref=f1e24]:
+                      - link "Show screen reader tips (opens in new tab)" [ref=f1e25] [cursor=pointer]:
+                        - /url: https://go.microsoft.com/fwlink/?linkid=852575
+                        - text: Show screen reader tips
+                    - listitem [ref=f1e29]:
+                      - button "Skip to main content" [ref=f1e30] [cursor=pointer]
+                  - region "Power BI Report" [ref=f1e39]:
+                    - heading "Power BI Report" [level=2]
+                    - generic:
+                      - generic:
+                        - generic:
+                          - group "3 items and 1 subgroup":
+                            - generic:
+                              - group [ref=f1e41]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e46]:
+                                  - paragraph [ref=f1e48]: Dashboard Operasi COVID-19
+                              - generic:
+                                - generic:
+                                  - group "2 items and 1 subgroup":
+                                    - generic:
+                                      - link "Back . Bahasa" [ref=f1e50]:
+                                        - generic "Visuals are loading..."
+                                        - img [ref=f1e55]:
+                                          - generic [ref=f1e57] [cursor=pointer]
+                                      - button "Page navigation . English" [disabled] [ref=f1e60]:
+                                        - generic "Visuals are loading..."
+                                        - img [ref=f1e65]:
+                                          - generic [ref=f1e67] [cursor=pointer]
+                                      - generic:
+                                        - generic:
+                                          - group "4 items":
+                                            - generic:
+                                              - img "Image" [ref=f1e70]:
+                                                - generic "Visuals are loading..."
+                                              - img "Image" [ref=f1e80]:
+                                                - generic "Visuals are loading..."
+                                              - group [ref=f1e90]:
+                                                - generic "Visuals are loading..."
+                                                - document [ref=f1e95]:
+                                                  - paragraph [ref=f1e97]: EN
+                                              - group [ref=f1e99]:
+                                                - generic "Visuals are loading..."
+                                                - document [ref=f1e104]:
+                                                  - paragraph [ref=f1e106]: ID
+                              - img "Image" [ref=f1e108]:
+                                - generic "Visuals are loading..."
+                              - img "Image" [ref=f1e115]:
+                                - generic "Visuals are loading..."
+                      - group [ref=f1e122]:
+                        - generic "Visuals are loading..."
+                        - document [ref=f1e127]:
+                          - paragraph [ref=f1e129]: Sejak tahun 2020, Palang Merah Indonesia (PMI) telah membantu pemerintah dalam melawan pandemi COVID-19. Beragam aksi di masyarakat telah dilakukan PMI untuk memutus rantai penularan dan mempercepat pemulihan COVID-19. PMI terus berupaya membantu penanganan COVID-19 melalui kolaborasi dan kemitraan dengan berbagai pihak seperti pemerintah, swasta, Mitra Gerakan, dan masyarakat.
+                      - generic:
+                        - generic:
+                          - group "4 items and 1 subgroup":
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - group "2 items":
+                                    - generic:
+                                      - img "Image" [ref=f1e131]:
+                                        - generic "Visuals are loading..."
+                                      - group [ref=f1e138]:
+                                        - generic "Visuals are loading..."
+                                        - document [ref=f1e143]:
+                                          - generic [ref=f1e144]:
+                                            - paragraph [ref=f1e145]: "34"
+                                            - paragraph [ref=f1e146]: Provinsi Terjangkau
+                              - img "Image" [ref=f1e148]:
+                                - generic "Visuals are loading..."
+                              - img "Image" [ref=f1e155]:
+                                - generic "Visuals are loading..."
+                              - group [ref=f1e162]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e167]:
+                                  - generic [ref=f1e168]:
+                                    - paragraph [ref=f1e169]: 38,5Jt
+                                    - paragraph [ref=f1e170]: Masyarakat Mendapat Manfaat
+                              - group [ref=f1e172]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e177]:
+                                  - generic [ref=f1e178]:
+                                    - paragraph [ref=f1e179]: 101M
+                                    - paragraph [ref=f1e180]: Nilai Bantuan Tersalurkan
+                      - generic:
+                        - generic:
+                          - group "13 items":
+                            - generic:
+                              - img "Image" [ref=f1e182]:
+                                - generic "Visuals are loading..."
+                              - button [ref=f1e192]:
+                                - generic "Visuals are loading..."
+                              - button [ref=f1e202]:
+                                - generic "Visuals are loading..."
+                              - button [ref=f1e212]:
+                                - generic "Visuals are loading..."
+                              - img "Image" [ref=f1e222]:
+                                - generic "Visuals are loading..."
+                              - link "Bookmark . Click here to follow" [ref=f1e229]:
+                                - generic "Visuals are loading..."
+                                - img [ref=f1e234]:
+                                  - generic [ref=f1e236] [cursor=pointer]
+                              - link "Bookmark . Click here to follow" [ref=f1e239]:
+                                - generic "Visuals are loading..."
+                                - img [ref=f1e244]:
+                                  - generic [ref=f1e246] [cursor=pointer]
+                              - img "Image" [ref=f1e249]:
+                                - generic "Visuals are loading..."
+                              - link "Bookmark . Click here to follow" [ref=f1e256]:
+                                - generic "Visuals are loading..."
+                                - img [ref=f1e261]:
+                                  - generic [ref=f1e263] [cursor=pointer]
+                              - img "Image" [ref=f1e266]:
+                                - generic "Visuals are loading..."
+                              - group [ref=f1e273]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e278]:
+                                  - paragraph [ref=f1e280]: CAPAIAN
+                              - group [ref=f1e282]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e287]:
+                                  - paragraph [ref=f1e289]: KAPASITAS
+                              - group [ref=f1e291]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e296]:
+                                  - paragraph [ref=f1e298]: KISAH PMI
+                      - img "Image" [ref=f1e300]:
+                        - generic "Visuals are loading..."
+                      - generic:
+                        - generic:
+                          - group "3 items and 3 subgroups":
+                            - generic:
+                              - link "Bookmark . Hubungi Kami" [ref=f1e307]:
+                                - generic "Visuals are loading..."
+                                - generic [ref=f1e312] [cursor=pointer]
+                              - link "Bookmark . Tentang COVID-19" [ref=f1e314]:
+                                - generic "Visuals are loading..."
+                                - generic [ref=f1e319] [cursor=pointer]
+                              - link "Bookmark . Tentang Dashboard" [ref=f1e321]:
+                                - generic "Visuals are loading..."
+                                - generic [ref=f1e326] [cursor=pointer]
+                      - generic:
+                        - generic:
+                          - group "6 items":
+                            - generic:
+                              - group [ref=f1e328]:
+                                - generic "Visuals are loading..."
+                                - document [ref=f1e333]:
+                                  - paragraph [ref=f1e335]: Perjalanan Operasi COVID-19 (Arahkan kursor ke atas tombol tahun)
+                              - img "Image" [ref=f1e337]:
+                                - generic "Visuals are loading..."
+                              - group [ref=f1e344]:
+                                - generic "Visuals are loading..."
+                                - img "Min of Year 2022." [ref=f1e349]:
+                                  - generic [ref=f1e350]: "2022"
+                              - group [ref=f1e353]:
+                                - generic "Visuals are loading..."
+                                - img "Min of Year 2020." [ref=f1e358]:
+                                  - generic [ref=f1e359]: "2020"
+                              - group [ref=f1e362]:
+                                - generic "Visuals are loading..."
+                                - img "Min of Year 2021." [ref=f1e367]:
+                                  - generic [ref=f1e368]: "2021"
+                              - group [ref=f1e371]:
+                                - generic "Visuals are loading..."
+                                - img "Max of Year 2023." [ref=f1e376]:
+                                  - generic [ref=f1e377]: "2023"
+              - generic [ref=f1e385]:
+                - generic [ref=f1e386]:
+                  - button "Zoom Out" [ref=f1e387] [cursor=pointer]: "-"
+                  - button "Zoom In" [ref=f1e391] [cursor=pointer]: +
+                - button "Zoom level. Click to open the Zoom dialog box" [ref=f1e392] [cursor=pointer]: 59%
+                - button "Fit to page" [ref=f1e394] [cursor=pointer]:
+                  - generic [ref=f1e395]: 
+            - generic [ref=f1e397]:
+              - link "Microsoft Power BI (Opens in new tab)" [ref=f1e398] [cursor=pointer]:
+                - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+                - text: Microsoft Power BI
+              - generic:  
+              - generic [ref=f1e399]:
+                - generic [ref=f1e402]:
+                  - link "Share via Facebook" [ref=f1e403] [cursor=pointer]:
+                    - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmis.pmi.or.id%2F
+                  - link "Share via Twitter" [ref=f1e405] [cursor=pointer]:
+                    - /url: https://twitter.com/intent/tweet?text=https%3A%2F%2Fmis.pmi.or.id%2F
+                  - link "Share via LinkedIn" [ref=f1e407] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmis.pmi.or.id%2F
+                  - button "Share" [ref=f1e409] [cursor=pointer]:
+                    - generic [ref=f1e410]: 
+                - button "Open in full-screen mode" [ref=f1e411] [cursor=pointer]:
+                  - generic [ref=f1e412]: 
+        - alert [ref=f1e414]: Report Zoomed To 59%
+    - generic [ref=e28]:
+      - heading "Rekap Anggota Relawan Kota Cilegon" [level=2] [ref=e29]
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - text: Palang Merah Remaja
+          - paragraph [ref=e33]: 0,00 Anggota
+          - paragraph [ref=e34]:
+            - button "Bergabung Bersama Kami" [ref=e35] [cursor=pointer]
+        - generic [ref=e37]:
+          - text: Korps Sukarela
+          - paragraph [ref=e38]: 0,00 Anggota
+          - paragraph [ref=e39]:
+            - button "Bergabung Bersama Kami" [ref=e40] [cursor=pointer]
+        - generic [ref=e42]:
+          - text: Tenaga Sukarela
+          - paragraph [ref=e43]: 0,00 Anggota
+          - paragraph [ref=e44]:
+            - button "Bergabung Bersama Kami" [ref=e45] [cursor=pointer]
+    - generic [ref=e53]:
+      - link:
+        - /url: http://www.ifrc.org/
+  - contentinfo [ref=e58]:
+    - generic [ref=e61]:
+      - paragraph [ref=e64]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=e66]:
+        - listitem [ref=e67]:
+          - link "" [ref=e68] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=e70]:
+          - link "" [ref=e71] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=e73]:
+          - link "" [ref=e74] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=e76] [cursor=pointer]:
+    - /url: "#"

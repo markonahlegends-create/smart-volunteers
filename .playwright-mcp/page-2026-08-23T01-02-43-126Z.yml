@@ -1,0 +1,46 @@
+- generic [ref=f8e3]:
+  - complementary [ref=f8e4]:
+    - generic [ref=f8e5]:
+      - generic [ref=f8e6]:
+        - generic [ref=f8e7]:
+          - img "PMI Logo" [ref=f8e8]
+          - generic [ref=f8e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f8e10]
+            - paragraph [ref=f8e11]: PMI Kota Cilegon
+        - navigation [ref=f8e12]:
+          - link "Dashboard" [ref=f8e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f8e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f8e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f8e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f8e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f8e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f8e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f8e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f8e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f8e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f8e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f8e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f8e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f8e98] [cursor=pointer]
+    - button [ref=f8e103] [cursor=pointer]
+  - main [ref=f8e106]:
+    - generic [ref=f8e111]:
+      - generic [ref=f8e113]:
+        - heading "Detail Unit PMR" [level=1] [ref=f8e114]
+        - paragraph [ref=f8e115]: PMI Kota Cilegon
+      - generic [ref=f8e116]:
+        - generic [ref=f8e117]: Admin PMI Kota Cilegon
+        - generic [ref=f8e118]: A

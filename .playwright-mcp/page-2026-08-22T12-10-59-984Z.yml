@@ -1,0 +1,211 @@
+- generic [active] [ref=f17e1]:
+  - generic: 10%
+  - banner [ref=f17e4]:
+    - navigation [ref=f17e5]:
+      - generic [ref=f17e6]:
+        - link [ref=f17e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f17e10]:
+          - listitem [ref=f17e11]:
+            - link "Markas PMI" [ref=f17e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f17e13]:
+            - link "Relawan" [ref=f17e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f17e16]:
+            - link "Layanan PMI" [ref=f17e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f17e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f17e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f17e22]:
+    - paragraph [ref=f17e23]:
+      - link "Buat Unit PMR Mula" [ref=f17e24] [cursor=pointer]:
+        - /url: /index.php?r=pmi%2Funit%2Fcreate&id=1
+    - generic [ref=f17e26]:
+      - generic [ref=f17e27]: Showing 1-7 of 7 items.
+      - table [ref=f17e37]:
+        - rowgroup [ref=f17e38]:
+          - row [ref=f17e39]:
+            - columnheader "#" [ref=f17e40]
+            - columnheader [ref=f17e41]:
+              - link "Nama Provinsi" [ref=f17e42] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=id_provinsi
+            - columnheader [ref=f17e43]:
+              - link "Nama Kabupaten" [ref=f17e44] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=id_kabupaten
+            - columnheader [ref=f17e45]:
+              - link "Nama Unit" [ref=f17e46] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=nama
+            - columnheader [ref=f17e47]:
+              - link "Alamat" [ref=f17e48] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=alamat
+            - columnheader [ref=f17e49]:
+              - link "Email" [ref=f17e50] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=email
+            - columnheader [ref=f17e51]:
+              - link "No Telpon" [ref=f17e52] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=no_telpon
+            - columnheader [ref=f17e53]:
+              - link "Status" [ref=f17e54] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmula&sort=status
+            - columnheader [ref=f17e55]
+          - row [ref=f17e56]:
+            - cell [ref=f17e57]
+            - cell [ref=f17e58]:
+              - combobox [ref=f17e61] [cursor=pointer]
+            - cell [ref=f17e62]:
+              - combobox [ref=f17e65] [cursor=pointer]
+            - cell [ref=f17e66]:
+              - textbox [ref=f17e67]
+            - cell [ref=f17e68]:
+              - textbox [ref=f17e69]
+            - cell [ref=f17e70]:
+              - textbox [ref=f17e71]
+            - cell [ref=f17e72]:
+              - textbox [ref=f17e73]
+            - cell [ref=f17e74]:
+              - combobox [ref=f17e77] [cursor=pointer]
+            - cell [ref=f17e78]
+        - rowgroup [ref=f17e79]:
+          - row [ref=f17e80]:
+            - cell "1" [ref=f17e81]
+            - cell "BANTEN" [ref=f17e82]
+            - cell "KOTA CILEGON" [ref=f17e83]
+            - cell "SDN CILEGON VII" [ref=f17e84]
+            - cell "JL. MAYJEND. D.I. PANJAITAN NO 12 JOMBANG" [ref=f17e85]
+            - cell [ref=f17e86]:
+              - paragraph [ref=f17e87]: "-"
+            - cell "380801" [ref=f17e88]
+            - cell "Aktif" [ref=f17e89]
+            - cell [ref=f17e90]:
+              - link "" [ref=f17e91] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1896
+              - link "✏" [ref=f17e93] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1896
+          - row [ref=f17e95]:
+            - cell "2" [ref=f17e96]
+            - cell "BANTEN" [ref=f17e97]
+            - cell "KOTA CILEGON" [ref=f17e98]
+            - cell "SD Islam Al-Khairiyah Kota Cilegon" [ref=f17e99]
+            - cell "Jl. BOJONERGARA NO 12 PEGANTUNGAN JOMBENG WETAN KE" [ref=f17e100]
+            - cell [ref=f17e101]:
+              - paragraph [ref=f17e102]: "-"
+            - cell [ref=f17e103]:
+              - paragraph [ref=f17e104]: "-"
+            - cell "Aktif" [ref=f17e105]
+            - cell [ref=f17e106]:
+              - link "" [ref=f17e107] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1895
+              - link "✏" [ref=f17e109] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1895
+          - row [ref=f17e111]:
+            - cell "3" [ref=f17e112]
+            - cell "BANTEN" [ref=f17e113]
+            - cell "KOTA CILEGON" [ref=f17e114]
+            - cell "SD Negeri Kedaleman 4 Kota Cilegon" [ref=f17e115]
+            - cell [ref=f17e116]:
+              - paragraph [ref=f17e117]: "-"
+            - cell [ref=f17e118]:
+              - paragraph [ref=f17e119]: "-"
+            - cell [ref=f17e120]:
+              - paragraph [ref=f17e121]: "-"
+            - cell "Aktif" [ref=f17e122]
+            - cell [ref=f17e123]:
+              - link "" [ref=f17e124] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1894
+              - link "✏" [ref=f17e126] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1894
+          - row [ref=f17e128]:
+            - cell "4" [ref=f17e129]
+            - cell "BANTEN" [ref=f17e130]
+            - cell "KOTA CILEGON" [ref=f17e131]
+            - cell "MIN 1 Kota Cilegon" [ref=f17e132]
+            - cell [ref=f17e133]:
+              - paragraph [ref=f17e134]: "-"
+            - cell [ref=f17e135]:
+              - paragraph [ref=f17e136]: "-"
+            - cell [ref=f17e137]:
+              - paragraph [ref=f17e138]: "-"
+            - cell "Aktif" [ref=f17e139]
+            - cell [ref=f17e140]:
+              - link "" [ref=f17e141] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1893
+              - link "✏" [ref=f17e143] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1893
+          - row [ref=f17e145]:
+            - cell "5" [ref=f17e146]
+            - cell "BANTEN" [ref=f17e147]
+            - cell "KOTA CILEGON" [ref=f17e148]
+            - cell "SD Peradaban Kota Cilegon" [ref=f17e149]
+            - cell [ref=f17e150]:
+              - paragraph [ref=f17e151]: "-"
+            - cell [ref=f17e152]:
+              - paragraph [ref=f17e153]: "-"
+            - cell [ref=f17e154]:
+              - paragraph [ref=f17e155]: "-"
+            - cell "Aktif" [ref=f17e156]
+            - cell [ref=f17e157]:
+              - link "" [ref=f17e158] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1892
+              - link "✏" [ref=f17e160] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1892
+          - row [ref=f17e162]:
+            - cell "6" [ref=f17e163]
+            - cell "BANTEN" [ref=f17e164]
+            - cell "KOTA CILEGON" [ref=f17e165]
+            - cell "SD Negeri Wilulang Kota Cilegon" [ref=f17e166]
+            - cell [ref=f17e167]:
+              - paragraph [ref=f17e168]: "-"
+            - cell [ref=f17e169]:
+              - paragraph [ref=f17e170]: "-"
+            - cell [ref=f17e171]:
+              - paragraph [ref=f17e172]: "-"
+            - cell "Aktif" [ref=f17e173]
+            - cell [ref=f17e174]:
+              - link "" [ref=f17e175] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1891
+              - link "✏" [ref=f17e177] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1891
+          - row [ref=f17e179]:
+            - cell "7" [ref=f17e180]
+            - cell "BANTEN" [ref=f17e181]
+            - cell "KOTA CILEGON" [ref=f17e182]
+            - cell "SD Negeri 9 Kota Cilegon" [ref=f17e183]
+            - cell [ref=f17e184]:
+              - paragraph [ref=f17e185]: "-"
+            - cell [ref=f17e186]:
+              - paragraph [ref=f17e187]: "-"
+            - cell [ref=f17e188]:
+              - paragraph [ref=f17e189]: "-"
+            - cell "Aktif" [ref=f17e190]
+            - cell [ref=f17e191]:
+              - link "" [ref=f17e192] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=1890
+              - link "✏" [ref=f17e194] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=1890
+  - contentinfo [ref=f17e196]:
+    - generic [ref=f17e200]:
+      - heading "MARKAS PUSAT PALANG MERAH INDONESIA" [level=4] [ref=f17e201]
+      - generic [ref=f17e202]: JL. Jend. Gatot Subroto Kav. 96 Jakarta 12790 - Indonesia
+      - paragraph [ref=f17e203]:
+        - generic [ref=f17e204]: 
+        - text: (021) 7992325
+        - generic [ref=f17e205]: 
+        - text: (021) 7995188
+        - generic [ref=f17e206]: 
+        - text: pmi.or.id
+    - generic [ref=f17e209]:
+      - paragraph [ref=f17e212]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f17e214]:
+        - listitem [ref=f17e215]:
+          - link "" [ref=f17e216] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f17e218]:
+          - link "" [ref=f17e219] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f17e221]:
+          - link "" [ref=f17e222] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f17e224] [cursor=pointer]:
+    - /url: "#"

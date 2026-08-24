@@ -1,0 +1,120 @@
+- generic [ref=f29e3]:
+  - complementary [ref=f29e4]:
+    - generic [ref=f29e5]:
+      - generic [ref=f29e6]:
+        - generic [ref=f29e7]:
+          - img "PMI Logo" [ref=f29e8]
+          - generic [ref=f29e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f29e10]
+            - paragraph [ref=f29e11]: PMI Kota Cilegon
+        - navigation [ref=f29e12]:
+          - link "Dashboard" [ref=f29e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f29e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f29e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f29e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f29e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f29e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f29e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f29e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f29e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f29e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f29e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f29e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f29e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f29e98] [cursor=pointer]
+    - button [ref=f29e103] [cursor=pointer]
+  - main [ref=f29e106]:
+    - generic [ref=f29e109]:
+      - generic [ref=f29e110]:
+        - heading "Dashboard" [level=1] [ref=f29e111]
+        - paragraph [ref=f29e112]: Selamat datang di Smart Volunteers PMI Kota Cilegon
+      - generic [ref=f29e113]:
+        - generic [ref=f29e116]:
+          - paragraph [ref=f29e117]: Palang Merah Remaja
+          - paragraph [ref=f29e118]: "11"
+        - generic [ref=f29e127]:
+          - paragraph [ref=f29e128]: Korps Sukarela
+          - paragraph [ref=f29e129]: "13"
+        - generic [ref=f29e137]:
+          - paragraph [ref=f29e138]: Tenaga Sukarela
+          - paragraph [ref=f29e139]: "2"
+        - generic [ref=f29e148]:
+          - paragraph [ref=f29e149]: Total Unit
+          - paragraph [ref=f29e150]: "12"
+        - generic [ref=f29e157]:
+          - paragraph [ref=f29e158]: Kejadian Bencana
+          - paragraph [ref=f29e159]: "0"
+      - generic [ref=f29e163]:
+        - generic [ref=f29e164]:
+          - heading "Kejadian Bencana Terbaru" [level=2] [ref=f29e165]
+          - generic [ref=f29e166]:
+            - generic [ref=f29e167]:
+              - generic [ref=f29e170]:
+                - paragraph [ref=f29e171]: "Bencana #1"
+                - paragraph [ref=f29e172]: Kota Cilegon, Banten
+              - generic [ref=f29e173]: Tanggap Darurat
+            - generic [ref=f29e174]:
+              - generic [ref=f29e177]:
+                - paragraph [ref=f29e178]: "Bencana #2"
+                - paragraph [ref=f29e179]: Kota Cilegon, Banten
+              - generic [ref=f29e180]: Tanggap Darurat
+            - generic [ref=f29e181]:
+              - generic [ref=f29e184]:
+                - paragraph [ref=f29e185]: "Bencana #3"
+                - paragraph [ref=f29e186]: Kota Cilegon, Banten
+              - generic [ref=f29e187]: Tanggap Darurat
+        - generic [ref=f29e188]:
+          - heading "Akses Cepat" [level=2] [ref=f29e189]
+          - generic [ref=f29e190]:
+            - button [ref=f29e191] [cursor=pointer]:
+              - paragraph [ref=f29e197]: Tambah Anggota
+            - button [active] [ref=f29e198] [cursor=pointer]:
+              - paragraph [ref=f29e203]: Tambah Unit
+            - link [ref=f29e204] [cursor=pointer]:
+              - /url: /bencana
+              - paragraph [ref=f29e207]: Laporan Bencana
+            - link [ref=f29e208] [cursor=pointer]:
+              - /url: /roster
+              - paragraph [ref=f29e212]: Daftar Roster
+      - generic [ref=f29e213]:
+        - heading "Total PMR" [level=2] [ref=f29e214]
+        - paragraph [ref=f29e215]: "10"
+        - generic [ref=f29e216]:
+          - generic [ref=f29e217]:
+            - generic [ref=f29e218]: PMR Mula
+            - generic [ref=f29e220]: "0"
+          - generic [ref=f29e221]:
+            - generic [ref=f29e222]: PMR Madya
+            - generic [ref=f29e224]: "5"
+          - generic [ref=f29e225]:
+            - generic [ref=f29e226]: PMR Wira
+            - generic [ref=f29e228]: "5"
+      - generic [ref=f29e239]:
+        - generic [ref=f29e240]:
+          - heading "Tambah Unit" [level=3] [ref=f29e241]
+          - button [ref=f29e242] [cursor=pointer]
+        - generic [ref=f29e245]:
+          - link "Tambah Unit PMR" [ref=f29e246] [cursor=pointer]:
+            - /url: /units/pmr/mula/add
+          - link "Tambah Unit KSR" [ref=f29e253] [cursor=pointer]:
+            - /url: /units/ksr/add
+          - link "Tambah Unit TSR" [ref=f29e260] [cursor=pointer]:
+            - /url: /units/tsr/add
+  - contentinfo [ref=f29e229]:
+    - generic [ref=f29e230]:
+      - paragraph [ref=f29e231]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link [ref=f29e232] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

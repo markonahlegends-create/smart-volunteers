@@ -1,0 +1,40 @@
+- generic [active] [ref=f12e1]:
+  - generic: 9%
+  - banner [ref=f12e4]:
+    - navigation [ref=f12e5]:
+      - generic [ref=f12e6]:
+        - link [ref=f12e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f12e10]:
+          - listitem [ref=f12e11]:
+            - link "Markas PMI" [ref=f12e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f12e13]:
+            - link "Relawan" [ref=f12e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f12e16]:
+            - link "Layanan PMI" [ref=f12e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f12e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f12e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f12e23]:
+    - heading "Forbidden (#403)" [level=1] [ref=f12e24]
+    - generic [ref=f12e25]: You are not allowed to perform this action.
+    - paragraph [ref=f12e26]: The above error occurred while the Web server was processing your request.
+    - paragraph [ref=f12e27]: Please contact us if you think this is a server error. Thank you.
+  - contentinfo [ref=f12e28]:
+    - generic [ref=f12e31]:
+      - paragraph [ref=f12e34]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f12e36]:
+        - listitem [ref=f12e37]:
+          - link "" [ref=f12e38] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f12e40]:
+          - link "" [ref=f12e41] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f12e43]:
+          - link "" [ref=f12e44] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f12e46] [cursor=pointer]:
+    - /url: "#"

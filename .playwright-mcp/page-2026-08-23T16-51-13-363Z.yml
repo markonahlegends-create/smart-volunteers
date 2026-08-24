@@ -1,0 +1,59 @@
+- generic [active] [ref=f4e1]:
+  - generic: 80%
+  - banner [ref=f4e4]:
+    - navigation [ref=f4e5]:
+      - generic [ref=f4e6]:
+        - link [ref=f4e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f4e10]:
+          - listitem [ref=f4e11]:
+            - link "Markas PMI" [ref=f4e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f4e13]:
+            - link "Relawan" [ref=f4e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f4e16]:
+            - link "Layanan PMI" [ref=f4e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f4e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f4e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f4e22]:
+    - iframe [ref=f4e25]:
+      - img "Power BI loading" [ref=f5e4]
+    - generic [ref=f4e28]:
+      - heading "Rekap Anggota Relawan Kota Cilegon" [level=2] [ref=f4e29]
+      - generic [ref=f4e30]:
+        - generic [ref=f4e32]:
+          - text: Palang Merah Remaja
+          - paragraph [ref=f4e33]: 0,00 Anggota
+          - paragraph [ref=f4e34]:
+            - button "Bergabung Bersama Kami" [ref=f4e35] [cursor=pointer]
+        - generic [ref=f4e37]:
+          - text: Korps Sukarela
+          - paragraph [ref=f4e38]: 0,00 Anggota
+          - paragraph [ref=f4e39]:
+            - button "Bergabung Bersama Kami" [ref=f4e40] [cursor=pointer]
+        - generic [ref=f4e42]:
+          - text: Tenaga Sukarela
+          - paragraph [ref=f4e43]: 0,00 Anggota
+          - paragraph [ref=f4e44]:
+            - button "Bergabung Bersama Kami" [ref=f4e45] [cursor=pointer]
+    - generic [ref=f4e53]:
+      - link:
+        - /url: http://www.ifrc.org/
+  - contentinfo [ref=f4e58]:
+    - generic [ref=f4e61]:
+      - paragraph [ref=f4e64]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f4e66]:
+        - listitem [ref=f4e67]:
+          - link "" [ref=f4e68] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f4e70]:
+          - link "" [ref=f4e71] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f4e73]:
+          - link "" [ref=f4e74] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f4e76] [cursor=pointer]:
+    - /url: "#"

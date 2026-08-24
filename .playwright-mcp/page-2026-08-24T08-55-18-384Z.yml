@@ -1,0 +1,48 @@
+- generic [ref=f12e3]:
+  - link "Lewati ke konten utama" [ref=f12e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary [ref=f12e5]:
+    - generic [ref=f12e6]:
+      - generic [ref=f12e7]:
+        - generic [ref=f12e8]:
+          - img "PMI Logo" [ref=f12e9]
+          - generic [ref=f12e10]:
+            - heading "Smart Volunteers" [level=1] [ref=f12e11]
+            - paragraph [ref=f12e12]: PMI Kota Cilegon
+        - navigation [ref=f12e13]:
+          - link "Dashboard" [ref=f12e14] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f12e21] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f12e27] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f12e34] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f12e41] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f12e48] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f12e55] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f12e62] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f12e69] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f12e76] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f12e83] [cursor=pointer]:
+            - /url: /bencana
+          - link "Laporan" [ref=f12e87] [cursor=pointer]:
+            - /url: /laporan
+          - link "Profile" [ref=f12e92] [cursor=pointer]:
+            - /url: /profile
+      - button "Keluar" [ref=f12e99] [cursor=pointer]:
+        - generic [ref=f12e103]: Logout
+    - button "Tutup sidebar" [ref=f12e104] [cursor=pointer]
+  - main [ref=f12e107]:
+    - paragraph [ref=f12e113]: Memuat halaman...
+  - contentinfo [ref=f12e114]:
+    - generic [ref=f12e115]:
+      - paragraph [ref=f12e116]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link "Oleh Fadil Advertising" [ref=f12e117] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

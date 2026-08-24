@@ -1,0 +1,48 @@
+- generic [ref=f9e3]:
+  - link "Lewati ke konten utama" [ref=f9e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary [ref=f9e5]:
+    - generic [ref=f9e6]:
+      - generic [ref=f9e7]:
+        - generic [ref=f9e8]:
+          - img "PMI Logo" [ref=f9e9]
+          - generic [ref=f9e10]:
+            - heading "Smart Volunteers" [level=1] [ref=f9e11]
+            - paragraph [ref=f9e12]: PMI Kota Cilegon
+        - navigation [ref=f9e13]:
+          - link "Dashboard" [ref=f9e14] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f9e21] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f9e27] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f9e34] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f9e41] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f9e48] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f9e55] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f9e62] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f9e69] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f9e76] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f9e83] [cursor=pointer]:
+            - /url: /bencana
+          - link "Laporan" [ref=f9e87] [cursor=pointer]:
+            - /url: /laporan
+          - link "Profile" [ref=f9e92] [cursor=pointer]:
+            - /url: /profile
+      - button "Keluar" [ref=f9e99] [cursor=pointer]:
+        - generic [ref=f9e103]: Logout
+    - button "Tutup sidebar" [ref=f9e104] [cursor=pointer]
+  - main [ref=f9e107]:
+    - paragraph [ref=f9e113]: Memuat halaman...
+  - contentinfo [ref=f9e114]:
+    - generic [ref=f9e115]:
+      - paragraph [ref=f9e116]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link "Oleh Fadil Advertising" [ref=f9e117] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

@@ -1,0 +1,48 @@
+- generic [ref=f64e3]:
+  - navigation [ref=f64e4]:
+    - generic [ref=f64e5]:
+      - generic [ref=f64e6]:
+        - img "PMI Logo" [ref=f64e7]
+        - generic [ref=f64e8]:
+          - heading "Smart Volunteers" [level=1] [ref=f64e9]
+          - paragraph [ref=f64e10]: PMI Kota Cilegon
+      - link "Masuk" [ref=f64e11] [cursor=pointer]:
+        - /url: /login
+  - generic [ref=f64e15]:
+    - img "PMI Logo" [ref=f64e16]
+    - heading "Smart Volunteers" [level=1] [ref=f64e17]
+    - paragraph [ref=f64e18]: Sistem Manajemen Relawan PMI Kota Cilegon
+    - link "Masuk ke Sistem" [ref=f64e20] [cursor=pointer]:
+      - /url: /login
+  - generic [ref=f64e22]:
+    - heading "Fitur Utama" [level=2] [ref=f64e23]
+    - generic [ref=f64e24]:
+      - generic [ref=f64e25]:
+        - heading "Manajemen Unit" [level=3] [ref=f64e32]
+        - paragraph [ref=f64e33]: Kelola data unit PMR, KSR, dan TSR dengan mudah dan terstruktur
+      - generic [ref=f64e34]:
+        - heading "Manajemen Anggota" [level=3] [ref=f64e38]
+        - paragraph [ref=f64e39]: Daftar anggota lengkap dengan data personal dan riwayat keanggotaan
+      - generic [ref=f64e40]:
+        - heading "Manajemen Bencana" [level=3] [ref=f64e44]
+        - paragraph [ref=f64e45]: Catat dan kelola data penanggulangan bencana secara real-time
+      - generic [ref=f64e46]:
+        - heading "Laporan Kegiatan" [level=3] [ref=f64e50]
+        - paragraph [ref=f64e51]: Generate laporan kegiatan dalam format Word dan Excel
+  - generic [ref=f64e53]:
+    - heading "Tentang PMI Kota Cilegon" [level=2] [ref=f64e54]
+    - generic [ref=f64e55]:
+      - paragraph [ref=f64e56]: Palang Merah Indonesia (PMI) Kota Cilegon adalah organisasi bantuan kemanusiaan yang berkomitmen untuk melayani masyarakat melalui berbagai kegiatan kemanusiaan, penanggulangan bencana, dan pengembangan relawan.
+      - paragraph [ref=f64e57]: Smart Volunteers adalah sistem digital yang memudahkan pengelolaan data unit, anggota, kegiatan, dan laporan secara terpadu dan efisien.
+  - generic [ref=f64e60]:
+    - generic [ref=f64e61]:
+      - heading "Kontak" [level=3] [ref=f64e64]
+      - paragraph [ref=f64e65]: +62 254 123456
+    - generic [ref=f64e66]:
+      - heading "Email" [level=3] [ref=f64e70]
+      - paragraph [ref=f64e71]: info@pmi-cilegon.or.id
+    - generic [ref=f64e72]:
+      - heading "Alamat" [level=3] [ref=f64e76]
+      - paragraph [ref=f64e77]: Kota Cilegon, Banten
+  - contentinfo [ref=f64e78]:
+    - paragraph [ref=f64e79]: © 2026 Palang Merah Indonesia Kota Cilegon. All rights reserved.

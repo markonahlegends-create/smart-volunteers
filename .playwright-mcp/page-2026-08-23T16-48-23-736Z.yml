@@ -1,0 +1,34 @@
+- generic [ref=e1]:
+  - generic: 20%
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e6] [cursor=pointer]:
+          - /url: /index.php
+        - generic [ref=e7]:
+          - list
+    - generic [ref=e11]:
+      - generic [ref=e12]: Sign In
+      - generic [ref=e13]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: Login
+            - textbox "Login" [active] [ref=e18]:
+              - /placeholder: Username
+          - generic [ref=e19]:
+            - generic [ref=e20]:
+              - text: Password (
+              - link "Forgot password?" [ref=e21] [cursor=pointer]:
+                - /url: /index.php?r=user%2Frecovery%2Frequest
+              - text: )
+            - textbox "Password (Forgot password?)" [ref=e22]:
+              - /placeholder: Password
+          - generic [ref=e23]:
+            - paragraph [ref=e25]: Verification (Please click on the image to get new code)
+            - textbox "Verification (Please click on the image to get new code)" [ref=e26]
+          - button "Sign in" [ref=e27] [cursor=pointer]
+        - paragraph [ref=e30]:
+          - link "Didn't receive confirmation message?" [ref=e31] [cursor=pointer]:
+            - /url: /index.php?r=user%2Fregistration%2Fresend
+        - generic:
+          - list

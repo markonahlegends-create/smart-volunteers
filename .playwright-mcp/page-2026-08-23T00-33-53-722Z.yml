@@ -1,0 +1,95 @@
+- generic [ref=f4e3]:
+  - complementary [ref=f4e4]:
+    - generic [ref=f4e5]:
+      - generic [ref=f4e6]:
+        - generic [ref=f4e7]:
+          - img "PMI Logo" [ref=f4e8]
+          - generic [ref=f4e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f4e10]
+            - paragraph [ref=f4e11]: PMI Kota Cilegon
+        - navigation [ref=f4e12]:
+          - link "Dashboard" [ref=f4e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f4e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f4e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f4e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f4e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f4e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f4e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f4e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f4e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f4e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f4e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f4e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f4e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f4e98] [cursor=pointer]
+    - button [ref=f4e103] [cursor=pointer]
+  - main [ref=f4e106]:
+    - generic [ref=f4e109]:
+      - generic [ref=f4e111]:
+        - generic [ref=f4e113]:
+          - heading "Tambah Unit PMR" [level=1] [ref=f4e114]
+          - paragraph [ref=f4e115]: PMI Kota Cilegon
+        - generic [ref=f4e116]:
+          - generic [ref=f4e117]: Admin PMI Kota Cilegon
+          - generic [ref=f4e118]: A
+      - generic [ref=f4e120]:
+        - button "Kembali" [ref=f4e122] [cursor=pointer]
+        - generic [ref=f4e125]:
+          - generic [ref=f4e126]:
+            - generic [ref=f4e127]:
+              - generic [ref=f4e128]: Tingkat
+              - combobox [ref=f4e129]:
+                - option "MULA"
+                - option "MADYA"
+                - option "WIRA" [selected]
+            - generic [ref=f4e130]:
+              - generic [ref=f4e131]: Kode Unit
+              - textbox "Masukkan kode unit" [ref=f4e132]: PMR-WIRA-001
+            - generic [ref=f4e133]:
+              - generic [ref=f4e134]: Nama Unit
+              - textbox [ref=f4e135]: Unit PMR Wira Test
+            - generic [ref=f4e136]:
+              - generic [ref=f4e137]: Email
+              - textbox [ref=f4e138]: wira@example.com
+            - generic [ref=f4e139]:
+              - generic [ref=f4e140]: No Telpon
+              - textbox [active] [ref=f4e141]: "081234567892"
+            - generic [ref=f4e142]:
+              - generic [ref=f4e143]: Status
+              - combobox [ref=f4e144]:
+                - option "Active" [selected]
+                - option "Tidak Aktif"
+          - generic [ref=f4e145]:
+            - generic [ref=f4e146]:
+              - generic [ref=f4e147]: Provinsi
+              - combobox [ref=f4e148]:
+                - option "Pilih Regional"
+                - option "BANTEN" [selected]
+            - generic [ref=f4e149]:
+              - generic [ref=f4e150]: Kabupaten
+              - combobox [ref=f4e151]:
+                - option "Pilih Kabupaten/Kota"
+                - option "KOTA CILEGON" [selected]
+                - option "LEBAK"
+                - option "PANDEGLANG"
+                - option "SERANG"
+                - option "KABUPATEN SERANG"
+            - generic [ref=f4e152]:
+              - generic [ref=f4e153]: Alamat
+              - textbox [ref=f4e154]
+          - generic [ref=f4e155]:
+            - button "Create" [ref=f4e156] [cursor=pointer]
+            - button "Batal" [ref=f4e157] [cursor=pointer]

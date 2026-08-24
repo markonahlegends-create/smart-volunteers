@@ -1,0 +1,70 @@
+- generic [ref=f24e3]:
+  - complementary [ref=f24e4]:
+    - generic [ref=f24e5]:
+      - generic [ref=f24e6]:
+        - generic [ref=f24e7]:
+          - img "PMI Logo" [ref=f24e8]
+          - generic [ref=f24e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f24e10]
+            - paragraph [ref=f24e11]: PMI Kota Cilegon
+        - navigation [ref=f24e12]:
+          - link "Dashboard" [ref=f24e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f24e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f24e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f24e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f24e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f24e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f24e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f24e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f24e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f24e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f24e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f24e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f24e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f24e98] [cursor=pointer]
+    - button [ref=f24e103] [cursor=pointer]
+  - main [ref=f24e106]:
+    - generic [ref=f24e109]:
+      - generic [ref=f24e111]:
+        - generic [ref=f24e113]:
+          - heading "Anggota PMR" [level=1] [ref=f24e114]
+          - paragraph [ref=f24e115]: PMI Kota Cilegon
+        - generic [ref=f24e116]:
+          - generic [ref=f24e117]: Admin PMI Kota Cilegon
+          - generic [ref=f24e118]: A
+      - generic [ref=f24e120]:
+        - generic [ref=f24e121]:
+          - paragraph [ref=f24e122]: "Total: 0 anggota"
+          - generic [ref=f24e123]:
+            - button "Export" [ref=f24e124] [cursor=pointer]
+            - button "Import" [ref=f24e129] [cursor=pointer]
+            - link "Tambah" [ref=f24e134] [cursor=pointer]:
+              - /url: /members/pmr/add
+        - generic [ref=f24e137]:
+          - textbox "Cari nama atau kode anggota..." [ref=f24e143]
+          - table [ref=f24e145]:
+            - rowgroup [ref=f24e146]:
+              - row [ref=f24e147]:
+                - columnheader "#" [ref=f24e148]
+                - columnheader "Provinsi" [ref=f24e149]
+                - columnheader "Kabupaten/Kota" [ref=f24e150]
+                - columnheader "Angkatan" [ref=f24e151]
+                - columnheader "Nama" [ref=f24e152]
+                - columnheader "Kode Anggota" [ref=f24e153]
+                - columnheader "Unit" [ref=f24e154]
+                - columnheader "Jenis" [ref=f24e155]
+                - columnheader "Aksi" [ref=f24e156]
+            - rowgroup

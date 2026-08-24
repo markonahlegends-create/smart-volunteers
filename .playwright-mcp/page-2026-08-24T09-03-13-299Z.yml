@@ -1,0 +1,48 @@
+- generic [ref=e3]:
+  - link "Lewati ke konten utama" [ref=e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - img "PMI Logo" [ref=e9]
+          - generic [ref=e10]:
+            - heading "Smart Volunteers" [level=1] [ref=e11]
+            - paragraph [ref=e12]: PMI Kota Cilegon
+        - navigation [ref=e13]:
+          - link "Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=e21] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=e27] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=e34] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=e41] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=e48] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=e55] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=e62] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=e69] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=e76] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=e83] [cursor=pointer]:
+            - /url: /bencana
+          - link "Laporan" [ref=e87] [cursor=pointer]:
+            - /url: /laporan
+          - link "Profile" [ref=e92] [cursor=pointer]:
+            - /url: /profile
+      - button "Keluar" [ref=e99] [cursor=pointer]:
+        - generic [ref=e103]: Logout
+    - button "Tutup sidebar" [ref=e104] [cursor=pointer]
+  - main [ref=e107]:
+    - paragraph [ref=e113]: Memuat halaman...
+  - contentinfo [ref=e114]:
+    - generic [ref=e115]:
+      - paragraph [ref=e116]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link "Oleh Fadil Advertising" [ref=e117] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

@@ -1,0 +1,258 @@
+- generic [active] [ref=f18e1]:
+  - generic: 10%
+  - banner [ref=f18e4]:
+    - navigation [ref=f18e5]:
+      - generic [ref=f18e6]:
+        - link [ref=f18e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f18e10]:
+          - listitem [ref=f18e11]:
+            - link "Markas PMI" [ref=f18e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f18e13]:
+            - link "Relawan" [ref=f18e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f18e16]:
+            - link "Layanan PMI" [ref=f18e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f18e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f18e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f18e22]:
+    - paragraph [ref=f18e23]:
+      - link "Tambah Unit PMR Madya" [ref=f18e24] [cursor=pointer]:
+        - /url: /index.php?r=pmi%2Funit%2Fcreate&id=2
+    - generic [ref=f18e26]:
+      - generic [ref=f18e27]: Showing 1-10 of 35 items.
+      - table [ref=f18e36]:
+        - rowgroup [ref=f18e37]:
+          - row [ref=f18e38]:
+            - columnheader "#" [ref=f18e39]
+            - columnheader [ref=f18e40]:
+              - link "Nama Provinsi" [ref=f18e41] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=id_provinsi
+            - columnheader [ref=f18e42]:
+              - link "Nama Kabupten" [ref=f18e43] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=id_kabupaten
+            - columnheader [ref=f18e44]:
+              - link "Nama Unit" [ref=f18e45] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=nama
+            - columnheader [ref=f18e46]:
+              - link "Alamat" [ref=f18e47] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=alamat
+            - columnheader [ref=f18e48]:
+              - link "Email" [ref=f18e49] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=email
+            - columnheader [ref=f18e50]:
+              - link "Status" [ref=f18e51] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fmadya&sort=status
+            - columnheader [ref=f18e52]
+          - row [ref=f18e53]:
+            - cell [ref=f18e54]
+            - cell [ref=f18e55]:
+              - combobox [ref=f18e58] [cursor=pointer]
+            - cell [ref=f18e59]:
+              - combobox [ref=f18e62] [cursor=pointer]
+            - cell [ref=f18e63]:
+              - textbox [ref=f18e64]
+            - cell [ref=f18e65]:
+              - textbox [ref=f18e66]
+            - cell [ref=f18e67]:
+              - textbox [ref=f18e68]
+            - cell [ref=f18e69]:
+              - combobox [ref=f18e72] [cursor=pointer]
+            - cell [ref=f18e73]
+        - rowgroup [ref=f18e74]:
+          - row [ref=f18e75]:
+            - cell "1" [ref=f18e76]
+            - cell "BANTEN" [ref=f18e77]
+            - cell "KOTA CILEGON" [ref=f18e78]
+            - cell "SMP ISLAM DAARUL FALAH" [ref=f18e79]
+            - cell [ref=f18e80]
+            - cell [ref=f18e81]
+            - cell "Aktif" [ref=f18e82]
+            - cell [ref=f18e83]:
+              - link "" [ref=f18e84] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=83651
+              - link "✏" [ref=f18e86] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=83651
+              - link "" [ref=f18e88] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=83651
+          - row [ref=f18e90]:
+            - cell "2" [ref=f18e91]
+            - cell "BANTEN" [ref=f18e92]
+            - cell "KOTA CILEGON" [ref=f18e93]
+            - cell "PKBM SMP ADZ-DZIKRA" [ref=f18e94]
+            - cell "Jln. Darma Kusuma No. 165 Kel. Ketileng Kec. Cilegon Kota Cilegon" [ref=f18e95]
+            - cell [ref=f18e96]
+            - cell "Aktif" [ref=f18e97]
+            - cell [ref=f18e98]:
+              - link "" [ref=f18e99] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=83650
+              - link "✏" [ref=f18e101] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=83650
+              - link "" [ref=f18e103] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=83650
+          - row [ref=f18e105]:
+            - cell "3" [ref=f18e106]
+            - cell "BANTEN" [ref=f18e107]
+            - cell "KOTA CILEGON" [ref=f18e108]
+            - cell "Pesantern Ibnu Syam II" [ref=f18e109]
+            - cell "Jln. Tegal Bunder Kel. Tegal Bunder Kec. Purwakarta Kota Cilegon-Banten Kode Pos 42437" [ref=f18e110]
+            - cell "ibnusyam@gmail.com" [ref=f18e111]
+            - cell "Aktif" [ref=f18e112]
+            - cell [ref=f18e113]:
+              - link "" [ref=f18e114] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=82732
+              - link "✏" [ref=f18e116] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=82732
+              - link "" [ref=f18e118] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=82732
+          - row [ref=f18e120]:
+            - cell "4" [ref=f18e121]
+            - cell "BANTEN" [ref=f18e122]
+            - cell "KOTA CILEGON" [ref=f18e123]
+            - cell "SMP Negeri 14 Kota Cilegon" [ref=f18e124]
+            - cell "Jl. Maulana Yusuf Lingkungan Kubang Lesung, Kelurahan Taman Baru Kecamatan Citangkil Kota Cilegon" [ref=f18e125]
+            - cell "smpn14clg@gmail.com" [ref=f18e126]
+            - cell "Aktif" [ref=f18e127]
+            - cell [ref=f18e128]:
+              - link "" [ref=f18e129] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=82684
+              - link "✏" [ref=f18e131] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=82684
+              - link "" [ref=f18e133] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=82684
+          - row [ref=f18e135]:
+            - cell "5" [ref=f18e136]
+            - cell "BANTEN" [ref=f18e137]
+            - cell "KOTA CILEGON" [ref=f18e138]
+            - cell "SMP Bosowa Al-Azhar" [ref=f18e139]
+            - cell [ref=f18e140]
+            - cell [ref=f18e141]
+            - cell "Aktif" [ref=f18e142]
+            - cell [ref=f18e143]:
+              - link "" [ref=f18e144] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=78430
+              - link "✏" [ref=f18e146] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=78430
+              - link "" [ref=f18e148] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=78430
+          - row [ref=f18e150]:
+            - cell "6" [ref=f18e151]
+            - cell "BANTEN" [ref=f18e152]
+            - cell "KOTA CILEGON" [ref=f18e153]
+            - cell "SMP YPWKS" [ref=f18e154]
+            - cell "Jl. Kawat No.10 Komp PT. Krakatau Stell Cilegon" [ref=f18e155]
+            - cell "smpypwks74@gmail.com" [ref=f18e156]
+            - cell "Aktif" [ref=f18e157]
+            - cell [ref=f18e158]:
+              - link "" [ref=f18e159] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=75830
+              - link "✏" [ref=f18e161] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=75830
+              - link "" [ref=f18e163] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=75830
+          - row [ref=f18e165]:
+            - cell "7" [ref=f18e166]
+            - cell "BANTEN" [ref=f18e167]
+            - cell "KOTA CILEGON" [ref=f18e168]
+            - cell "MTs Al - Inayah" [ref=f18e169]
+            - 'cell "Jl . KH. M Syadeli No : 122 Rt 01/03 Jerang Ilir Cibeber Cilegon Banten" [ref=f18e170]'
+            - cell [ref=f18e171]
+            - cell "Aktif" [ref=f18e172]
+            - cell [ref=f18e173]:
+              - link "" [ref=f18e174] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=75737
+              - link "✏" [ref=f18e176] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=75737
+              - link "" [ref=f18e178] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=75737
+          - row [ref=f18e180]:
+            - cell "8" [ref=f18e181]
+            - cell "BANTEN" [ref=f18e182]
+            - cell "KOTA CILEGON" [ref=f18e183]
+            - cell "MTs Al - FATH" [ref=f18e184]
+            - cell [ref=f18e185]
+            - cell [ref=f18e186]
+            - cell "Aktif" [ref=f18e187]
+            - cell [ref=f18e188]:
+              - link "" [ref=f18e189] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=75722
+              - link "✏" [ref=f18e191] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=75722
+              - link "" [ref=f18e193] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=75722
+          - row [ref=f18e195]:
+            - cell "9" [ref=f18e196]
+            - cell "BANTEN" [ref=f18e197]
+            - cell "KOTA CILEGON" [ref=f18e198]
+            - cell "SMP Mardi Yuana Cilegon" [ref=f18e199]
+            - cell "Jl. Panglima Polim No. 51B Cilegon, Banten 42421" [ref=f18e200]
+            - cell "smpmardiyuana@ymail.com" [ref=f18e201]
+            - cell "Aktif" [ref=f18e202]
+            - cell [ref=f18e203]:
+              - link "" [ref=f18e204] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=75012
+              - link "✏" [ref=f18e206] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=75012
+              - link "" [ref=f18e208] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=75012
+          - row [ref=f18e210]:
+            - cell "10" [ref=f18e211]
+            - cell "BANTEN" [ref=f18e212]
+            - cell "KOTA CILEGON" [ref=f18e213]
+            - cell "SMP Al-Khairiyah Cilegon" [ref=f18e214]
+            - cell [ref=f18e215]
+            - cell [ref=f18e216]
+            - cell "Aktif" [ref=f18e217]
+            - cell [ref=f18e218]:
+              - link "" [ref=f18e219] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fview&id=70727
+              - link "✏" [ref=f18e221] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Funit%2Fupdate&id=70727
+              - link "" [ref=f18e223] [cursor=pointer]:
+                - /url: /index.php?r=pmi%2Fpmr%2Fupdate-status&id=70727
+      - list [ref=f18e225]:
+        - listitem:
+          - generic [ref=f18e226]: «
+        - listitem:
+          - link "1" [ref=f18e227]:
+            - /url: /index.php?r=pmi%2Fpmr%2Fmadya&page=1&per-page=10
+        - listitem:
+          - link "2" [ref=f18e228] [cursor=pointer]:
+            - /url: /index.php?r=pmi%2Fpmr%2Fmadya&page=2&per-page=10
+        - listitem:
+          - link "3" [ref=f18e229] [cursor=pointer]:
+            - /url: /index.php?r=pmi%2Fpmr%2Fmadya&page=3&per-page=10
+        - listitem:
+          - link "4" [ref=f18e230] [cursor=pointer]:
+            - /url: /index.php?r=pmi%2Fpmr%2Fmadya&page=4&per-page=10
+        - listitem:
+          - link "»" [ref=f18e231] [cursor=pointer]:
+            - /url: /index.php?r=pmi%2Fpmr%2Fmadya&page=2&per-page=10
+  - contentinfo [ref=f18e232]:
+    - generic [ref=f18e236]:
+      - heading "MARKAS PUSAT PALANG MERAH INDONESIA" [level=4] [ref=f18e237]
+      - generic [ref=f18e238]: JL. Jend. Gatot Subroto Kav. 96 Jakarta 12790 - Indonesia
+      - paragraph [ref=f18e239]:
+        - generic [ref=f18e240]: 
+        - text: (021) 7992325
+        - generic [ref=f18e241]: 
+        - text: (021) 7995188
+        - generic [ref=f18e242]: 
+        - text: pmi.or.id
+    - generic [ref=f18e245]:
+      - paragraph [ref=f18e248]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f18e250]:
+        - listitem [ref=f18e251]:
+          - link "" [ref=f18e252] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f18e254]:
+          - link "" [ref=f18e255] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f18e257]:
+          - link "" [ref=f18e258] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f18e260] [cursor=pointer]:
+    - /url: "#"

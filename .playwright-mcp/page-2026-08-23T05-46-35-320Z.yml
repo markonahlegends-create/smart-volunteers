@@ -1,0 +1,215 @@
+- generic [active] [ref=f63e1]:
+  - generic [ref=f63e3]:
+    - complementary [ref=f63e4]:
+      - generic [ref=f63e5]:
+        - generic [ref=f63e6]:
+          - generic [ref=f63e7]:
+            - img "PMI Logo" [ref=f63e8]
+            - generic [ref=f63e9]:
+              - heading "Smart Volunteers" [level=1] [ref=f63e10]
+              - paragraph [ref=f63e11]: PMI Kota Cilegon
+          - navigation [ref=f63e12]:
+            - link "Dashboard" [ref=f63e13] [cursor=pointer]:
+              - /url: /
+            - link "Markas PMI" [ref=f63e20] [cursor=pointer]:
+              - /url: /markas
+            - link "Unit PMR Mula" [ref=f63e26] [cursor=pointer]:
+              - /url: /units/pmr/mula
+            - link "Unit PMR Madya" [ref=f63e33] [cursor=pointer]:
+              - /url: /units/pmr/madya
+            - link "Unit PMR Wira" [ref=f63e40] [cursor=pointer]:
+              - /url: /units/pmr/wira
+            - link "Unit KSR" [ref=f63e47] [cursor=pointer]:
+              - /url: /units/ksr
+            - link "Unit TSR" [ref=f63e54] [cursor=pointer]:
+              - /url: /units/tsr
+            - link "Anggota PMR" [ref=f63e61] [cursor=pointer]:
+              - /url: /members/pmr
+            - link "Anggota KSR" [ref=f63e68] [cursor=pointer]:
+              - /url: /members/ksr
+            - link "Anggota TSR" [ref=f63e75] [cursor=pointer]:
+              - /url: /members/tsr
+            - link "Kejadian Bencana" [ref=f63e82] [cursor=pointer]:
+              - /url: /bencana
+            - link "Laporan" [ref=f63e86] [cursor=pointer]:
+              - /url: /laporan
+            - link "Profile" [ref=f63e91] [cursor=pointer]:
+              - /url: /profile
+        - button "Logout" [ref=f63e98] [cursor=pointer]
+      - button [ref=f63e103] [cursor=pointer]
+    - main [ref=f63e106]:
+      - generic [ref=f63e109]:
+        - generic [ref=f63e110]:
+          - heading "Dashboard" [level=1] [ref=f63e111]
+          - paragraph [ref=f63e112]: Selamat datang di Smart Volunteers PMI Kota Cilegon
+        - generic [ref=f63e113]:
+          - generic [ref=f63e114]:
+            - generic [ref=f63e117]:
+              - paragraph [ref=f63e118]: Total PMR
+              - paragraph [ref=f63e119]: "-"
+              - generic [ref=f63e120]:
+                - generic [ref=f63e124]: +12.5%
+                - generic [ref=f63e125]: vs last month
+            - generic [ref=f63e134]:
+              - paragraph [ref=f63e135]: Total KSR
+              - paragraph [ref=f63e136]: "-"
+              - generic [ref=f63e137]:
+                - generic [ref=f63e141]: +12.5%
+                - generic [ref=f63e142]: vs last month
+            - generic [ref=f63e150]:
+              - paragraph [ref=f63e151]: Total TSR
+              - paragraph [ref=f63e152]: "-"
+              - generic [ref=f63e153]:
+                - generic [ref=f63e157]: +12.5%
+                - generic [ref=f63e158]: vs last month
+            - generic [ref=f63e164]:
+              - paragraph [ref=f63e165]: Total Unit
+              - paragraph [ref=f63e166]: "-"
+              - generic [ref=f63e167]:
+                - generic [ref=f63e171]: +12.5%
+                - generic [ref=f63e172]: vs last month
+          - generic [ref=f63e179]:
+            - heading "August 2026" [level=3] [ref=f63e181]
+            - generic [ref=f63e184]:
+              - generic [ref=f63e185]: Su
+              - generic [ref=f63e186]: Mo
+              - generic [ref=f63e187]: Tu
+              - generic [ref=f63e188]: We
+              - generic [ref=f63e189]: Th
+              - generic [ref=f63e190]: Fr
+              - generic [ref=f63e191]: Sa
+              - generic [ref=f63e198]: "1"
+              - generic [ref=f63e199]: "2"
+              - generic [ref=f63e200]: "3"
+              - generic [ref=f63e201]: "4"
+              - generic [ref=f63e202]: "5"
+              - generic [ref=f63e203]: "6"
+              - generic [ref=f63e204]: "7"
+              - generic [ref=f63e205]: "8"
+              - generic [ref=f63e206]: "9"
+              - generic [ref=f63e207]: "10"
+              - generic [ref=f63e208]: "11"
+              - generic [ref=f63e209]: "12"
+              - generic [ref=f63e210]: "13"
+              - generic [ref=f63e211]: "14"
+              - generic [ref=f63e212]: "15"
+              - generic [ref=f63e213]: "16"
+              - generic [ref=f63e214]: "17"
+              - generic [ref=f63e215]: "18"
+              - generic [ref=f63e216]: "19"
+              - generic [ref=f63e217]: "20"
+              - generic [ref=f63e218]: "21"
+              - generic [ref=f63e219]: "22"
+              - generic [ref=f63e220]: "23"
+              - generic [ref=f63e221]: "24"
+              - generic [ref=f63e223]: "25"
+              - generic [ref=f63e225]: "26"
+              - generic [ref=f63e226]: "27"
+              - generic [ref=f63e227]: "28"
+              - generic [ref=f63e228]: "29"
+              - generic [ref=f63e229]: "30"
+              - generic [ref=f63e230]: "31"
+            - generic [ref=f63e231]:
+              - generic [ref=f63e232]: Banjir di Kota Cilegon
+              - generic [ref=f63e235]: Kebakaran di Jenderal Sudirman
+              - generic [ref=f63e238]: Longsor di Perkebunan
+        - generic [ref=f63e241]:
+          - heading "Akses Cepat" [level=2] [ref=f63e242]
+          - generic [ref=f63e243]:
+            - button [ref=f63e244] [cursor=pointer]:
+              - paragraph [ref=f63e250]: Tambah Anggota
+            - button [ref=f63e251] [cursor=pointer]:
+              - paragraph [ref=f63e256]: Tambah Unit
+            - link [ref=f63e257] [cursor=pointer]:
+              - /url: /bencana
+              - paragraph [ref=f63e260]: Laporan Bencana
+            - link [ref=f63e261] [cursor=pointer]:
+              - /url: /laporan
+              - paragraph [ref=f63e265]: Daftar Roster
+        - generic [ref=f63e266]:
+          - generic [ref=f63e267]:
+            - heading "Breakdown PMR" [level=2] [ref=f63e268]
+            - generic [ref=f63e269]:
+              - generic [ref=f63e270]:
+                - generic [ref=f63e271]: "0"
+                - generic [ref=f63e277]: PMR Mula
+              - generic [ref=f63e278]:
+                - generic [ref=f63e279]: "0"
+                - generic [ref=f63e285]: PMR Madya
+              - generic [ref=f63e286]:
+                - generic [ref=f63e287]: "0"
+                - generic [ref=f63e293]: PMR Wira
+            - generic [ref=f63e295]:
+              - paragraph [ref=f63e296]: "0"
+              - paragraph [ref=f63e297]: Total PMR
+          - generic [ref=f63e298]:
+            - heading "Pertumbuhan Bulanan" [level=2] [ref=f63e299]
+            - generic [ref=f63e302]:
+              - list [ref=f63e304]:
+                - listitem [ref=f63e305]:
+                  - img "KSR legend icon" [ref=f63e306]
+                  - text: KSR
+                - listitem [ref=f63e308]:
+                  - img "PMR legend icon" [ref=f63e309]
+                  - text: PMR
+                - listitem [ref=f63e311]:
+                  - img "TSR legend icon" [ref=f63e312]
+                  - text: TSR
+              - application [ref=f63e314]:
+                - generic [ref=f63e319]:
+                  - generic [ref=f63e320]:
+                    - generic [ref=f63e321]: Jan
+                    - generic [ref=f63e323]: Feb
+                    - generic [ref=f63e325]: Mar
+                    - generic [ref=f63e327]: Apr
+                    - generic [ref=f63e329]: May
+                    - generic [ref=f63e331]: Jun
+                  - generic [ref=f63e333]:
+                    - generic [ref=f63e334]: "0"
+                    - generic [ref=f63e336]: "50"
+                    - generic [ref=f63e338]: "100"
+                    - generic [ref=f63e340]: "150"
+                    - generic [ref=f63e342]: "200"
+        - generic [ref=f63e344]:
+          - generic [ref=f63e345]:
+            - heading "Tren Anggota" [level=2] [ref=f63e346]
+            - application [ref=f63e350]:
+              - generic [ref=f63e363]:
+                - generic [ref=f63e364]:
+                  - generic [ref=f63e365]: Jan
+                  - generic [ref=f63e367]: Feb
+                  - generic [ref=f63e369]: Mar
+                  - generic [ref=f63e371]: Apr
+                  - generic [ref=f63e373]: May
+                  - generic [ref=f63e375]: Jun
+                - generic [ref=f63e377]:
+                  - generic [ref=f63e378]: "0"
+                  - generic [ref=f63e380]: "150"
+                  - generic [ref=f63e382]: "300"
+                  - generic [ref=f63e384]: "450"
+                  - generic [ref=f63e386]: "600"
+          - generic [ref=f63e388]:
+            - heading "Distribusi Kategori" [level=2] [ref=f63e389]
+            - generic [ref=f63e390]:
+              - generic [ref=f63e391]:
+                - generic [ref=f63e392]: PMR
+                - generic [ref=f63e394]: 0%
+                - generic [ref=f63e400]: 0%
+              - generic [ref=f63e401]:
+                - generic [ref=f63e402]: KSR
+                - generic [ref=f63e404]: 0%
+                - generic [ref=f63e410]: 0%
+              - generic [ref=f63e411]:
+                - generic [ref=f63e412]: TSR
+                - generic [ref=f63e414]: 0%
+                - generic [ref=f63e420]: 0%
+              - generic [ref=f63e421]:
+                - generic [ref=f63e422]: Unit
+                - generic [ref=f63e424]: 0%
+                - generic [ref=f63e430]: 0%
+    - contentinfo [ref=f63e431]:
+      - generic [ref=f63e432]:
+        - paragraph [ref=f63e433]: © 2026 Palang Merah Indonesia Kota Cilegon
+        - link "Oleh Fadil Advertising" [ref=f63e434] [cursor=pointer]:
+          - /url: https://fadil-labs.vercel.app/
+  - generic [ref=f63e439]: "300"

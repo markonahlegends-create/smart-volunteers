@@ -1,0 +1,63 @@
+- generic [ref=f36e3]:
+  - generic [ref=f36e4]:
+    - generic [ref=f36e5]:
+      - img "PMI Logo" [ref=f36e6]
+      - generic [ref=f36e7]:
+        - heading "Smart Volunteers" [level=1] [ref=f36e8]
+        - paragraph [ref=f36e9]: PMI Kota Cilegon
+    - button [ref=f36e10] [cursor=pointer]
+  - main [ref=f36e12]:
+    - generic [ref=f36e15]:
+      - generic [ref=f36e16]:
+        - heading "Dashboard" [level=1] [ref=f36e17]
+        - paragraph [ref=f36e18]: Selamat datang di Smart Volunteers PMI Kota Cilegon
+      - generic [ref=f36e19]:
+        - generic [ref=f36e22]:
+          - paragraph [ref=f36e23]: Palang Merah Remaja
+          - paragraph [ref=f36e24]: "-"
+        - generic [ref=f36e33]:
+          - paragraph [ref=f36e34]: Korps Sukarela
+          - paragraph [ref=f36e35]: "-"
+        - generic [ref=f36e43]:
+          - paragraph [ref=f36e44]: Tenaga Sukarela
+          - paragraph [ref=f36e45]: "-"
+        - generic [ref=f36e54]:
+          - paragraph [ref=f36e55]: Total Unit
+          - paragraph [ref=f36e56]: "-"
+        - generic [ref=f36e63]:
+          - paragraph [ref=f36e64]: Kejadian Bencana
+          - paragraph [ref=f36e65]: "-"
+      - generic [ref=f36e69]:
+        - generic [ref=f36e70]:
+          - heading "Kejadian Bencana Terbaru" [level=2] [ref=f36e71]
+          - generic [ref=f36e72]:
+            - generic [ref=f36e73]:
+              - generic [ref=f36e76]:
+                - paragraph [ref=f36e77]: "Bencana #1"
+                - paragraph [ref=f36e78]: Kota Cilegon, Banten
+              - generic [ref=f36e79]: Tanggap Darurat
+            - generic [ref=f36e80]:
+              - generic [ref=f36e83]:
+                - paragraph [ref=f36e84]: "Bencana #2"
+                - paragraph [ref=f36e85]: Kota Cilegon, Banten
+              - generic [ref=f36e86]: Tanggap Darurat
+            - generic [ref=f36e87]:
+              - generic [ref=f36e90]:
+                - paragraph [ref=f36e91]: "Bencana #3"
+                - paragraph [ref=f36e92]: Kota Cilegon, Banten
+              - generic [ref=f36e93]: Tanggap Darurat
+        - generic [ref=f36e94]:
+          - heading "Akses Cepat" [level=2] [ref=f36e95]
+          - generic [ref=f36e96]:
+            - link [ref=f36e97] [cursor=pointer]:
+              - /url: /members/pmr
+              - paragraph [ref=f36e98]: Tambah Anggota
+            - link [ref=f36e99] [cursor=pointer]:
+              - /url: /units/pmr/mula
+              - paragraph [ref=f36e100]: Tambah Unit
+            - link [ref=f36e101] [cursor=pointer]:
+              - /url: /bencana
+              - paragraph [ref=f36e102]: Laporan Bencana
+            - link [ref=f36e103] [cursor=pointer]:
+              - /url: /roster
+              - paragraph [ref=f36e104]: Daftar Roster

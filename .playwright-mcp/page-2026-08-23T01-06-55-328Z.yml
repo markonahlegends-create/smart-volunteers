@@ -1,0 +1,126 @@
+- generic [ref=f12e3]:
+  - complementary [ref=f12e4]:
+    - generic [ref=f12e5]:
+      - generic [ref=f12e6]:
+        - generic [ref=f12e7]:
+          - img "PMI Logo" [ref=f12e8]
+          - generic [ref=f12e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f12e10]
+            - paragraph [ref=f12e11]: PMI Kota Cilegon
+        - navigation [ref=f12e12]:
+          - link "Dashboard" [ref=f12e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f12e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f12e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f12e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f12e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f12e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f12e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f12e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f12e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f12e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f12e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f12e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f12e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f12e98] [cursor=pointer]
+    - button [ref=f12e103] [cursor=pointer]
+  - main [ref=f12e106]:
+    - generic [ref=f12e109]:
+      - generic [ref=f12e111]:
+        - generic [ref=f12e113]:
+          - heading "Tambah Unit TSR" [level=1] [ref=f12e114]
+          - paragraph [ref=f12e115]: PMI Kota Cilegon
+        - generic [ref=f12e116]:
+          - generic [ref=f12e117]: Admin PMI Kota Cilegon
+          - generic [ref=f12e118]: A
+      - generic [ref=f12e120]:
+        - button "Kembali" [ref=f12e122] [cursor=pointer]
+        - generic [ref=f12e125]:
+          - generic [ref=f12e126]:
+            - generic [ref=f12e127]:
+              - generic [ref=f12e128]: Jenis
+              - textbox [ref=f12e129]: TSR
+            - generic [ref=f12e130]:
+              - generic [ref=f12e131]: Kode Unit
+              - textbox "Masukkan kode unit" [ref=f12e132]: TSR-TEST
+            - generic [ref=f12e133]:
+              - generic [ref=f12e134]: Nama Unit
+              - textbox [active] [ref=f12e135]: Unit TSR Detail Test
+            - generic [ref=f12e136]:
+              - generic [ref=f12e137]: Email
+              - textbox [ref=f12e138]
+            - generic [ref=f12e139]:
+              - generic [ref=f12e140]: No Telpon
+              - textbox [ref=f12e141]
+            - generic [ref=f12e142]:
+              - generic [ref=f12e143]: Status
+              - combobox [ref=f12e144]:
+                - option "Active" [selected]
+                - option "Tidak Aktif"
+          - generic [ref=f12e145]:
+            - generic [ref=f12e146]:
+              - generic [ref=f12e147]: Data Lokasi
+              - iframe [ref=f12e149]:
+                - generic [ref=f13e2]:
+                  - generic:
+                    - region "Map" [ref=f13e3]
+                    - button "[missing \"en-US.javascripts.map.marker.title\" translation]" [ref=f13e4]
+                  - generic:
+                    - generic [ref=f13e8]:
+                      - button "Zoom In" [ref=f13e9] [cursor=pointer]
+                      - button "Zoom Out" [ref=f13e11] [cursor=pointer]
+                    - group [ref=f13e13]:
+                      - generic [ref=f13e14]:
+                        - link "Report a problem" [ref=f13e18] [cursor=pointer]:
+                          - /url: /fixthemap?lat=-6.05000&lon=106.10000&zoom=13
+                        - text: "| ©"
+                        - link "OpenStreetMap contributors" [ref=f13e19] [cursor=pointer]:
+                          - /url: /copyright
+                        - text: ♥️
+                        - link "Make a Donation" [ref=f13e20] [cursor=pointer]:
+                          - /url: https://supporting.openstreetmap.org
+                        - text: .
+                        - link "Website and API terms" [ref=f13e21] [cursor=pointer]:
+                          - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use
+              - generic [ref=f12e150]:
+                - generic [ref=f12e151]: Cari Lokasi
+                - generic [ref=f12e152]:
+                  - textbox "Cari nama gedung, kantor, instansi, rumah, toko, pabrik..." [ref=f12e153]
+                  - button "Cari" [ref=f12e154] [cursor=pointer]
+            - generic [ref=f12e155]:
+              - generic [ref=f12e156]: Provinsi
+              - combobox [ref=f12e157]:
+                - option "Pilih Regional"
+                - option "BANTEN" [selected]
+            - generic [ref=f12e158]:
+              - generic [ref=f12e159]: Kabupaten
+              - combobox [ref=f12e160]:
+                - option "Pilih Kabupaten/Kota"
+                - option "KOTA CILEGON" [selected]
+                - option "LEBAK"
+                - option "PANDEGLANG"
+                - option "SERANG"
+                - option "KABUPATEN SERANG"
+            - generic [ref=f12e161]:
+              - generic [ref=f12e162]: Alamat
+              - textbox [ref=f12e163]
+            - generic [ref=f12e164]:
+              - generic [ref=f12e165]: Upload SK
+              - generic [ref=f12e166] [cursor=pointer]:
+                - paragraph [ref=f12e170]: Klik untuk upload atau drag file ke sini
+                - paragraph [ref=f12e171]: Hanya file PDF yang diizinkan
+          - generic [ref=f12e172]:
+            - button "Create" [ref=f12e173] [cursor=pointer]
+            - button "Batal" [ref=f12e174] [cursor=pointer]

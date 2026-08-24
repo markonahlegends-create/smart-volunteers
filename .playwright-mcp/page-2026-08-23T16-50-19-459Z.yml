@@ -1,0 +1,38 @@
+- generic [ref=f3e1]:
+  - text: 100%
+  - generic [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - link [ref=f3e6] [cursor=pointer]:
+          - /url: /index.php
+        - generic [ref=f3e7]:
+          - list
+    - generic [ref=f3e11]:
+      - generic [ref=f3e12]: Sign In
+      - generic [ref=f3e13]:
+        - generic [ref=f3e15]:
+          - generic [ref=f3e16]:
+            - generic [ref=f3e17]: Login
+            - textbox "Login" [active] [ref=f3e18]:
+              - /placeholder: Username
+              - text: cuklay@gmail.com
+          - generic [ref=f3e19]:
+            - generic [ref=f3e20]:
+              - text: Password (
+              - link "Forgot password?" [ref=f3e21] [cursor=pointer]:
+                - /url: /index.php?r=user%2Frecovery%2Frequest
+              - text: )
+            - textbox "Password (Forgot password?)" [invalid] [ref=f3e22]:
+              - /placeholder: Password
+              - text: ROKWLO
+            - generic [ref=f3e23]: Invalid login or password !
+          - generic [ref=f3e24]:
+            - paragraph [ref=f3e26]: Verification (Please click on the image to get new code)
+            - textbox "Verification (Please click on the image to get new code)" [ref=f3e27]: ROKWLO
+            - generic [ref=f3e28]: The verification code is incorrect.
+          - button "Sign in" [ref=f3e29] [cursor=pointer]
+        - paragraph [ref=f3e32]:
+          - link "Didn't receive confirmation message?" [ref=f3e33] [cursor=pointer]:
+            - /url: /index.php?r=user%2Fregistration%2Fresend
+        - generic:
+          - list

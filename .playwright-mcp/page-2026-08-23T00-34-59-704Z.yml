@@ -1,0 +1,92 @@
+- generic [ref=f5e3]:
+  - complementary [ref=f5e4]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e6]:
+        - generic [ref=f5e7]:
+          - img "PMI Logo" [ref=f5e8]
+          - generic [ref=f5e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f5e10]
+            - paragraph [ref=f5e11]: PMI Kota Cilegon
+        - navigation [ref=f5e12]:
+          - link "Dashboard" [ref=f5e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f5e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f5e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f5e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f5e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f5e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f5e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f5e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f5e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f5e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f5e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f5e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f5e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f5e98] [cursor=pointer]
+    - button [ref=f5e103] [cursor=pointer]
+  - main [ref=f5e106]:
+    - generic [ref=f5e109]:
+      - generic [ref=f5e111]:
+        - generic [ref=f5e113]:
+          - heading "Tambah Unit TSR" [level=1] [ref=f5e114]
+          - paragraph [ref=f5e115]: PMI Kota Cilegon
+        - generic [ref=f5e116]:
+          - generic [ref=f5e117]: Admin PMI Kota Cilegon
+          - generic [ref=f5e118]: A
+      - generic [ref=f5e120]:
+        - button "Kembali" [ref=f5e122] [cursor=pointer]
+        - generic [ref=f5e125]:
+          - generic [ref=f5e126]:
+            - generic [ref=f5e127]:
+              - generic [ref=f5e128]: Jenis
+              - textbox [ref=f5e129]: TSR
+            - generic [ref=f5e130]:
+              - generic [ref=f5e131]: Kode Unit
+              - textbox "Masukkan kode unit" [ref=f5e132]: TSR-001
+            - generic [ref=f5e133]:
+              - generic [ref=f5e134]: Nama Unit
+              - textbox [ref=f5e135]: Unit TSR Test
+            - generic [ref=f5e136]:
+              - generic [ref=f5e137]: Email
+              - textbox [ref=f5e138]: tsr@example.com
+            - generic [ref=f5e139]:
+              - generic [ref=f5e140]: No Telpon
+              - textbox [active] [ref=f5e141]: "081234567893"
+            - generic [ref=f5e142]:
+              - generic [ref=f5e143]: Status
+              - combobox [ref=f5e144]:
+                - option "Active" [selected]
+                - option "Tidak Aktif"
+          - generic [ref=f5e145]:
+            - generic [ref=f5e146]:
+              - generic [ref=f5e147]: Provinsi
+              - combobox [ref=f5e148]:
+                - option "Pilih Regional"
+                - option "BANTEN" [selected]
+            - generic [ref=f5e149]:
+              - generic [ref=f5e150]: Kabupaten
+              - combobox [ref=f5e151]:
+                - option "Pilih Kabupaten/Kota"
+                - option "KOTA CILEGON" [selected]
+                - option "LEBAK"
+                - option "PANDEGLANG"
+                - option "SERANG"
+                - option "KABUPATEN SERANG"
+            - generic [ref=f5e152]:
+              - generic [ref=f5e153]: Alamat
+              - textbox [ref=f5e154]
+          - generic [ref=f5e155]:
+            - button "Create" [ref=f5e156] [cursor=pointer]
+            - button "Batal" [ref=f5e157] [cursor=pointer]

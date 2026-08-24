@@ -1,0 +1,73 @@
+- generic [active] [ref=f13e1]:
+  - generic: 99%
+  - banner [ref=f13e4]:
+    - navigation [ref=f13e5]:
+      - generic [ref=f13e6]:
+        - link [ref=f13e8] [cursor=pointer]:
+          - /url: /
+        - list [ref=f13e10]:
+          - listitem [ref=f13e11]:
+            - link "Markas PMI" [ref=f13e12] [cursor=pointer]:
+              - /url: /index.php?r=pmi%2Fdatapmi%2Flist
+          - listitem [ref=f13e13]:
+            - link "Relawan" [ref=f13e14] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f13e16]:
+            - link "Layanan PMI" [ref=f13e17] [cursor=pointer]:
+              - /url: /index.php?r=site%2Findex
+          - listitem [ref=f13e19]:
+            - link "Logout (cuklay@gmail.com)" [ref=f13e20] [cursor=pointer]:
+              - /url: "#"
+  - generic [ref=f13e22]:
+    - iframe [ref=f13e25]:
+      - generic [ref=f14e1]:
+        - img "Power BI loading" [ref=f14e4]
+        - generic [ref=f14e13]:
+          - link "Microsoft Power BI (Opens in new tab)" [ref=f14e14] [cursor=pointer]:
+            - /url: https://go.microsoft.com/fwlink/?LinkID=722383&clcid=0x409
+            - text: Microsoft Power BI
+          - generic:  
+          - generic [ref=f14e15]:
+            - button "About Power BI" [ref=f14e16] [cursor=pointer]:
+              - generic [ref=f14e17]: 
+            - link "Flag this content as inappropriate":
+              - /url: https://learn.microsoft.com/power-bi/support/service-support-options#how-do-i-contact-support
+              - generic [ref=f14e18] [cursor=pointer]: 
+            - button "Open in full-screen mode" [ref=f14e19] [cursor=pointer]:
+              - generic [ref=f14e20]: 
+    - generic [ref=f13e28]:
+      - heading "Rekap Anggota Relawan Kota Cilegon" [level=2] [ref=f13e29]
+      - generic [ref=f13e30]:
+        - generic [ref=f13e32]:
+          - text: Palang Merah Remaja
+          - paragraph [ref=f13e33]: 0,00 Anggota
+          - paragraph [ref=f13e34]:
+            - button "Bergabung Bersama Kami" [ref=f13e35] [cursor=pointer]
+        - generic [ref=f13e37]:
+          - text: Korps Sukarela
+          - paragraph [ref=f13e38]: 0,00 Anggota
+          - paragraph [ref=f13e39]:
+            - button "Bergabung Bersama Kami" [ref=f13e40] [cursor=pointer]
+        - generic [ref=f13e42]:
+          - text: Tenaga Sukarela
+          - paragraph [ref=f13e43]: 0,00 Anggota
+          - paragraph [ref=f13e44]:
+            - button "Bergabung Bersama Kami" [ref=f13e45] [cursor=pointer]
+    - generic [ref=f13e53]:
+      - link:
+        - /url: http://www.ifrc.org/
+  - contentinfo [ref=f13e58]:
+    - generic [ref=f13e61]:
+      - paragraph [ref=f13e64]: © Palang Merah Indonesia. All rights reserved.
+      - list [ref=f13e66]:
+        - listitem [ref=f13e67]:
+          - link "" [ref=f13e68] [cursor=pointer]:
+            - /url: https://www.facebook.com/palangmerah
+        - listitem [ref=f13e70]:
+          - link "" [ref=f13e71] [cursor=pointer]:
+            - /url: https://twitter.com/palangmerah
+        - listitem [ref=f13e73]:
+          - link "" [ref=f13e74] [cursor=pointer]:
+            - /url: https://plus.google.com/u/0/111335889120165210241
+  - link "" [ref=f13e76] [cursor=pointer]:
+    - /url: "#"

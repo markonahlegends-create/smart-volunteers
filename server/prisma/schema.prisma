@@ -1,0 +1,596 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  password_hash String
+  nama         String
+  role         String   @default("admin")
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("users")
+}
+
+model MarkasPMI {
+  id                     Int      @id @default(autoincrement())
+  nama_pmi               String
+  level_pmi              String
+  nama_kepala_markas     String
+  no_telpon              String
+  email                  String
+  kode_pos               String
+  alamat                 String
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("markas_pmi")
+}
+
+model UnitPMR {
+  id           Int      @id @default(autoincrement())
+  kode_unit    String?  @unique
+  nama_unit    String
+  alamat       String?
+  email        String?
+  no_telpon    String?
+  status       String   @default("Aktif")
+  tingkat      String
+  provinsi     String?
+  kabupaten    String?
+  sk           String?
+  lat          Float?
+  lng          Float?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("unit_pmr")
+}
+
+model UnitKSR {
+  id           Int      @id @default(autoincrement())
+  kode_unit    String?  @unique
+  nama_unit    String
+  alamat       String?
+  email        String?
+  no_telpon    String?
+  status       String   @default("Aktif")
+  jenis        String
+  kategori     String?
+  provinsi     String?
+  kabupaten    String?
+  catatan      String?
+  sk           String?
+  lat          Float?
+  lng          Float?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("unit_ksr")
+}
+
+model UnitTSR {
+  id           Int      @id @default(autoincrement())
+  kode_unit    String?  @unique
+  nama_unit    String
+  alamat       String?
+  email        String?
+  no_telpon    String?
+  status       String   @default("Aktif")
+  jenis        String
+  provinsi     String?
+  kabupaten    String?
+  sk           String?
+  lat          Float?
+  lng          Float?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  @@map("unit_tsr")
+}
+
+model AnggotaPMR {
+  id                     Int      @id @default(autoincrement())
+  provinsi               String
+  kabupaten              String
+  angkatan               Int
+  kode_anggota           String   @unique
+  nama                   String
+  kelamin                String
+  status                 String   @default("Aktif")
+  kategori               String   @default("Anggota")
+  nama_unit              String
+  jenis                  String
+  jenis_identitas        String?
+  no_nik                 String?
+  tempat_lahir           String?
+  tanggal_lahir          String?
+  agama                  String?
+  golongan_darah         String?
+  email                  String?
+  no_hp                  String?
+  alamat_ktp             String?
+  ktp_provinsi           String?
+  ktp_kabupaten          String?
+  ktp_kecamatan          String?
+  ktp_desa               String?
+  dom_is_alamat_ktp      Boolean? @default(false)
+  dom_provinsi           String?
+  dom_kabupaten          String?
+  dom_kecamatan          String?
+  dom_desa               String?
+  alamat                 String?
+  rt                     String?
+  rw                     String?
+  kode_pos               String?
+  no_telp                String?
+  dom_status_kepemilikan String?
+  dom_status_tinggal     String?
+  dom_catatan            String?
+  id_provinsi            String?
+  id_kabupaten           String?
+  id_kecamatan           String?
+  id_desa                String?
+  id_alamat              String?
+  id_rt                  String?
+  id_rw                  String?
+  id_kode_pos            String?
+  id_status_kepemilikan  String?
+  foto                   String?
+  kontak_darurat_nama    String?
+  kontak_darurat_hubungan String?
+  kontak_darurat_hp      String?
+  kontak_darurat_alamat  String?
+  riwayat_tahun_bergabung String?
+  riwayat_unit_asal      String?
+  riwayat_jabatan        String?
+  riwayat_keterangan     String?
+  pendidikan_tingkat     String?
+  pendidikan_institusi   String?
+  pendidikan_jurusan     String?
+  pendidikan_tahun_lulus String?
+  pendidikan_ijazah      String?
+  diklat_nama            String?
+  diklat_penyelenggara   String?
+  diklat_tempat          String?
+  diklat_tahun           String?
+  diklat_sertifikat      String?
+  sertifikasi_nama       String?
+  sertifikasi_penerbit   String?
+  sertifikasi_nomor      String?
+  sertifikasi_tahun      String?
+  sertifikasi_berlaku    String?
+  keahlian               String?
+  keterampilan           String?
+  keahlian_kategori      String?
+  organisasi_nama        String?
+  organisasi_jabatan     String?
+  organisasi_periode     String?
+  organisasi_keterangan  String?
+  penghargaan_nama       String?
+  penghargaan_pemberi    String?
+  penghargaan_tahun      String?
+  penghargaan_keterangan String?
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("anggota_pmr")
+}
+
+model AnggotaKSR {
+  id                     Int      @id @default(autoincrement())
+  provinsi               String
+  kabupaten              String
+  angkatan               Int
+  kode_anggota           String   @unique
+  nama                   String
+  kelamin                String
+  status                 String   @default("Aktif")
+  kategori               String   @default("Anggota")
+  nama_unit              String
+  jenis                  String
+  jenis_identitas        String?
+  no_nik                 String?
+  tempat_lahir           String?
+  tanggal_lahir          String?
+  agama                  String?
+  golongan_darah         String?
+  email                  String?
+  no_hp                  String?
+  alamat_ktp             String?
+  ktp_provinsi           String?
+  ktp_kabupaten          String?
+  ktp_kecamatan          String?
+  ktp_desa               String?
+  dom_is_alamat_ktp      Boolean? @default(false)
+  dom_provinsi           String?
+  dom_kabupaten          String?
+  dom_kecamatan          String?
+  dom_desa               String?
+  alamat                 String?
+  rt                     String?
+  rw                     String?
+  kode_pos               String?
+  no_telp                String?
+  dom_status_kepemilikan String?
+  dom_status_tinggal     String?
+  dom_catatan            String?
+  id_provinsi            String?
+  id_kabupaten           String?
+  id_kecamatan           String?
+  id_desa                String?
+  id_alamat              String?
+  id_rt                  String?
+  id_rw                  String?
+  id_kode_pos            String?
+  id_status_kepemilikan  String?
+  foto                   String?
+  kontak_darurat_nama    String?
+  kontak_darurat_hubungan String?
+  kontak_darurat_hp      String?
+  kontak_darurat_alamat  String?
+  riwayat_tahun_bergabung String?
+  riwayat_unit_asal      String?
+  riwayat_jabatan        String?
+  riwayat_keterangan     String?
+  pendidikan_tingkat     String?
+  pendidikan_institusi   String?
+  pendidikan_jurusan     String?
+  pendidikan_tahun_lulus String?
+  pendidikan_ijazah      String?
+  diklat_nama            String?
+  diklat_penyelenggara   String?
+  diklat_tempat          String?
+  diklat_tahun           String?
+  diklat_sertifikat      String?
+  sertifikasi_nama       String?
+  sertifikasi_penerbit   String?
+  sertifikasi_nomor      String?
+  sertifikasi_tahun      String?
+  sertifikasi_berlaku    String?
+  keahlian               String?
+  keterampilan           String?
+  keahlian_kategori      String?
+  organisasi_nama        String?
+  organisasi_jabatan     String?
+  organisasi_periode     String?
+  organisasi_keterangan  String?
+  penghargaan_nama       String?
+  penghargaan_pemberi    String?
+  penghargaan_tahun      String?
+  penghargaan_keterangan String?
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("anggota_ksr")
+}
+
+model AnggotaTSR {
+  id                     Int      @id @default(autoincrement())
+  provinsi               String
+  kabupaten              String
+  angkatan               Int
+  kode_anggota           String   @unique
+  nama                   String
+  kelamin                String
+  status                 String   @default("Aktif")
+  kategori               String   @default("Anggota")
+  nama_unit              String
+  jenis                  String
+  jenis_identitas        String?
+  no_nik                 String?
+  tempat_lahir           String?
+  tanggal_lahir          String?
+  agama                  String?
+  golongan_darah         String?
+  email                  String?
+  no_hp                  String?
+  alamat_ktp             String?
+  ktp_provinsi           String?
+  ktp_kabupaten          String?
+  ktp_kecamatan          String?
+  ktp_desa               String?
+  dom_is_alamat_ktp      Boolean? @default(false)
+  dom_provinsi           String?
+  dom_kabupaten          String?
+  dom_kecamatan          String?
+  dom_desa               String?
+  alamat                 String?
+  rt                     String?
+  rw                     String?
+  kode_pos               String?
+  no_telp                String?
+  dom_status_kepemilikan String?
+  dom_status_tinggal     String?
+  dom_catatan            String?
+  id_provinsi            String?
+  id_kabupaten           String?
+  id_kecamatan           String?
+  id_desa                String?
+  id_alamat              String?
+  id_rt                  String?
+  id_rw                  String?
+  id_kode_pos            String?
+  id_status_kepemilikan  String?
+  foto                   String?
+  kontak_darurat_nama    String?
+  kontak_darurat_hubungan String?
+  kontak_darurat_hp      String?
+  kontak_darurat_alamat  String?
+  riwayat_tahun_bergabung String?
+  riwayat_unit_asal      String?
+  riwayat_jabatan        String?
+  riwayat_keterangan     String?
+  pendidikan_tingkat     String?
+  pendidikan_institusi   String?
+  pendidikan_jurusan     String?
+  pendidikan_tahun_lulus String?
+  pendidikan_ijazah      String?
+  diklat_nama            String?
+  diklat_penyelenggara   String?
+  diklat_tempat          String?
+  diklat_tahun           String?
+  diklat_sertifikat      String?
+  sertifikasi_nama       String?
+  sertifikasi_penerbit   String?
+  sertifikasi_nomor      String?
+  sertifikasi_tahun      String?
+  sertifikasi_berlaku    String?
+  keahlian               String?
+  keterampilan           String?
+  keahlian_kategori      String?
+  organisasi_nama        String?
+  organisasi_jabatan     String?
+  organisasi_periode     String?
+  organisasi_keterangan  String?
+  penghargaan_nama       String?
+  penghargaan_pemberi    String?
+  penghargaan_tahun      String?
+  penghargaan_keterangan String?
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("anggota_tsr")
+}
+
+model AnggotaDDS {
+  id                     Int      @id @default(autoincrement())
+  provinsi               String
+  kabupaten              String
+  angkatan               Int
+  kode_anggota           String   @unique
+  nama                   String
+  kelamin                String
+  status                 String   @default("Aktif")
+  kategori               String   @default("Anggota")
+  nama_unit              String
+  jenis                  String
+  jenis_identitas        String?
+  no_nik                 String?
+  tempat_lahir           String?
+  tanggal_lahir          String?
+  agama                  String?
+  golongan_darah         String?
+  email                  String?
+  no_hp                  String?
+  alamat_ktp             String?
+  ktp_provinsi           String?
+  ktp_kabupaten          String?
+  ktp_kecamatan          String?
+  ktp_desa               String?
+  dom_is_alamat_ktp      Boolean? @default(false)
+  dom_provinsi           String?
+  dom_kabupaten          String?
+  dom_kecamatan          String?
+  dom_desa               String?
+  alamat                 String?
+  rt                     String?
+  rw                     String?
+  kode_pos               String?
+  no_telp                String?
+  dom_status_kepemilikan String?
+  dom_status_tinggal     String?
+  dom_catatan            String?
+  id_provinsi            String?
+  id_kabupaten           String?
+  id_kecamatan           String?
+  id_desa                String?
+  id_alamat              String?
+  id_rt                  String?
+  id_rw                  String?
+  id_kode_pos            String?
+  id_status_kepemilikan  String?
+  foto                   String?
+  kontak_darurat_nama    String?
+  kontak_darurat_hubungan String?
+  kontak_darurat_hp      String?
+  kontak_darurat_alamat  String?
+  riwayat_tahun_bergabung String?
+  riwayat_unit_asal      String?
+  riwayat_jabatan        String?
+  riwayat_keterangan     String?
+  pendidikan_tingkat     String?
+  pendidikan_institusi   String?
+  pendidikan_jurusan     String?
+  pendidikan_tahun_lulus String?
+  pendidikan_ijazah      String?
+  diklat_nama            String?
+  diklat_penyelenggara   String?
+  diklat_tempat          String?
+  diklat_tahun           String?
+  diklat_sertifikat      String?
+  sertifikasi_nama       String?
+  sertifikasi_penerbit   String?
+  sertifikasi_nomor      String?
+  sertifikasi_tahun      String?
+  sertifikasi_berlaku    String?
+  keahlian               String?
+  keterampilan           String?
+  keahlian_kategori      String?
+  organisasi_nama        String?
+  organisasi_jabatan     String?
+  organisasi_periode     String?
+  organisasi_keterangan  String?
+  penghargaan_nama       String?
+  penghargaan_pemberi    String?
+  penghargaan_tahun      String?
+  penghargaan_keterangan String?
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("anggota_dds")
+}
+
+model Bencana {
+  id                Int      @id @default(autoincrement())
+  jenis_bencana     String
+  nama_kejadian     String
+  tanggal_kejadian   String
+  id_provinsi       Int?
+  level             String
+  status            String   @default("Kejadian")
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+
+  @@map("bencana")
+}
+
+model Kegiatan {
+  id                Int      @id @default(autoincrement())
+  tanggal_kejadian   String
+  nama_kegiatan     String
+  tempat            String
+  bidang            String
+  bulan             String
+  semester          Int
+  tahun             Int
+  ks_count          Int      @default(0)
+  tsr_count         Int      @default(0)
+  pengurus_count    Int      @default(0)
+  staf_count        Int      @default(0)
+  pmr_count         Int      @default(0)
+  penerima_laki     Int      @default(0)
+  penerima_perempuan Int     @default(0)
+  penerima_kk       Int      @default(0)
+  penerima_jiwa     Int      @default(0)
+  keterangan        String?
+  anggaran          String?
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+
+  @@map("kegiatan")
+}
+
+model Relawan {
+  id                     Int      @id @default(autoincrement())
+  provinsi               String
+  kabupaten              String
+  angkatan               Int
+  kode_anggota           String   @unique
+  nama                   String
+  kelamin                String
+  status                 String   @default("Aktif")
+  kategori               String   @default("Anggota")
+  nama_unit              String
+  jenis                  String
+  jenis_identitas        String?
+  no_nik                 String?
+  tempat_lahir           String?
+  tanggal_lahir          String?
+  agama                  String?
+  golongan_darah         String?
+  email                  String?
+  no_hp                  String?
+  alamat_ktp             String?
+  ktp_provinsi           String?
+  ktp_kabupaten          String?
+  ktp_kecamatan          String?
+  ktp_desa               String?
+  dom_is_alamat_ktp      Boolean? @default(false)
+  dom_provinsi           String?
+  dom_kabupaten          String?
+  dom_kecamatan          String?
+  dom_desa               String?
+  alamat                 String?
+  rt                     String?
+  rw                     String?
+  kode_pos               String?
+  no_telp                String?
+  dom_status_kepemilikan String?
+  dom_status_tinggal     String?
+  dom_catatan            String?
+  id_provinsi            String?
+  id_kabupaten           String?
+  id_kecamatan           String?
+  id_desa                String?
+  id_alamat              String?
+  id_rt                  String?
+  id_rw                  String?
+  id_kode_pos            String?
+  id_status_kepemilikan  String?
+  foto                   String?
+  kontak_darurat_nama    String?
+  kontak_darurat_hubungan String?
+  kontak_darurat_hp      String?
+  kontak_darurat_alamat  String?
+  riwayat_tahun_bergabung String?
+  riwayat_unit_asal      String?
+  riwayat_jabatan        String?
+  riwayat_keterangan     String?
+  pendidikan_tingkat     String?
+  pendidikan_institusi   String?
+  pendidikan_jurusan     String?
+  pendidikan_tahun_lulus String?
+  pendidikan_ijazah      String?
+  diklat_nama            String?
+  diklat_penyelenggara   String?
+  diklat_tempat          String?
+  diklat_tahun           String?
+  diklat_sertifikat      String?
+  sertifikasi_nama       String?
+  sertifikasi_penerbit   String?
+  sertifikasi_nomor      String?
+  sertifikasi_tahun      String?
+  sertifikasi_berlaku    String?
+  keahlian               String?
+  keterampilan           String?
+  keahlian_kategori      String?
+  organisasi_nama        String?
+  organisasi_jabatan     String?
+  organisasi_periode     String?
+  organisasi_keterangan  String?
+  penghargaan_nama       String?
+  penghargaan_pemberi    String?
+  penghargaan_tahun      String?
+  penghargaan_keterangan String?
+  created_at             DateTime @default(now())
+  updated_at             DateTime @updatedAt
+
+  @@map("relawan")
+}
+
+model Roster {
+  id          Int      @id @default(autoincrement())
+  kode_anggota String
+  nama        String
+  unit        String
+  jenis       String
+  created_at  DateTime @default(now())
+
+  @@map("roster")
+}
+
+model Captcha {
+  id        Int      @id @default(autoincrement())
+  code      String
+  created_at DateTime @default(now())
+
+  @@map("captcha")
+}

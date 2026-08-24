@@ -1,0 +1,87 @@
+- generic [ref=f24e3]:
+  - navigation [ref=f24e4]:
+    - generic [ref=f24e5]:
+      - generic [ref=f24e6]:
+        - img "PMI Logo" [ref=f24e8]
+        - generic [ref=f24e10]:
+          - heading "Smart Volunteers" [level=1] [ref=f24e11]
+          - paragraph [ref=f24e12]: PMI Kota Cilegon
+      - link "Masuk" [ref=f24e14] [cursor=pointer]:
+        - /url: /login
+  - generic [ref=f24e22]:
+    - img "PMI Logo" [ref=f24e25]
+    - heading "SmartVolunteers" [level=1] [ref=f24e26]
+    - paragraph [ref=f24e27]: Sistem Manajemen Relawan PMI Kota Cilegon
+    - link "Masuk ke Sistem" [ref=f24e29] [cursor=pointer]:
+      - /url: /login
+  - generic [ref=f24e56]:
+    - heading "7 Prinsip Dasar PMI" [level=2] [ref=f24e57]
+    - paragraph [ref=f24e58]: Prinsip yang menjadi landasan setiap tindakan kemanusiaan yang kami laksanakan.
+    - generic [ref=f24e59]:
+      - generic [ref=f24e61]:
+        - heading "Kemanusiaan" [level=3] [ref=f24e65]
+        - paragraph [ref=f24e66]: Mengutamakan penghargaan terhadap martabat manusia dan melindungi jiwa serta kesehatan.
+      - generic [ref=f24e69]:
+        - heading "Netralitas" [level=3] [ref=f24e73]
+        - paragraph [ref=f24e74]: Tidak mengambil pihak dalam konflik, menjaga kepercayaan semua pihak.
+      - generic [ref=f24e77]:
+        - heading "Ketidakberpihakan" [level=3] [ref=f24e84]
+        - paragraph [ref=f24e85]: Memberi bantuan tanpa memandang suku, keyakinan, atau latar belakang.
+      - generic [ref=f24e88]:
+        - heading "Kemandirian" [level=3] [ref=f24e93]
+        - paragraph [ref=f24e94]: Mengelola organisasi secara otonom sesuai dengan prinsip gerakan.
+      - generic [ref=f24e97]:
+        - heading "Sukarela" [level=3] [ref=f24e104]
+        - paragraph [ref=f24e105]: Dikelola oleh relawan yang bekerja tanpa pamrih dan ikhlas.
+      - generic [ref=f24e108]:
+        - heading "Kesatuan" [level=3] [ref=f24e115]
+        - paragraph [ref=f24e116]: Hanya ada satu organisasi PMI di setiap negara.
+      - generic [ref=f24e119]:
+        - heading "Universalitas" [level=3] [ref=f24e124]
+        - paragraph [ref=f24e125]: Gerakan PMI adalah satu gerakan global yang sama di seluruh dunia.
+  - generic [ref=f24e130]:
+    - heading "Dampak Kemanusiaan" [level=2] [ref=f24e131]
+    - generic [ref=f24e132]:
+      - generic [ref=f24e133]:
+        - heading "Respons Bencana" [level=3] [ref=f24e137]
+        - paragraph [ref=f24e138]: Mobilisasi tim relawan dalam hitungan jam untuk tanggap darurat.
+      - generic [ref=f24e140]:
+        - heading "Pelayanan Medis" [level=3] [ref=f24e144]
+        - paragraph [ref=f24e145]: Posyandu, donor darah, dan layanan kesehatan masyarakat.
+      - generic [ref=f24e147]:
+        - heading "Pengembangan Relawan" [level=3] [ref=f24e154]
+        - paragraph [ref=f24e155]: Diklat dan sertifikasi SDM kemanusiaan secara berkelanjutan.
+  - generic [ref=f24e158]:
+    - heading "Mengapa Smart Volunteers?" [level=2] [ref=f24e159]
+    - generic [ref=f24e160]:
+      - generic [ref=f24e168]:
+        - heading "Manajemen Unit Terpadu" [level=3] [ref=f24e169]
+        - paragraph [ref=f24e170]: Kelola PMR, KSR, dan TSR dalam satu platform terintegrasi dengan data real-time.
+      - generic [ref=f24e175]:
+        - heading "Database Anggota Lengkap" [level=3] [ref=f24e176]
+        - paragraph [ref=f24e177]: Profil anggota, riwayat diklat, dan dokumen tersimpan aman dan mudah diakses.
+      - generic [ref=f24e182]:
+        - heading "Monitoring Bencana" [level=3] [ref=f24e183]
+        - paragraph [ref=f24e184]: Catat penanggulangan bencana dengan timestamp dan koordinat untuk akuntabilitas.
+      - generic [ref=f24e190]:
+        - heading "Laporan Otomatis" [level=3] [ref=f24e191]
+        - paragraph [ref=f24e192]: Generate laporan kegiatan dalam format Word dan Excel dengan satu klik.
+  - generic [ref=f24e197]:
+    - heading "Relawan PMI Kota Cilegon" [level=2] [ref=f24e198]
+    - paragraph [ref=f24e199]: Bergabung dengan kami dan jadi bagian dari gerakan kemanusiaan terbesar di dunia.
+  - contentinfo [ref=f24e213]:
+    - generic [ref=f24e214]:
+      - generic [ref=f24e215]:
+        - generic [ref=f24e216]:
+          - img "PMI Logo" [ref=f24e217]
+          - generic [ref=f24e218]:
+            - heading "Smart Volunteers" [level=3] [ref=f24e219]
+            - paragraph [ref=f24e220]: PMI Kota Cilegon
+        - generic [ref=f24e221]:
+          - generic [ref=f24e222]: +62 254 123456
+          - generic [ref=f24e225]: info@pmi-cilegon.or.id
+          - generic [ref=f24e229]: Kota Cilegon, Banten
+      - generic [ref=f24e233]:
+        - paragraph [ref=f24e234]: © 2026 Palang Merah Indonesia Kota Cilegon. All rights reserved.
+        - link "by Fadil Advertising" [ref=f24e235] [cursor=pointer]:
+          - /url: https://fadil-labs.vercel.app/

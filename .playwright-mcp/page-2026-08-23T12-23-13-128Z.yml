@@ -1,0 +1,26 @@
+- generic [ref=e3]:
+  - img "Background" [ref=e4]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - img "PMI Logo" [ref=e8]
+        - heading "Smart Volunteers" [level=1] [ref=e9]
+        - paragraph [ref=e10]: PMI Kota Cilegon
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - text: Email
+          - textbox "Masukkan email" [ref=e17]: cuklay@gmail.com
+        - generic [ref=e18]:
+          - text: Password
+          - generic [ref=e19]:
+            - textbox "Masukkan password" [ref=e23]: admin123
+            - button [ref=e24] [cursor=pointer]
+        - generic [ref=e28]:
+          - text: Verifikasi CAPTCHA
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic [ref=e31]: XQpPZN
+              - textbox "Masukkan kode CAPTCHA" [ref=e32]
+            - button "Refresh" [ref=e33] [cursor=pointer]
+        - button "Masuk" [ref=e34] [cursor=pointer]
+    - paragraph [ref=e35]: © 2026 Palang Merah Indonesia. All rights reserved.

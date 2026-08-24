@@ -1,0 +1,150 @@
+- generic [ref=f20e3]:
+  - complementary [ref=f20e4]:
+    - generic [ref=f20e5]:
+      - generic [ref=f20e6]:
+        - generic [ref=f20e7]:
+          - img "PMI Logo" [ref=f20e8]
+          - generic [ref=f20e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f20e10]
+            - paragraph [ref=f20e11]: PMI Kota Cilegon
+        - navigation [ref=f20e12]:
+          - link "Dashboard" [ref=f20e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f20e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f20e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f20e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f20e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f20e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f20e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f20e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f20e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f20e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f20e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f20e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f20e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f20e98] [cursor=pointer]
+    - button [ref=f20e103] [cursor=pointer]
+  - main [ref=f20e106]:
+    - generic [ref=f20e163]:
+      - generic [ref=f20e165]:
+        - generic [ref=f20e167]:
+          - heading "Detail Unit PMR" [level=1] [ref=f20e168]
+          - paragraph [ref=f20e169]: PMI Kota Cilegon
+        - generic [ref=f20e170]:
+          - generic [ref=f20e171]: Admin PMI Kota Cilegon
+          - generic [ref=f20e172]: A
+      - generic [ref=f20e174]:
+        - button "Kembali ke Daftar Unit" [ref=f20e176] [cursor=pointer]
+        - generic [ref=f20e180]:
+          - generic [ref=f20e181]:
+            - generic [ref=f20e182]:
+              - generic [ref=f20e183]: Kode Unit
+              - generic [ref=f20e184]: "14"
+            - heading "SDN 1 Cilegon" [level=2] [ref=f20e185]
+            - paragraph [ref=f20e186]: "Tingkat: MULA"
+            - generic [ref=f20e187]:
+              - generic [ref=f20e188]: MULA
+              - generic [ref=f20e189]: Aktif
+          - generic [ref=f20e190]:
+            - button "Update Unit" [ref=f20e191] [cursor=pointer]
+            - button "Tambah Anggota" [ref=f20e196] [cursor=pointer]
+        - generic [ref=f20e199]:
+          - generic [ref=f20e200]:
+            - heading "Informasi Unit" [level=3] [ref=f20e201]
+            - generic [ref=f20e202]:
+              - generic [ref=f20e208]:
+                - paragraph [ref=f20e209]: Nama Unit
+                - paragraph [ref=f20e210]: SDN 1 Cilegon
+              - generic [ref=f20e215]:
+                - paragraph [ref=f20e216]: Alamat
+                - paragraph [ref=f20e217]: Cilegon Banten
+              - generic [ref=f20e222]:
+                - paragraph [ref=f20e223]: Email
+                - paragraph [ref=f20e224]: sdn1clg@email.com
+              - generic [ref=f20e228]:
+                - paragraph [ref=f20e229]: No. Telpon
+                - paragraph [ref=f20e230]: "05213456"
+          - generic [ref=f20e231]:
+            - heading "Detail" [level=3] [ref=f20e232]
+            - generic [ref=f20e233]:
+              - generic [ref=f20e234]:
+                - paragraph [ref=f20e235]: Status
+                - paragraph [ref=f20e236]: Aktif
+              - generic [ref=f20e237]:
+                - paragraph [ref=f20e238]: Tingkat
+                - paragraph [ref=f20e239]: MULA
+        - generic [ref=f20e240]:
+          - generic [ref=f20e241]:
+            - heading "Data Lokasi" [level=3] [ref=f20e242]
+            - iframe [ref=f20e244]:
+              - generic [ref=f21e2]:
+                - generic:
+                  - region "Map" [ref=f21e3]
+                  - button "[missing \"en-US.javascripts.map.marker.title\" translation]" [ref=f21e4]
+                - generic:
+                  - generic [ref=f21e8]:
+                    - button "Zoom In" [ref=f21e9] [cursor=pointer]
+                    - button "Zoom Out" [ref=f21e11] [cursor=pointer]
+                  - group [ref=f21e13]:
+                    - generic [ref=f21e14]:
+                      - text: ©
+                      - link "OpenStreetMap contributors" [ref=f21e15] [cursor=pointer]:
+                        - /url: /copyright
+                      - text: ♥️
+                      - link "Make a Donation" [ref=f21e16] [cursor=pointer]:
+                        - /url: https://supporting.openstreetmap.org
+                      - text: .
+                      - link "Website and API terms" [ref=f21e17] [cursor=pointer]:
+                        - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use
+            - generic [ref=f20e245]:
+              - generic [ref=f20e246]:
+                - paragraph [ref=f20e247]: Provinsi
+                - paragraph [ref=f20e248]: BANTEN
+              - generic [ref=f20e249]:
+                - paragraph [ref=f20e250]: Kabupaten
+                - paragraph [ref=f20e251]: KOTA CILEGON
+              - generic [ref=f20e252]:
+                - paragraph [ref=f20e253]: Alamat
+                - paragraph [ref=f20e254]: Cilegon Banten
+              - generic [ref=f20e255]:
+                - paragraph [ref=f20e256]: Koordinat
+                - paragraph [ref=f20e257]: "-6.017389, 106.053769"
+          - generic [ref=f20e258]:
+            - heading "Upload SK" [level=3] [ref=f20e259]
+            - generic [ref=f20e265]:
+              - paragraph [ref=f20e266]: Surat Keputusan
+              - link "Lihat file" [ref=f20e267] [cursor=pointer]:
+                - /url: /uploads/sk-1787447158092-219776719.pdf
+        - generic [ref=f20e268]:
+          - navigation [ref=f20e270]:
+            - button "Koordinator" [ref=f20e271] [cursor=pointer]
+            - button "Anggota" [ref=f20e272] [cursor=pointer]
+            - button "Calon Anggota" [ref=f20e273] [cursor=pointer]
+            - button "Anggota Tidak Aktif" [ref=f20e274] [cursor=pointer]
+          - textbox "Search..." [ref=f20e280]
+          - table [ref=f20e282]:
+            - rowgroup [ref=f20e283]:
+              - row [ref=f20e284]:
+                - columnheader "#" [ref=f20e285]
+                - columnheader "Kode Anggota" [ref=f20e286]
+                - columnheader "Nama" [ref=f20e287]
+                - columnheader "Kelamin" [ref=f20e288]
+                - columnheader "Angkatan" [ref=f20e289]
+                - columnheader "No HP" [ref=f20e290]
+                - columnheader "Email" [ref=f20e291]
+                - columnheader "Aksi" [ref=f20e292]
+            - rowgroup [ref=f20e293]:
+              - row [ref=f20e294]:
+                - cell "Tidak ada data anggota" [ref=f20e295]

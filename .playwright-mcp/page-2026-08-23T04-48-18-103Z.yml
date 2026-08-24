@@ -1,0 +1,134 @@
+- generic [ref=f58e3]:
+  - complementary [ref=f58e4]:
+    - generic [ref=f58e5]:
+      - generic [ref=f58e6]:
+        - generic [ref=f58e7]:
+          - img "PMI Logo" [ref=f58e8]
+          - generic [ref=f58e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f58e10]
+            - paragraph [ref=f58e11]: PMI Kota Cilegon
+        - navigation [ref=f58e12]:
+          - link "Dashboard" [ref=f58e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f58e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f58e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f58e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f58e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f58e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f58e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f58e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f58e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f58e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f58e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Laporan" [ref=f58e86] [cursor=pointer]:
+            - /url: /laporan
+          - link "Profile" [ref=f58e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f58e98] [cursor=pointer]
+    - button [ref=f58e103] [cursor=pointer]
+  - main [ref=f58e106]:
+    - generic [ref=f58e109]:
+      - generic [ref=f58e111]:
+        - generic [ref=f58e113]:
+          - heading "Laporan" [level=1] [ref=f58e114]
+          - paragraph [ref=f58e115]: PMI Kota Cilegon
+        - button [ref=f58e117] [cursor=pointer]:
+          - generic [ref=f58e122]:
+            - paragraph [ref=f58e123]: Admin PMI Kota Cilegon
+            - paragraph [ref=f58e124]: Administrator
+      - generic [ref=f58e127]:
+        - generic [ref=f58e128]:
+          - generic [ref=f58e129]:
+            - generic [ref=f58e135]:
+              - heading "Laporan Semester" [level=3] [ref=f58e136]
+              - paragraph [ref=f58e137]: Download laporan semester dalam format Word
+            - generic [ref=f58e138]:
+              - generic [ref=f58e139]:
+                - generic [ref=f58e140]: Semester
+                - combobox [ref=f58e141]:
+                  - option "Semester 1" [selected]
+                  - option "Semester 2"
+              - generic [ref=f58e142]:
+                - generic [ref=f58e143]: Tahun
+                - spinbutton [ref=f58e144]: "2026"
+            - button "Download Laporan Semester (Word)" [active] [ref=f58e145] [cursor=pointer]
+          - generic [ref=f58e149]:
+            - generic [ref=f58e155]:
+              - heading "Laporan Kegiatan" [level=3] [ref=f58e156]
+              - paragraph [ref=f58e157]: Download laporan kegiatan dalam format Excel
+            - generic [ref=f58e158]:
+              - generic [ref=f58e159]:
+                - generic [ref=f58e160]: Semester
+                - combobox [ref=f58e161]:
+                  - option "Semester 1" [selected]
+                  - option "Semester 2"
+              - generic [ref=f58e162]:
+                - generic [ref=f58e163]: Tahun
+                - spinbutton [ref=f58e164]: "2026"
+            - generic [ref=f58e165]:
+              - generic [ref=f58e166]: Bidang
+              - combobox [ref=f58e167]:
+                - option "Semua Bidang" [selected]
+                - option "BIDANG PENANGGULANGAN BENCANA"
+                - option "BIDANG RELAWAN"
+            - button "Download Laporan Kegiatan (Excel)" [ref=f58e168] [cursor=pointer]
+        - generic [ref=f58e172]:
+          - generic [ref=f58e173]:
+            - heading "Daftar Kegiatan" [level=3] [ref=f58e174]
+            - button "Tambah Kegiatan" [ref=f58e175] [cursor=pointer]
+          - textbox "Cari kegiatan..." [ref=f58e183]
+          - table [ref=f58e185]:
+            - rowgroup [ref=f58e186]:
+              - row [ref=f58e187]:
+                - columnheader "#" [ref=f58e188]
+                - columnheader "Tanggal" [ref=f58e189]
+                - columnheader "Kegiatan" [ref=f58e190]
+                - columnheader "Tempat" [ref=f58e191]
+                - columnheader "Bidang" [ref=f58e192]
+                - columnheader "Aksi" [ref=f58e193]
+            - rowgroup [ref=f58e194]:
+              - row [ref=f58e195]:
+                - cell "1" [ref=f58e196]
+                - cell "2026-08-22" [ref=f58e197]
+                - cell "Pelatihan Manajemen PMR Mula" [ref=f58e198]
+                - cell "Markas PMI Kota Cilegon" [ref=f58e199]
+                - cell "BIDANG RELAWAN" [ref=f58e200]
+                - cell [ref=f58e201]:
+                  - generic [ref=f58e202]:
+                    - button "Edit" [ref=f58e203] [cursor=pointer]
+                    - button "Hapus" [ref=f58e204] [cursor=pointer]
+              - row [ref=f58e205]:
+                - cell "2" [ref=f58e206]
+                - cell "2026-01-02" [ref=f58e207]
+                - cell "Respon Bencana Banjir di Kota Cilegon" [ref=f58e208]
+                - cell "Kec. Citangkil, Cilegon" [ref=f58e209]
+                - cell "BIDANG PENANGGULANGAN BENCANA" [ref=f58e210]
+                - cell [ref=f58e211]:
+                  - generic [ref=f58e212]:
+                    - button "Edit" [ref=f58e213] [cursor=pointer]
+                    - button "Hapus" [ref=f58e214] [cursor=pointer]
+              - row [ref=f58e215]:
+                - cell "3" [ref=f58e216]
+                - cell "2026-01-24" [ref=f58e217]
+                - cell "Diklat PMR Unit SMKN 1 Kota Cilegon" [ref=f58e218]
+                - cell "Aula SMKN 1 Kota Cilegon" [ref=f58e219]
+                - cell "BIDANG RELAWAN" [ref=f58e220]
+                - cell [ref=f58e221]:
+                  - generic [ref=f58e222]:
+                    - button "Edit" [ref=f58e223] [cursor=pointer]
+                    - button "Hapus" [ref=f58e224] [cursor=pointer]
+  - contentinfo [ref=f58e225]:
+    - generic [ref=f58e226]:
+      - paragraph [ref=f58e227]: © 2026 Palang Merah Indonesia Kota Cilegon
+      - link "Oleh Fadil Advertising" [ref=f58e228] [cursor=pointer]:
+        - /url: https://fadil-labs.vercel.app/

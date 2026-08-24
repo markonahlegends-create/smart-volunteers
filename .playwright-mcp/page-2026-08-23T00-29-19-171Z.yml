@@ -1,0 +1,64 @@
+- generic [ref=f2e3]:
+  - complementary [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - generic [ref=f2e7]:
+          - img "PMI Logo" [ref=f2e8]
+          - generic [ref=f2e9]:
+            - heading "Smart Volunteers" [level=1] [ref=f2e10]
+            - paragraph [ref=f2e11]: PMI Kota Cilegon
+        - navigation [ref=f2e12]:
+          - link "Dashboard" [ref=f2e13] [cursor=pointer]:
+            - /url: /
+          - link "Markas PMI" [ref=f2e20] [cursor=pointer]:
+            - /url: /markas
+          - link "Unit PMR Mula" [ref=f2e26] [cursor=pointer]:
+            - /url: /units/pmr/mula
+          - link "Unit PMR Madya" [ref=f2e33] [cursor=pointer]:
+            - /url: /units/pmr/madya
+          - link "Unit PMR Wira" [ref=f2e40] [cursor=pointer]:
+            - /url: /units/pmr/wira
+          - link "Unit KSR" [ref=f2e47] [cursor=pointer]:
+            - /url: /units/ksr
+          - link "Unit TSR" [ref=f2e54] [cursor=pointer]:
+            - /url: /units/tsr
+          - link "Anggota PMR" [ref=f2e61] [cursor=pointer]:
+            - /url: /members/pmr
+          - link "Anggota KSR" [ref=f2e68] [cursor=pointer]:
+            - /url: /members/ksr
+          - link "Anggota TSR" [ref=f2e75] [cursor=pointer]:
+            - /url: /members/tsr
+          - link "Kejadian Bencana" [ref=f2e82] [cursor=pointer]:
+            - /url: /bencana
+          - link "Pendaftaran Roster" [ref=f2e86] [cursor=pointer]:
+            - /url: /roster
+          - link "Profile" [ref=f2e91] [cursor=pointer]:
+            - /url: /profile
+      - button "Logout" [ref=f2e98] [cursor=pointer]
+    - button [ref=f2e103] [cursor=pointer]
+  - main [ref=f2e106]:
+    - generic [ref=f2e109]:
+      - generic [ref=f2e111]:
+        - generic [ref=f2e113]:
+          - heading "Unit PMR Mula" [level=1] [ref=f2e114]
+          - paragraph [ref=f2e115]: PMI Kota Cilegon
+        - generic [ref=f2e116]:
+          - generic [ref=f2e117]: Admin PMI Kota Cilegon
+          - generic [ref=f2e118]: A
+      - generic [ref=f2e120]:
+        - generic [ref=f2e121]:
+          - paragraph [ref=f2e122]: "Total: 0 unit"
+          - button "Tambah Unit" [ref=f2e123] [cursor=pointer]
+        - generic [ref=f2e126]:
+          - textbox "Cari unit..." [ref=f2e132]
+          - table [ref=f2e134]:
+            - rowgroup [ref=f2e135]:
+              - row [ref=f2e136]:
+                - columnheader "#" [ref=f2e137]
+                - columnheader "Nama Unit" [ref=f2e138]
+                - columnheader "Tingkat" [ref=f2e139]
+                - columnheader "Provinsi" [ref=f2e140]
+                - columnheader "Kabupaten" [ref=f2e141]
+                - columnheader "Status" [ref=f2e142]
+                - columnheader "Aksi" [ref=f2e143]
+            - rowgroup
