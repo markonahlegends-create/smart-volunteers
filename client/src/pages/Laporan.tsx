@@ -4,6 +4,7 @@ import { Download, Plus, Search, FileText, FileSpreadsheet } from 'lucide-react'
 import { motion } from 'framer-motion';
 import Header from '../components/layout/Header';
 import { kegiatanApi } from '../services/resources';
+import api from '../services/api';
 
 interface KegiatanItem {
   id: number;
@@ -282,9 +283,9 @@ export default function Laporan() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {filteredKegiatan.map((kegiatan: KegiatanItem) => (
+                {filteredKegiatan.map((kegiatan: KegiatanItem, index: number) => (
                   <tr key={kegiatan.id} className="table-row">
-                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{filteredKegiatan.indexOf(kegiatan) + 1}</td>
+                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{(currentPage - 1) * 10 + index + 1}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{kegiatan.tanggal_kejadian}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm font-medium text-gray-900">{kegiatan.nama_kegiatan}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{kegiatan.tempat}</td>

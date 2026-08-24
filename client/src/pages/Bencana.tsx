@@ -3,6 +3,7 @@ import { Plus, Edit, Trash2, Search, Download } from 'lucide-react';
 import { useState } from 'react';
 import Modal from '../components/ui/Modal';
 import { bencanaApi } from '../services/resources';
+import api from '../services/api';
 import Header from '../components/layout/Header';
 
 export default function Bencana() {
@@ -115,9 +116,9 @@ export default function Bencana() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {filteredBencanas.map((bencana: any) => (
+                {filteredBencanas.map((bencana: any, index: number) => (
                   <tr key={bencana.id} className="table-row">
-                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{filteredBencanas.indexOf(bencana) + 1}</td>
+                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{(currentPage - 1) * 10 + index + 1}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm font-medium text-gray-900">{bencana.jenis_bencana}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{bencana.nama_kejadian}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{bencana.tanggal_kejadian}</td>

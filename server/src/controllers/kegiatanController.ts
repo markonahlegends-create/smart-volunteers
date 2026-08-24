@@ -16,13 +16,13 @@ export const getKegiatan = async (req: Request, res: Response) => {
 
     const hasPagination = page !== undefined || limit !== undefined;
     const limitNum = hasPagination ? (Number(limit) || 10) : undefined;
-    const skip = hasPagination && page ? (Number(page) - 1) * limitNum : undefined;
+    const skip = hasPagination && page ? (Number(page) - 1) * (limitNum as number) : undefined;
 
     const [kegiatan, total] = await Promise.all([
       prisma.kegiatan.findMany({
         where,
         skip,
-        take: limitNum,
+        take: limitNum as any,
         orderBy: [{ bulan: 'asc' }, { id: 'asc' }],
       }),
       prisma.kegiatan.count({ where }),
@@ -33,7 +33,7 @@ export const getKegiatan = async (req: Request, res: Response) => {
       total,
       page: hasPagination ? Number(page) : 1,
       limit: limitNum,
-      totalPages: hasPagination ? Math.ceil(total / limitNum) : 1,
+      totalPages: hasPagination ? Math.ceil(total / (limitNum as number)) : 1,
     });
   } catch (error) {
     res.status(500).json({ message: 'Gagal memuat data kegiatan' });

@@ -322,21 +322,21 @@ export default function Landing() {
       </section>
 
       <footer className="bg-black border-t border-white/5 py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-16">
-              <img src="/logopmiputih.png" alt="PMI Logo" className="h-16 opacity-80" />
-              <div>
-                <h3 className="font-bold">Smart Volunteers</h3>
-                <p className="text-xs text-gray-500">PMI Kota Cilegon</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-red-400" /> 0254 394617</span>
-              <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-red-400" /> humaspmicilegon@gmail.com</span>
-              <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-red-400" /> Jl. Belibis Raya Blok E21 No.1 Perumnas Cibeber Kencana, Kecamatan Cibeber - Kota Cilegon Provinsi Banten</span>
-            </div>
-          </div>
+         <div className="max-w-7xl mx-auto">
+           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+             <div className="flex items-center gap-4">
+               <img src="/logopmiputih.png" alt="PMI Logo" className="h-16 opacity-80" />
+               <div className="flex items-baseline gap-2">
+                 <h3 className="font-bold">Smart Volunteers</h3>
+                 <span className="text-xs text-gray-500">PMI Kota Cilegon</span>
+               </div>
+             </div>
+             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-400">
+               <span className="flex items-center gap-2"><Phone className="h-4 w-4 text-red-400" /> 0254 394617</span>
+               <span className="flex items-center gap-2"><Mail className="h-4 w-4 text-red-400" /> humaspmicilegon@gmail.com</span>
+               <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-red-400" /> Jl. Belibis Raya Blok E21 No.1 Perumnas Cibeber Kencana, Kecamatan Cibeber - Kota Cilegon Provinsi Banten</span>
+             </div>
+           </div>
           <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600">© 2026 Palang Merah Indonesia Kota Cilegon. All rights reserved.</p>
             <a href="https://fadil-labs.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-red-400 transition-colors">

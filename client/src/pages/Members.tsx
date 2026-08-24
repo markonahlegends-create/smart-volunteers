@@ -35,7 +35,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
     }
   }, [editingMember]);
 
-  const { data: membersData, refetch: refetchMembers } = useQuery({
+  const { data: membersData } = useQuery({
     queryKey: ['members', type, currentPage],
     queryFn: async () => {
       const response = await api.get(`/members/${type}`, { params: { page: currentPage, limit: 10 } });
@@ -240,7 +240,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
               <tbody className="divide-y divide-gray-200">
                 {filteredMembers.map((member: any, index: number) => (
                   <tr key={member.id} className="table-row">
-                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{index + 1}</td>
+                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{(currentPage - 1) * 10 + index + 1}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.provinsi}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.kabupaten}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600 hidden md:table-cell">{member.angkatan}</td>
