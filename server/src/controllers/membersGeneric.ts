@@ -89,7 +89,7 @@ export const getMemberById = async (req: Request, res: Response, type: MemberTyp
   try {
     const { id } = req.params;
     const model = getModel(type);
-    const anggota = await prisma[model].findUnique({
+    const anggota = await (prisma as any)[model].findUnique({
       where: { id: parseInt(id) },
     });
     if (!anggota) return res.status(404).json({ message: `Anggota ${type.toUpperCase()} tidak ditemukan` });
@@ -127,7 +127,7 @@ export const updateMember = async (req: Request, res: Response, type: MemberType
     }
     const model = getModel(type);
     const data = buildMemberData(req.body);
-    const anggota = await prisma[model].update({
+    const anggota = await (prisma as any)[model].update({
       where: { id: parseInt(id) },
       data,
     });
@@ -145,7 +145,7 @@ export const deleteMember = async (req: Request, res: Response, type: MemberType
   try {
     const { id } = req.params;
     const model = getModel(type);
-    await prisma[model].delete({ where: { id: parseInt(id) } });
+    await (prisma as any)[model].delete({ where: { id: parseInt(id) } });
     res.json({ message: `Anggota ${type.toUpperCase()} berhasil dihapus` });
     triggerMemberSync().catch(console.error);
   } catch (error) {
