@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, BorderStyle, AlignmentType } from 'docx';
 import ExcelJS from 'exceljs';
+import { downloadTemplateFromDrive } from '../services/googleDrive';
+import { createReport } from 'docx-templates';
 import { triggerKegiatanSync } from '../services/syncTriggers';
 
 const prisma = new PrismaClient();
@@ -87,113 +89,89 @@ export const downloadSemesterReport = async (req: Request, res: Response) => {
     const semesterNum = parseInt(semester as string);
     const tahunNum = parseInt(tahun as string);
 
-    const [pmrCount, ksrCount, tsrCount, unitCount, bencanaCount, kegiatanList] = await Promise.all([
-      prisma.anggotaPMR.count(),
-      prisma.anggotaKSR.count(),
-      prisma.anggotaTSR.count(),
-      prisma.unitPMR.count(),
-      prisma.bencana.count(),
-      prisma.kegiatan.findMany({
-        where: { semester: semesterNum, tahun: tahunNum },
-        orderBy: [{ bidang: 'asc' }, { bulan: 'asc' }, { id: 'asc' }],
-      }),
+    const [
+      pmrMulaL, pmrMulaP, pmrMadyaL, pmrMadyaP, pmrWiraL, pmrWiraP,
+      ksrTsrL, ksrTsrP,
+      ddsL, ddsP,
+      stafL, stafP,
+      penerimaIndividu, penerimaKK,
+      pelayananKesehatan, pelayananSosial, pemberdayaanMasyarakat,
+      totalDanaDiperoleh, totalDanaDibelanjakan,
+      jumlahPmiKecamatan,
+    ] = await Promise.all([
+      prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Laki-laki' } }),
+      prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Wanita' } }),
+      prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Laki-laki' } }),
+      prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Wanita' } }),
+      prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Laki-laki' } }),
+      prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Wanita' } }),
+      prisma.anggotaKSR.count({ where: { kelamin: 'Laki-laki' } }),
+      prisma.anggotaKSR.count({ where: { kelamin: 'Wanita' } }),
+      prisma.anggotaDDS.count({ where: { kelamin: 'Laki-laki' } }),
+      prisma.anggotaDDS.count({ where: { kelamin: 'Wanita' } }),
+      prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } }),
+      prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } }),
+      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true, penerima_kk: true } }),
+      prisma.kegiatan.aggregate({ _sum: { penerima_kk: true } }),
+      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
+      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
+      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
+      prisma.kegiatan.aggregate({ _sum: { anggaran: true } } as any),
+      prisma.kegiatan.aggregate({ _sum: { anggaran: true } } as any),
+      prisma.unitKSR.count(),
     ]);
 
-    const doc = new Document({
-      sections: [{
-        properties: {},
-        children: [
-          new Paragraph({
-            children: [new TextRun({ text: "PALANG MERAH INDONESIA", bold: true, size: 24 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "KOTA CILEGON", bold: true, size: 24 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "Jl. Raya Cilegon No. 1, Kota Cilegon, Banten", size: 20 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "Telp: (0254) 123456 | Email: info@pmi-cilegon.or.id", size: 20 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            text: "",
-            spacing: { after: 400 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `LAPORAN SEMESTER ${semesterNum} TAHUN ${tahunNum}`, bold: true, size: 28 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "PALANG MERAH REMaja PMI KOTA CILEGON", bold: true, size: 22 })],
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            text: "",
-            spacing: { after: 400 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `Total Anggota: ${pmrCount + ksrCount + tsrCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `- PMR: ${pmrCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `- KSR: ${ksrCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `- TSR: ${tsrCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `Total Unit: ${unitCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: `Total Kejadian Bencana: ${bencanaCount}`, size: 22 })],
-          }),
-          new Paragraph({
-            text: "",
-            spacing: { after: 400 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "RINGKASAN KEGIATAN", bold: true, size: 24 })],
-          }),
-          ...kegiatanList.map((k, i) =>
-            new Paragraph({
-              children: [new TextRun({ text: `${i + 1}. ${k.nama_kegiatan} (${k.tempat}) - ${k.bulan} ${k.tahun}`, size: 22 })],
-            })
-          ),
-          new Paragraph({
-            text: "",
-            spacing: { after: 400 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "Cilegon, " + new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }), size: 22 })],
-          }),
-          new Paragraph({
-            text: "",
-            spacing: { after: 200 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "Ketua PMI Kota Cilegon", bold: true, size: 22 })],
-          }),
-          new Paragraph({
-            text: "",
-            spacing: { after: 400 },
-          }),
-          new Paragraph({
-            children: [new TextRun({ text: "(Nama Ketua)", size: 22 })],
-          }),
-        ],
-      }],
-    });
+    const data = {
+      nomor_surat: '',
+      lampiran_surat: '',
+      perihal_surat: `Laporan Semester ${semesterNum} Tahun ${tahunNum}`,
+      tujuan_surat: `\n\t\tPengurus PMI Provinsi Banten, di Bandung`,
+      semester_romawi: semesterNum === 1 ? 'I' : 'II',
+      text_semester: semesterNum === 1 ? 'Januari - Juni' : 'Juli - Desember',
+      tahun: tahunNum,
+      pmr_mula_l: pmrMulaL,
+      pmr_mula_p: pmrMulaP,
+      pmr_mula_total: pmrMulaL + pmrMulaP,
+      pmr_madya_l: pmrMadyaL,
+      pmr_madya_p: pmrMadyaP,
+      pmr_madya_total: pmrMadyaL + pmrMadyaP,
+      pmr_wira_l: pmrWiraL,
+      pmr_wira_p: pmrWiraP,
+      pmr_wira_total: pmrWiraL + pmrWiraP,
+      ksr_tsr_l: ksrTsrL,
+      ksr_tsr_p: ksrTsrP,
+      ksr_tsr_total: ksrTsrL + ksrTsrP,
+      dds_l: ddsL,
+      dds_p: ddsP,
+      dds_total: ddsL + ddsP,
+      staf_l: stafL,
+      staff_p: stafP,
+      staf_total: stafL + stafP,
+      penerima_manfaat_individu_l: penerimaIndividu._sum.penerima_laki || 0,
+      penerima_manfaat_individu_p: penerimaIndividu._sum.penerima_perempuan || 0,
+      penerima_manfaat_individu_total: (penerimaIndividu._sum.penerima_laki || 0) + (penerimaIndividu._sum.penerima_perempuan || 0),
+      penerima_manfaat_kk_total: penerimaKK._sum.penerima_kk || 0,
+      pelayanan_kesehatan_l: pelayananKesehatan._sum.penerima_laki || 0,
+      pelayanan_kesehatan_p: pelayananKesehatan._sum.penerima_perempuan || 0,
+      pelayanan_kesehatan_total: (pelayananKesehatan._sum.penerima_laki || 0) + (pelayananKesehatan._sum.penerima_perempuan || 0),
+      pelayanan_sosial_l: pelayananSosial._sum.penerima_laki || 0,
+      pelayanan_sosial_p: pelayananSosial._sum.penerima_perempuan || 0,
+      pelayanan_sosial_total: (pelayananSosial._sum.penerima_laki || 0) + (pelayananSosial._sum.penerima_perempuan || 0),
+      pemberdayaan_masyarakat_l: pemberdayaanMasyarakat._sum.penerima_laki || 0,
+      pemberdayaan_masyarakat_p: pemberdayaanMasyarakat._sum.penerima_perempuan || 0,
+      pemberdayaan_masyarakat_total: (pemberdayaanMasyarakat._sum.penerima_laki || 0) + (pemberdayaanMasyarakat._sum.penerima_perempuan || 0),
+      total_dana_diperoleh: (totalDanaDiperoleh as any)?._sum?.anggaran || 0,
+      total_dana_dibelanjakan: (totalDanaDibelanjakan as any)?._sum?.anggaran || 0,
+      jumlah_pmi_kecamatan: jumlahPmiKecamatan,
+    };
 
-    const buffer = await Packer.toBuffer(doc);
+    const templateBuffer = await downloadTemplateFromDrive('template_laporan_semester.docx');
+    const template = await createReport({ template: templateBuffer, data });
+    const filledBuffer = await Packer.toBuffer(template as any);
+
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
     res.setHeader('Content-Disposition', `attachment; filename=Laporan-Semester-${semesterNum}-${tahunNum}.docx`);
-    res.send(buffer);
+    res.send(filledBuffer);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Gagal generate laporan semester' });
