@@ -37,7 +37,7 @@ interface SidebarProps {
   onLaporanClick?: () => void;
 }
 
-export default function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps) {
+export default function Sidebar({ isCollapsed = false, onToggleCollapse, onLaporanClick }: SidebarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const SidebarContent = () => (

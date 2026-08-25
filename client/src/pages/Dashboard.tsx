@@ -28,6 +28,7 @@ import {
   Area,
 } from 'recharts';
 import api from '../services/api';
+import { useLayout } from '../context/LayoutContext';
 
 function SkeletonCard() {
   return (
@@ -313,7 +314,7 @@ function SmallCircularStat({ value, maxValue, color }: { value: number; maxValue
 export default function Dashboard() {
   const [memberModalOpen, setMemberModalOpen] = useState(false);
   const [unitModalOpen, setUnitModalOpen] = useState(false);
-  const [laporanModalOpen, setLaporanModalOpen] = useState(false);
+  const { laporanModalOpen, setLaporanModalOpen } = useLayout();
   const [syncing, setSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<string | null>(null);
 
@@ -331,7 +332,7 @@ export default function Dashboard() {
     }
   };
 
-  const handleLaporanAction = async (path: string, type: 'link' | 'download') => {
+  const handleLaporanAction = async (path: string, type?: 'link' | 'download') => {
     setLaporanModalOpen(false);
     if (type === 'link') {
       window.location.href = path;

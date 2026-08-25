@@ -3,10 +3,11 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import { useLayout } from '../../context/LayoutContext';
 
 export default function Layout() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [laporanModalOpen, setLaporanModalOpen] = useState(false);
+  const { setLaporanModalOpen } = useLayout();
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">

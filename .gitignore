@@ -46,6 +46,9 @@ tmp/
 temp/
 test-db.js
 
+# Data files
+data/
+
 # Apps Script
 apps-script.js
 apps-script-new.js
