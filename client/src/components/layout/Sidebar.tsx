@@ -34,6 +34,7 @@ const menuItems = [
 interface SidebarProps {
   isCollapsed?: boolean;
   onToggleCollapse?: () => void;
+  onLaporanClick?: () => void;
 }
 
 export default function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps) {
@@ -74,19 +75,36 @@ export default function Sidebar({ isCollapsed = false, onToggleCollapse }: Sideb
         </div>
 
         <nav className="space-y-1">
-          {menuItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setIsMobileOpen(false)}
-              className={({ isActive }) =>
-                `sidebar-link ${isActive ? 'active' : ''} ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`
-              }
-            >
-              <item.icon className="h-5 w-5 flex-shrink-0" />
-              {!isCollapsed && <span className="truncate">{item.label}</span>}
-            </NavLink>
-          ))}
+          {menuItems.map((item) => {
+            if (item.path === '/laporan') {
+              return (
+                <button
+                  key={item.path}
+                  onClick={() => {
+                    onLaporanClick?.();
+                    setIsMobileOpen(false);
+                  }}
+                  className={`sidebar-link w-full ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`}
+                >
+                  <item.icon className="h-5 w-5 flex-shrink-0" />
+                  {!isCollapsed && <span className="truncate">{item.label}</span>}
+                </button>
+              );
+            }
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileOpen(false)}
+                className={({ isActive }) =>
+                  `sidebar-link ${isActive ? 'active' : ''} ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`
+                }
+              >
+                <item.icon className="h-5 w-5 flex-shrink-0" />
+                {!isCollapsed && <span className="truncate">{item.label}</span>}
+              </NavLink>
+            );
+          })}
         </nav>
       </div>
 

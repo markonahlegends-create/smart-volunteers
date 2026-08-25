@@ -105,11 +105,13 @@ function QuickAccessModal({
   onClose,
   title,
   items,
+  onItemClick,
 }: {
   isOpen: boolean;
   onClose: () => void;
   title: string;
-  items: { label: string; path: string; icon: typeof Users }[];
+  items: { label: string; path: string; icon: typeof Users; type?: 'link' | 'download' }[];
+  onItemClick?: (path: string, type?: 'link' | 'download') => void;
 }) {
   return (
     <AnimatePresence>
@@ -143,17 +145,22 @@ function QuickAccessModal({
             </div>
             <div className="p-4 space-y-2">
               {items.map((item) => (
-                <a
+                <button
                   key={item.path}
-                  href={item.path}
-                  onClick={onClose}
-                  className="flex items-center gap-3 p-3 bg-primary-50 hover:bg-primary-100 rounded-lg transition-colors group"
+                  onClick={() => {
+                    if (item.type === 'download') {
+                      onItemClick?.(item.path, 'download');
+                    } else {
+                      onItemClick?.(item.path, 'link');
+                    }
+                  }}
+                  className="flex items-center gap-3 p-3 bg-primary-50 hover:bg-primary-100 rounded-lg transition-colors group w-full text-left"
                 >
                   <div className="p-2 bg-white rounded-lg group-hover:scale-110 transition-transform">
                     <item.icon className="h-5 w-5 text-primary-600" />
                   </div>
                   <span className="font-medium text-primary-700 text-sm lg:text-base">{item.label}</span>
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>
@@ -324,6 +331,34 @@ export default function Dashboard() {
     }
   };
 
+  const handleLaporanAction = async (path: string, type: 'link' | 'download') => {
+    setLaporanModalOpen(false);
+    if (type === 'link') {
+      window.location.href = path;
+      return;
+    }
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch(path, {
+        headers: {
+          Authorization: token ? `Bearer ${token}` : '',
+        },
+      });
+      if (!response.ok) throw new Error('Download failed');
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = path.includes('semester') ? 'Laporan-Semester.docx' : 'Laporan-Kegiatan.xlsx';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      alert('Gagal mengunduh laporan. Silakan coba lagi.');
+    }
+  };
+
   const { data: stats, isLoading, error: statsError, refetch: refetchStats } = useQuery<DashboardStats>({
     queryKey: ['dashboard', 'stats'],
     queryFn: async () => {
@@ -417,9 +452,9 @@ export default function Dashboard() {
   ];
 
   const laporanOptions = [
-    { label: 'Laporan Semester', path: '/api/kegiatan/download/semester', icon: FileSpreadsheet },
-    { label: 'Laporan Kegiatan', path: '/api/kegiatan/download/kegiatan', icon: FileText },
-    { label: 'Tambah Kegiatan', path: '/laporan', icon: Plus },
+    { label: 'Laporan Semester', path: '/api/kegiatan/download/semester', icon: FileSpreadsheet, type: 'download' as const },
+    { label: 'Laporan Kegiatan', path: '/api/kegiatan/download/kegiatan', icon: FileText, type: 'download' as const },
+    { label: 'Tambah Kegiatan', path: '/laporan', icon: Plus, type: 'link' as const },
   ];
 
   const horizontalBars = [
@@ -715,6 +750,7 @@ export default function Dashboard() {
         onClose={() => setLaporanModalOpen(false)}
         title="Download Laporan"
         items={laporanOptions}
+        onItemClick={handleLaporanAction}
       />
     </div>
   );
