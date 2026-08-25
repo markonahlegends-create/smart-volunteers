@@ -5,21 +5,25 @@ const GOOGLE_DRIVE_FOLDER_ID = process.env.GOOGLE_DRIVE_FOLDER_ID || '';
 const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '';
 const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY || '';
 
-if (!GOOGLE_SERVICE_ACCOUNT_EMAIL || !GOOGLE_PRIVATE_KEY) {
-  throw new Error('Google service account credentials are not configured');
-}
+const getAuth = () => {
+  if (!GOOGLE_SERVICE_ACCOUNT_EMAIL || !GOOGLE_PRIVATE_KEY) {
+    throw new Error('Google service account credentials are not configured');
+  }
+  return new google.auth.GoogleAuth({
+    credentials: {
+      client_email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      private_key: GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    },
+    scopes: ['https://www.googleapis.com/auth/drive'],
+  });
+};
 
-const auth = new google.auth.GoogleAuth({
-  credentials: {
-    client_email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    private_key: GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-  },
-  scopes: ['https://www.googleapis.com/auth/drive'],
-});
-
-const drive = google.drive({ version: 'v3', auth });
+const getDrive = () => {
+  return google.drive({ version: 'v3', auth: getAuth() });
+};
 
 export async function downloadTemplateFromDrive(fileName: string): Promise<Buffer> {
+  const drive = getDrive();
   const folderId = GOOGLE_DRIVE_FOLDER_ID;
   const response = await drive.files.list({
     q: `name='${fileName}' and '${folderId}' in parents and trashed=false`,
@@ -46,6 +50,7 @@ export async function downloadTemplateFromDrive(fileName: string): Promise<Buffe
 }
 
 export async function listDriveFiles() {
+  const drive = getDrive();
   const folderId = GOOGLE_DRIVE_FOLDER_ID;
   const response = await drive.files.list({
     q: `'${folderId}' in parents and trashed=false`,
