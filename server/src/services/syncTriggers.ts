@@ -82,6 +82,28 @@ export async function triggerMemberSync() {
   }
 }
 
+export async function triggerRelawanSync() {
+  try {
+    const [pmr, ksr, tsr, dds] = await Promise.all([
+      prisma.anggotaPMR.findMany(),
+      prisma.anggotaKSR.findMany(),
+      prisma.anggotaTSR.findMany(),
+      prisma.anggotaDDS.findMany(),
+    ]);
+
+    const relawan = cleanFotoForSheets([
+      ...pmr.map((item: any) => ({ ...item, _tipe: 'PMR' })),
+      ...ksr.map((item: any) => ({ ...item, _tipe: 'KSR' })),
+      ...tsr.map((item: any) => ({ ...item, _tipe: 'TSR' })),
+      ...dds.map((item: any) => ({ ...item, _tipe: 'DDS' })),
+    ]);
+    const uniqueRelawan = uniqueByKey(relawan, 'kode_anggota');
+    await syncToGoogleSheets({ sheet: 'Relawan', data: uniqueRelawan as any, action: 'sync', type: 'relawan' });
+  } catch (error) {
+    console.error('Auto-sync relawan failed:', error);
+  }
+}
+
 export async function triggerUnitSync() {
   try {
     const [unitPmr, unitKsr, unitTsr] = await Promise.all([
