@@ -10,7 +10,7 @@ import Header from '../components/layout/Header';
 
 interface MembersPageProps {
   title: string;
-  type: 'pmr' | 'ksr' | 'tsr' | 'dds';
+  type: 'ksr-markas' | 'ksr-perguruan-tinggi';
 }
 
 export default function MembersPage({ title, type }: MembersPageProps) {
@@ -21,7 +21,6 @@ export default function MembersPage({ title, type }: MembersPageProps) {
   const [importFile, setImportFile] = useState<File | null>(null);
   const [importing, setImporting] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [kategoriFilter, setKategoriFilter] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [modalProvinsi, setModalProvinsi] = useState('BANTEN');
   const [modalKabupaten, setModalKabupaten] = useState('KOTA CILEGON');
@@ -36,12 +35,12 @@ export default function MembersPage({ title, type }: MembersPageProps) {
     }
   }, [editingMember]);
 
+  const apiPath = type === 'ksr-markas' ? 'ksr-markas' : 'ksr-perguruan-tinggi';
+
   const { data: membersData } = useQuery({
-    queryKey: ['members', type, currentPage, kategoriFilter],
+    queryKey: ['members', apiPath, currentPage],
     queryFn: async () => {
-      const params: any = { page: currentPage, limit: 10 };
-      if (kategoriFilter) params.kategori = kategoriFilter;
-      const response = await api.get(`/members/${type}`, { params });
+      const response = await api.get(`/members/${apiPath}`, { params: { page: currentPage, limit: 10 } });
       return response.data;
     },
   });
@@ -59,39 +58,27 @@ export default function MembersPage({ title, type }: MembersPageProps) {
   ) || [];
 
   const createMutation = useMutation({
-    mutationFn: (data: any) => {
-      if (type === 'pmr') return membersApi.createPMR(data);
-      if (type === 'ksr') return membersApi.createKSR(data);
-      return membersApi.createTSR(data);
-    },
+    mutationFn: (data: any) => membersApi.createKSR(data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['members', type] });
+      queryClient.invalidateQueries({ queryKey: ['members', apiPath] });
       setIsModalOpen(false);
       setEditingMember(null);
     },
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: any) => {
-      if (type === 'pmr') return membersApi.updatePMR(id, data);
-      if (type === 'ksr') return membersApi.updateKSR(id, data);
-      return membersApi.updateTSR(id, data);
-    },
+    mutationFn: ({ id, data }: any) => membersApi.updateKSR(id, data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['members', type] });
+      queryClient.invalidateQueries({ queryKey: ['members', apiPath] });
       setIsModalOpen(false);
       setEditingMember(null);
     },
   });
 
   const deleteMutation = useMutation({
-    mutationFn: (id: number) => {
-      if (type === 'pmr') return membersApi.deletePMR(id);
-      if (type === 'ksr') return membersApi.deleteKSR(id);
-      return membersApi.deleteTSR(id);
-    },
+    mutationFn: (id: number) => membersApi.deleteKSR(id),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['members', type] });
+      queryClient.invalidateQueries({ queryKey: ['members', apiPath] });
     },
   });
 
@@ -116,16 +103,15 @@ export default function MembersPage({ title, type }: MembersPageProps) {
           if (h === 'status') row.status = cols[idx];
           if (h === 'nama unit') row.nama_unit = cols[idx];
           if (h === 'jenis') row.jenis = cols[idx];
+          if (h === 'kategori') row.kategori = cols[idx];
         });
         
         if (row.kode_anggota && row.nama) {
-          if (type === 'pmr') await membersApi.createPMR(row);
-          else if (type === 'ksr') await membersApi.createKSR(row);
-          else await membersApi.createTSR(row);
+          await membersApi.createKSR({ ...row, kategori: type === 'ksr-markas' ? 'MARKAS' : 'PERGURUAN TINGGI' });
         }
       }
       
-      queryClient.invalidateQueries({ queryKey: ['members', type] });
+      queryClient.invalidateQueries({ queryKey: ['members', apiPath] });
       setImportFile(null);
       setImporting(false);
       alert('Import berhasil');
@@ -137,16 +123,16 @@ export default function MembersPage({ title, type }: MembersPageProps) {
   };
 
   const handleExport = () => {
-    const headers = ['No', 'Provinsi', 'Kabupaten/Kota', 'Angkatan', 'Kode Anggota', 'Nama', 'Kelamin', 'Status', 'Nama Unit', 'Jenis'];
+    const headers = ['No', 'Provinsi', 'Kabupaten/Kota', 'Angkatan', 'Kode Anggota', 'Nama', 'Kelamin', 'Status', 'Nama Unit', 'Kategori'];
     const rows = members.map((m: any, i: number) => [
-      i + 1, m.provinsi || '', m.kabupaten || '', m.angkatan || '', m.kode_anggota || '', m.nama || '', m.kelamin || '', m.status || '', m.nama_unit || '', m.jenis || ''
+      i + 1, m.provinsi || '', m.kabupaten || '', m.angkatan || '', m.kode_anggota || '', m.nama || '', m.kelamin || '', m.status || '', m.nama_unit || '', m.kategori || ''
     ]);
     const csv = [headers, ...rows].map(r => r.join('\t')).join('\n');
     const blob = new Blob([csv], { type: 'text/plain;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `anggota_${type}_${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `anggota_${apiPath}_${new Date().toISOString().split('T')[0]}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -192,7 +178,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
               onChange={(e) => setImportFile(e.target.files?.[0] || null)}
               className="hidden"
             />
-            <Link to={`/members/${type}/add`} className="btn-primary flex items-center gap-2 text-sm">
+            <Link to={`/members/${apiPath}/add`} className="btn-primary flex items-center gap-2 text-sm">
               <Plus className="h-4 w-4" />
               <span>Tambah</span>
             </Link>
@@ -203,7 +189,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
           <div className="card flex items-center justify-between">
             <div>
               <p className="text-sm font-medium text-gray-800">File: {importFile.name}</p>
-              <p className="text-xs text-gray-500">Format: No, Provinsi, Kabupaten/Kota, Angkatan, Kode Anggota, Nama, Kelamin, Status, Nama Unit, Jenis</p>
+              <p className="text-xs text-gray-500">Format: No, Provinsi, Kabupaten/Kota, Angkatan, Kode Anggota, Nama, Kelamin, Status, Nama Unit, Kategori</p>
             </div>
             <button onClick={handleImport} disabled={importing} className="btn-primary text-sm">
               {importing ? 'Mengimport...' : 'Import'}
@@ -212,45 +198,7 @@ export default function MembersPage({ title, type }: MembersPageProps) {
         )}
 
         <div className="card overflow-hidden p-0">
-          <div className="p-4 border-b border-gray-200 space-y-3">
-            {type === 'pmr' && (
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => { setKategoriFilter(null); setCurrentPage(1); }}
-                  className={`px-3 py-1.5 text-sm rounded border ${!kategoriFilter ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}`}
-                >
-                  Semua
-                </button>
-                {['MULA', 'MADYA', 'WIRA'].map((k) => (
-                  <button
-                    key={k}
-                    onClick={() => { setKategoriFilter(kategoriFilter === k ? null : k); setCurrentPage(1); }}
-                    className={`px-3 py-1.5 text-sm rounded border ${kategoriFilter === k ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}`}
-                  >
-                    PMR {k.charAt(0) + k.slice(1).toLowerCase()}
-                  </button>
-                ))}
-              </div>
-            )}
-            {type === 'ksr' && (
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => { setKategoriFilter(null); setCurrentPage(1); }}
-                  className={`px-3 py-1.5 text-sm rounded border ${!kategoriFilter ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}`}
-                >
-                  Semua
-                </button>
-                {['MARKAS', 'PERGURUAN TINGGI'].map((k) => (
-                  <button
-                    key={k}
-                    onClick={() => { setKategoriFilter(kategoriFilter === k ? null : k); setCurrentPage(1); }}
-                    className={`px-3 py-1.5 text-sm rounded border ${kategoriFilter === k ? 'bg-primary-600 text-white border-primary-600' : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'}`}
-                  >
-                    KSR {k === 'MARKAS' ? 'Markas' : 'Perguruan Tinggi'}
-                  </button>
-                ))}
-              </div>
-            )}
+          <div className="p-4 border-b border-gray-200">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
@@ -269,12 +217,12 @@ export default function MembersPage({ title, type }: MembersPageProps) {
                 <tr>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Provinsi</th>
-                  <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kabupaten/Kota</th>
+                  <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Kabupaten/Kota</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Angkatan</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kode Anggota</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Unit</th>
-                  <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Jenis</th>
+                  <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kategori</th>
                   <th className="px-4 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Aksi</th>
                 </tr>
               </thead>
@@ -283,19 +231,15 @@ export default function MembersPage({ title, type }: MembersPageProps) {
                   <tr key={member.id} className="table-row">
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-900">{(currentPage - 1) * 10 + index + 1}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.provinsi}</td>
-                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.kabupaten}</td>
+                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-600 hidden md:table-cell">{member.kabupaten}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600 hidden md:table-cell">{member.angkatan}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm font-medium text-gray-900">{member.nama}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600 font-mono">{member.kode_anggota}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.nama_unit}</td>
-                    <td className="px-4 lg:px-6 py-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        {member.jenis}
-                      </span>
-                    </td>
+                    <td className="px-4 lg:px-6 py-4 text-sm text-gray-600">{member.kategori}</td>
                     <td className="px-4 lg:px-6 py-4 text-sm">
                       <div className="flex gap-2">
-                        <Link to={`/members/${type}/${member.id}`} className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
+                        <Link to={`/members/${apiPath}/${member.id}`} className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1">
                           <Edit className="h-4 w-4" />
                           Detail
                         </Link>
@@ -375,20 +319,20 @@ export default function MembersPage({ title, type }: MembersPageProps) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Kelamin<span className="text-red-500 ml-1">*</span></label>
-            <select name="kelamin" defaultValue={editingMember?.kelamin || 'Pria'} className="input-field">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Kelamin<span className="text-red-500 ml-1">*</span></label>
+              <select name="kelamin" defaultValue={editingMember?.kelamin || 'Pria'} className="input-field">
                 <option value="Pria">Pria</option>
                 <option value="Wanita">Wanita</option>
               </select>
             </div>
             <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Angkatan<span className="text-red-500 ml-1">*</span></label>
-            <input
-              type="number"
-              name="angkatan"
-              defaultValue={editingMember?.angkatan || new Date().getFullYear()}
-              className="input-field"
-            />
+              <label className="block text-sm font-medium text-gray-700 mb-1">Angkatan<span className="text-red-500 ml-1">*</span></label>
+              <input
+                type="number"
+                name="angkatan"
+                defaultValue={editingMember?.angkatan || new Date().getFullYear()}
+                className="input-field"
+              />
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -419,26 +363,25 @@ export default function MembersPage({ title, type }: MembersPageProps) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Nama Unit<span className="text-red-500 ml-1">*</span></label>
-            <input
-              type="text"
-              name="nama_unit"
-              defaultValue={editingMember?.nama_unit || ''}
-              className="input-field"
-              list="unit-list"
-            />
-            <datalist id="unit-list">
-              {unitOptions.map((unit: string) => (
-                <option key={unit} value={unit} />
-              ))}
-            </datalist>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Nama Unit<span className="text-red-500 ml-1">*</span></label>
+              <input
+                type="text"
+                name="nama_unit"
+                defaultValue={editingMember?.nama_unit || ''}
+                className="input-field"
+                list="unit-list"
+              />
+              <datalist id="unit-list">
+                {unitOptions.map((unit: string) => (
+                  <option key={unit} value={unit} />
+                ))}
+              </datalist>
             </div>
             <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Jenis<span className="text-red-500 ml-1">*</span></label>
-            <select name="jenis" defaultValue={editingMember?.jenis || 'PMR'} className="input-field">
-                <option value="PMR">PMR</option>
-                <option value="KSR">KSR</option>
-                <option value="TSR">TSR</option>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Kategori<span className="text-red-500 ml-1">*</span></label>
+              <select name="kategori" defaultValue={editingMember?.kategori || (type === 'ksr-markas' ? 'MARKAS' : 'PERGURUAN TINGGI')} className="input-field">
+                <option value="MARKAS">Markas</option>
+                <option value="PERGURUAN TINGGI">Perguruan Tinggi</option>
               </select>
             </div>
           </div>

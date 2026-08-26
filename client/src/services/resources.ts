@@ -32,10 +32,14 @@ export const membersApi = {
   getPMRById: async (id: number) => (await api.get(`/members/pmr/${id}`)).data,
   getKSR: async (params?: any) => (await api.get('/members/ksr', { params })).data,
   getKSRById: async (id: number) => (await api.get(`/members/ksr/${id}`)).data,
+  getKSRMarkas: async (params?: any) => (await api.get('/members/ksr/markas', { params })).data,
+  getKSRPerguruanTinggi: async (params?: any) => (await api.get('/members/ksr/perguruan-tinggi', { params })).data,
   getTSR: async (params?: any) => (await api.get('/members/tsr', { params })).data,
   getTSRById: async (id: number) => (await api.get(`/members/tsr/${id}`)).data,
   getDDS: async (params?: any) => (await api.get('/members/dds', { params })).data,
   getDDSById: async (id: number) => (await api.get(`/members/dds/${id}`)).data,
+  getRelawan: async (params?: any) => (await api.get('/members/relawan', { params })).data,
+  getRelawanById: async (id: number) => (await api.get(`/members/relawan/${id}`)).data,
 
   createPMR: async (data: any) => (await api.post('/members/pmr', data)).data,
   updatePMR: async (id: number, data: any) => (await api.put(`/members/pmr/${id}`, data)).data,
@@ -52,6 +56,10 @@ export const membersApi = {
   createDDS: async (data: any) => (await api.post('/members/dds', data)).data,
   updateDDS: async (id: number, data: any) => (await api.put(`/members/dds/${id}`, data)).data,
   deleteDDS: async (id: number) => (await api.delete(`/members/dds/${id}`)).data,
+
+  createRelawan: async (data: any) => (await api.post('/members/relawan', data)).data,
+  updateRelawan: async (id: number, data: any) => (await api.put(`/members/relawan/${id}`, data)).data,
+  deleteRelawan: async (id: number) => (await api.delete(`/members/relawan/${id}`)).data,
 };
 
 export const bencanaApi = {

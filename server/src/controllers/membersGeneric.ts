@@ -62,16 +62,19 @@ function validateRequired(body: any): string | null {
 
 export const getMembers = async (req: Request, res: Response, type: MemberType) => {
   try {
-    const { page = 1, limit = 10 } = req.query;
+    const { page = 1, limit = 10, kategori } = req.query;
     const model = getModel(type);
     const skip = (Number(page) - 1) * Number(limit);
+    const where: any = {};
+    if (kategori) where.kategori = kategori;
     const [data, total] = await Promise.all([
       (prisma as any)[model].findMany({
         skip,
         take: Number(limit),
         orderBy: { id: 'desc' },
+        where,
       }),
-      (prisma as any)[model].count(),
+      (prisma as any)[model].count({ where }),
     ]);
     res.json({
       data,

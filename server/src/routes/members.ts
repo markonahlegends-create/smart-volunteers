@@ -27,6 +27,14 @@ const router = Router();
 
 router.get('/pmr', authenticate, getPMR);
 router.get('/pmr/:id', authenticate, getPMRMemberById);
+router.get('/ksr/markas', authenticate, (req, res) => {
+  req.query.kategori = 'MARKAS';
+  getMembers(req, res, 'ksr');
+});
+router.get('/ksr/perguruan-tinggi', authenticate, (req, res) => {
+  req.query.kategori = 'PERGURUAN TINGGI';
+  getMembers(req, res, 'ksr');
+});
 router.get('/ksr', authenticate, getKSRMembers);
 router.get('/ksr/:id', authenticate, getKSRMemberById);
 router.get('/tsr', authenticate, getTSRMembers);

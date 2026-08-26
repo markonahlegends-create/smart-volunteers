@@ -12,24 +12,36 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Users2,
+  GraduationCap,
+  ChevronDown,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const menuItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/markas', label: 'Markas PMI', icon: Building2 },
-  { path: '/units/pmr/mula', label: 'Unit PMR Mula', icon: Users },
-  { path: '/units/pmr/madya', label: 'Unit PMR Madya', icon: Users },
-  { path: '/units/pmr/wira', label: 'Unit PMR Wira', icon: Users },
-  { path: '/units/ksr', label: 'Unit KSR', icon: Users },
-  { path: '/units/tsr', label: 'Unit TSR', icon: Users },
-  { path: '/members/pmr', label: 'Anggota PMR', icon: Users },
-  { path: '/members/ksr', label: 'Anggota KSR', icon: Users },
-  { path: '/members/tsr', label: 'Anggota TSR', icon: Users },
+  { type: 'category', label: 'Unit PMR', icon: Users2, sub: [
+      { path: '/units/pmr/mula', label: 'Mula' },
+      { path: '/units/pmr/madya', label: 'Madya' },
+      { path: '/units/pmr/wira', label: 'Wira' },
+    ] 
+  },
+  { type: 'category', label: 'Unit KSR', icon: GraduationCap, sub: [
+      { path: '/units/ksr/markas', label: 'Markas' },
+      { path: '/units/ksr/perguruan-tinggi', label: 'Perguruan Tinggi' },
+    ] 
+  },
+  { type: 'category', label: 'Relawan', icon: Users, sub: [
+      { path: '/members/pmr', label: 'Anggota PMR' },
+      { path: '/members/ksr', label: 'Anggota KSR' },
+      { path: '/members/tsr', label: 'Anggota TSR' },
+    ] 
+  },
   { path: '/bencana', label: 'Kejadian Bencana', icon: AlertTriangle },
   { path: '/laporan', label: 'Laporan', icon: FileText },
   { path: '/profile', label: 'Profile', icon: User },
-];
+] as const;
 
 interface SidebarProps {
   isCollapsed?: boolean;
@@ -38,6 +50,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isCollapsed = false, onToggleCollapse }: SidebarProps) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const SidebarContent = () => (
     <div className="h-full flex flex-col">
@@ -74,19 +87,71 @@ export default function Sidebar({ isCollapsed = false, onToggleCollapse }: Sideb
         </div>
 
         <nav className="space-y-1">
-          {menuItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={() => setIsMobileOpen(false)}
-              className={({ isActive }) =>
-                `sidebar-link ${isActive ? 'active' : ''} ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`
-              }
-            >
-              <item.icon className="h-5 w-5 flex-shrink-0" />
-              {!isCollapsed && <span className="truncate">{item.label}</span>}
-            </NavLink>
-          ))}
+          {menuItems.map((item) => {
+            if ('sub' in item) {
+              const isOpen = openCategory === item.label;
+              const Icon = item.icon as any;
+              return (
+                <div key={item.label} className="space-y-1">
+                  <button
+                    onMouseEnter={() => !isCollapsed && setOpenCategory(item.label)}
+                    onMouseLeave={() => setOpenCategory(null)}
+                    onClick={() => {
+                      if (isCollapsed) {
+                        setOpenCategory(prev => prev === item.label ? null : item.label);
+                      } else {
+                        setOpenCategory(prev => prev === item.label ? null : item.label);
+                      }
+                    }}
+                    className={`sidebar-link w-full flex items-center justify-between ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`}
+                  >
+                    <span className="flex items-center gap-3">
+                      <Icon className="h-5 w-5 flex-shrink-0" />
+                      {!isCollapsed && <span className="truncate">{item.label}</span>}
+                    </span>
+                    {!isCollapsed && <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />}
+                  </button>
+                  <AnimatePresence>
+                    {isOpen && !isCollapsed && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-11 pr-2 space-y-1 overflow-hidden"
+                      >
+                        {item.sub?.map((sub) => (
+                          <NavLink
+                            key={sub.path}
+                            to={sub.path}
+                            onClick={() => setIsMobileOpen(false)}
+                            className={({ isActive }) =>
+                              `sidebar-link ${isActive ? 'active' : ''}`
+                            }
+                          >
+                            <span className="truncate text-sm">{sub.label}</span>
+                          </NavLink>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileOpen(false)}
+                className={({ isActive }) =>
+                  `sidebar-link ${isActive ? 'active' : ''} ${isCollapsed ? 'lg:justify-center lg:px-2' : ''}`
+                }
+              >
+                <item.icon className="h-5 w-5 flex-shrink-0" />
+                {!isCollapsed && <span className="truncate">{item.label}</span>}
+              </NavLink>
+            );
+          })}
         </nav>
       </div>
 

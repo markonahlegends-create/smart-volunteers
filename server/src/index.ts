@@ -12,6 +12,7 @@ import rosterRoutes from './routes/roster';
 import kegiatanRoutes from './routes/kegiatan';
 import syncRoutes from './routes/sync';
 import uploadRoutes from './routes/upload';
+import { getRelawan, getRelawanById, createRelawan, updateRelawan, deleteRelawan } from './controllers/relawanController';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use('/api/markas-pmi', markasRoutes);
 app.use('/api/units', unitsRoutes);
 app.use('/api/members', membersRoutes);
 app.use('/api/relawan', relawanRoutes);
+app.use('/api/members/relawan', relawanRoutes);
 app.use('/api/bencana', bencanaRoutes);
 app.use('/api/roster', rosterRoutes);
 app.use('/api/kegiatan', kegiatanRoutes);

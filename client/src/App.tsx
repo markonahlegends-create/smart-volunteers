@@ -16,6 +16,9 @@ const AddUnitPMR = lazy(() => import('./pages/AddUnitPMR'));
 const AddUnitTSR = lazy(() => import('./pages/AddUnitTSR'));
 const UnitDetailPMR = lazy(() => import('./pages/UnitDetailPMR'));
 const UnitDetailTSR = lazy(() => import('./pages/UnitDetailTSR'));
+const MembersKSRMarkas = lazy(() => import('./pages/MembersKSRMarkas'));
+const MembersKSRPerguruanTinggi = lazy(() => import('./pages/MembersKSRPerguruanTinggi'));
+const Relawan = lazy(() => import('./pages/Relawan'));
 const MembersPage = lazy(() => import('./pages/Members'));
 const MemberProfile = lazy(() => import('./pages/MemberProfile'));
 const AddMember = lazy(() => import('./pages/AddMember'));
@@ -100,8 +103,11 @@ function App() {
             <Route path="units/tsr/:id" element={<Suspense fallback={<PageFallback />}><UnitDetailTSR /></Suspense>} />
             <Route path="members/pmr" element={<Suspense fallback={<PageFallback />}><MembersPage title="Anggota PMR" type="pmr" /></Suspense>} />
             <Route path="members/ksr" element={<Suspense fallback={<PageFallback />}><MembersPage title="Anggota KSR" type="ksr" /></Suspense>} />
+            <Route path="members/ksr/markas" element={<Suspense fallback={<PageFallback />}><MembersKSRMarkas title="Anggota KSR Markas" type="ksr-markas" /></Suspense>} />
+            <Route path="members/ksr/perguruan-tinggi" element={<Suspense fallback={<PageFallback />}><MembersKSRPerguruanTinggi title="Anggota KSR Perguruan Tinggi" type="ksr-perguruan-tinggi" /></Suspense>} />
             <Route path="members/tsr" element={<Suspense fallback={<PageFallback />}><MembersPage title="Anggota TSR" type="tsr" /></Suspense>} />
             <Route path="members/dds" element={<Suspense fallback={<PageFallback />}><MembersPage title="Anggota DDS" type="dds" /></Suspense>} />
+            <Route path="members/relawan" element={<Suspense fallback={<PageFallback />}><Relawan title="Relawan" type="relawan" /></Suspense>} />
             <Route path="members/:type/add/:id" element={<Suspense fallback={<PageFallback />}><AddMember /></Suspense>} />
             <Route path="members/:type/add" element={<Suspense fallback={<PageFallback />}><AddMember /></Suspense>} />
             <Route path="members/:type/:id" element={<Suspense fallback={<PageFallback />}><MemberProfile /></Suspense>} />
