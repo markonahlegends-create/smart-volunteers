@@ -92,10 +92,13 @@ export default function Sidebar({ isCollapsed = false, onToggleCollapse }: Sideb
               const isOpen = openCategory === item.label;
               const Icon = item.icon as any;
               return (
-                <div key={item.label} className="space-y-1">
+                <div
+                  key={item.label}
+                  className="space-y-1"
+                  onMouseEnter={() => !isCollapsed && setOpenCategory(item.label)}
+                  onMouseLeave={() => setOpenCategory(null)}
+                >
                   <button
-                    onMouseEnter={() => !isCollapsed && setOpenCategory(item.label)}
-                    onMouseLeave={() => setOpenCategory(null)}
                     onClick={() => {
                       if (isCollapsed) {
                         setOpenCategory(prev => prev === item.label ? null : item.label);
