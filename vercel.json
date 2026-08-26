@@ -1,23 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "cd server && npm install",
-        "buildCommand": "cd server && npm run build"
-      }
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "installCommand": "cd client && npm install",
-        "buildCommand": "cd client && npm run build"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/api/(.*)",
