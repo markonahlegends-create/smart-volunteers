@@ -89,37 +89,24 @@ export const downloadSemesterReport = async (req: Request, res: Response) => {
     const semesterNum = parseInt(semester);
     const tahunNum = parseInt(tahun);
 
-    const [
-      pmrMulaL, pmrMulaP, pmrMadyaL, pmrMadyaP, pmrWiraL, pmrWiraP,
-      ksrTsrL, ksrTsrP,
-      ddsL, ddsP,
-      stafL, stafP,
-      penerimaIndividu, penerimaKK,
-      pelayananKesehatan, pelayananSosial, pemberdayaanMasyarakat,
-      totalDanaDiperoleh, totalDanaDibelanjakan,
-      jumlahPmiKecamatan,
-    ] = await Promise.all([
-      prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Laki-laki' } }),
-      prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Wanita' } }),
-      prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Laki-laki' } }),
-      prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Wanita' } }),
-      prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Laki-laki' } }),
-      prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Wanita' } }),
-      prisma.anggotaKSR.count({ where: { kelamin: 'Laki-laki' } }),
-      prisma.anggotaKSR.count({ where: { kelamin: 'Wanita' } }),
-      prisma.anggotaDDS.count({ where: { kelamin: 'Laki-laki' } }),
-      prisma.anggotaDDS.count({ where: { kelamin: 'Wanita' } }),
-      prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } }),
-      prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } }),
-      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true, penerima_kk: true } }),
-      prisma.kegiatan.aggregate({ _sum: { penerima_kk: true } }),
-      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
-      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
-      prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } }),
-      prisma.kegiatan.aggregate({ _sum: { anggaran: true } } as any),
-      prisma.kegiatan.aggregate({ _sum: { anggaran: true } } as any),
-      prisma.unitKSR.count(),
-    ]);
+    const pmrMulaL = await prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Laki-laki' } });
+    const pmrMulaP = await prisma.anggotaPMR.count({ where: { kategori: 'MULA', kelamin: 'Wanita' } });
+    const pmrMadyaL = await prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Laki-laki' } });
+    const pmrMadyaP = await prisma.anggotaPMR.count({ where: { kategori: 'MADYA', kelamin: 'Wanita' } });
+    const pmrWiraL = await prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Laki-laki' } });
+    const pmrWiraP = await prisma.anggotaPMR.count({ where: { kategori: 'WIRA', kelamin: 'Wanita' } });
+    const ksrTsrL = await prisma.anggotaKSR.count({ where: { kelamin: 'Laki-laki' } });
+    const ksrTsrP = await prisma.anggotaKSR.count({ where: { kelamin: 'Wanita' } });
+    const ddsL = await prisma.anggotaDDS.count({ where: { kelamin: 'Laki-laki' } });
+    const ddsP = await prisma.anggotaDDS.count({ where: { kelamin: 'Wanita' } });
+    const stafL = await prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } });
+    const stafP = await prisma.anggotaKSR.count({ where: { kategori: { not: 'Anggota' } } });
+    const penerimaIndividu = await prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true, penerima_kk: true } });
+    const penerimaKK = await prisma.kegiatan.aggregate({ _sum: { penerima_kk: true } });
+    const pelayananKesehatan = await prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } });
+    const pelayananSosial = await prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } });
+    const pemberdayaanMasyarakat = await prisma.kegiatan.aggregate({ _sum: { penerima_laki: true, penerima_perempuan: true } });
+    const jumlahPmiKecamatan = await prisma.unitKSR.count();
 
     const data = {
       nomor_surat: req.body.nomor_surat || '',
@@ -147,21 +134,21 @@ export const downloadSemesterReport = async (req: Request, res: Response) => {
       staf_l: stafL,
       staff_p: stafP,
       staf_total: stafL + stafP,
-      penerima_manfaat_individu_l: penerimaIndividu._sum.penerima_laki || 0,
-      penerima_manfaat_individu_p: penerimaIndividu._sum.penerima_perempuan || 0,
-      penerima_manfaat_individu_total: (penerimaIndividu._sum.penerima_laki || 0) + (penerimaIndividu._sum.penerima_perempuan || 0),
-      penerima_manfaat_kk_total: penerimaKK._sum.penerima_kk || 0,
-      pelayanan_kesehatan_l: pelayananKesehatan._sum.penerima_laki || 0,
-      pelayanan_kesehatan_p: pelayananKesehatan._sum.penerima_perempuan || 0,
-      pelayanan_kesehatan_total: (pelayananKesehatan._sum.penerima_laki || 0) + (pelayananKesehatan._sum.penerima_perempuan || 0),
-      pelayanan_sosial_l: pelayananSosial._sum.penerima_laki || 0,
-      pelayanan_sosial_p: pelayananSosial._sum.penerima_perempuan || 0,
-      pelayanan_sosial_total: (pelayananSosial._sum.penerima_laki || 0) + (pelayananSosial._sum.penerima_perempuan || 0),
-      pemberdayaan_masyarakat_l: pemberdayaanMasyarakat._sum.penerima_laki || 0,
-      pemberdayaan_masyarakat_p: pemberdayaanMasyarakat._sum.penerima_perempuan || 0,
-      pemberdayaan_masyarakat_total: (pemberdayaanMasyarakat._sum.penerima_laki || 0) + (pemberdayaanMasyarakat._sum.penerima_perempuan || 0),
-      total_dana_diperoleh: (totalDanaDiperoleh as any)?._sum?.anggaran || 0,
-      total_dana_dibelanjakan: (totalDanaDibelanjakan as any)?._sum?.anggaran || 0,
+      penerima_manfaat_individu_l: (penerimaIndividu as any)?._sum?.penerima_laki || 0,
+      penerima_manfaat_individu_p: (penerimaIndividu as any)?._sum?.penerima_perempuan || 0,
+      penerima_manfaat_individu_total: ((penerimaIndividu as any)?._sum?.penerima_laki || 0) + ((penerimaIndividu as any)?._sum?.penerima_perempuan || 0),
+      penerima_manfaat_kk_total: (penerimaKK as any)?._sum?.penerima_kk || 0,
+      pelayanan_kesehatan_l: (pelayananKesehatan as any)?._sum?.penerima_laki || 0,
+      pelayanan_kesehatan_p: (pelayananKesehatan as any)?._sum?.penerima_perempuan || 0,
+      pelayanan_kesehatan_total: ((pelayananKesehatan as any)?._sum?.penerima_laki || 0) + ((pelayananKesehatan as any)?._sum?.penerima_perempuan || 0),
+      pelayanan_sosial_l: (pelayananSosial as any)?._sum?.penerima_laki || 0,
+      pelayanan_sosial_p: (pelayananSosial as any)?._sum?.penerima_perempuan || 0,
+      pelayanan_sosial_total: ((pelayananSosial as any)?._sum?.penerima_laki || 0) + ((pelayananSosial as any)?._sum?.penerima_perempuan || 0),
+      pemberdayaan_masyarakat_l: (pemberdayaanMasyarakat as any)?._sum?.penerima_laki || 0,
+      pemberdayaan_masyarakat_p: (pemberdayaanMasyarakat as any)?._sum?.penerima_perempuan || 0,
+      pemberdayaan_masyarakat_total: ((pemberdayaanMasyarakat as any)?._sum?.penerima_laki || 0) + ((pemberdayaanMasyarakat as any)?._sum?.penerima_perempuan || 0),
+      total_dana_diperoleh: 0,
+      total_dana_dibelanjakan: 0,
       jumlah_pmi_kecamatan: jumlahPmiKecamatan,
     };
 
