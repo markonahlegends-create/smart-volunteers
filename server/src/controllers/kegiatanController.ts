@@ -85,9 +85,9 @@ export const deleteKegiatan = async (req: Request, res: Response) => {
 
 export const downloadSemesterReport = async (req: Request, res: Response) => {
   try {
-    const { semester = '1', tahun = '2026' } = req.query;
-    const semesterNum = parseInt(semester as string);
-    const tahunNum = parseInt(tahun as string);
+    const { semester = '1', tahun = '2026' } = req.body;
+    const semesterNum = parseInt(semester);
+    const tahunNum = parseInt(tahun);
 
     const [
       pmrMulaL, pmrMulaP, pmrMadyaL, pmrMadyaP, pmrWiraL, pmrWiraP,
@@ -122,10 +122,10 @@ export const downloadSemesterReport = async (req: Request, res: Response) => {
     ]);
 
     const data = {
-      nomor_surat: '',
-      lampiran_surat: '',
-      perihal_surat: `Laporan Semester ${semesterNum} Tahun ${tahunNum}`,
-      tujuan_surat: `\n\t\tPengurus PMI Provinsi Banten, di Bandung`,
+      nomor_surat: req.body.nomor_surat || '',
+      lampiran_surat: req.body.lampiran_surat || '',
+      perihal_surat: req.body.perihal_surat || `Laporan Semester ${semesterNum} Tahun ${tahunNum}`,
+      tujuan_surat: req.body.tujuan_surat || '\n\t\tPengurus PMI Provinsi Banten, di Bandung',
       semester_romawi: semesterNum === 1 ? 'I' : 'II',
       text_semester: semesterNum === 1 ? 'Januari - Juni' : 'Juli - Desember',
       tahun: tahunNum,

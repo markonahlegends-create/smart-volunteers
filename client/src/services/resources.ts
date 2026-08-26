@@ -71,9 +71,8 @@ export const kegiatanApi = {
   create: async (data: any) => (await api.post('/kegiatan', data)).data,
   update: async (id: number, data: any) => (await api.put(`/kegiatan/${id}`, data)).data,
   delete: async (id: number) => (await api.delete(`/kegiatan/${id}`)).data,
-  downloadSemester: async (semester?: number, tahun?: number) => {
-    const response = await api.get(`/kegiatan/download/semester`, {
-      params: { semester, tahun },
+  downloadSemester: async (data?: { semester?: number; tahun?: number; nomor_surat?: string; lampiran_surat?: string; perihal_surat?: string; tujuan_surat?: string }) => {
+    const response = await api.post(`/kegiatan/download/semester`, data, {
       responseType: 'blob',
     });
     return response.data;

@@ -38,6 +38,11 @@ export default function Laporan() {
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [nomorSurat, setNomorSurat] = useState('');
+  const [lampiranSurat, setLampiranSurat] = useState('');
+  const [perihalSurat, setPerihalSurat] = useState('');
+  const [tujuanSurat, setTujuanSurat] = useState('');
+
   const { data: kegiatanData } = useQuery({
     queryKey: ['kegiatan', semester, tahun, bidang, currentPage],
     queryFn: async () => {
@@ -76,7 +81,14 @@ export default function Laporan() {
   });
 
   const handleDownloadSemester = async () => {
-    const blob = await kegiatanApi.downloadSemester(parseInt(semester), parseInt(tahun));
+    const blob = await kegiatanApi.downloadSemester({
+      semester: parseInt(semester),
+      tahun: parseInt(tahun),
+      nomor_surat: nomorSurat,
+      lampiran_surat: lampiranSurat,
+      perihal_surat: perihalSurat,
+      tujuan_surat: tujuanSurat,
+    });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -169,6 +181,48 @@ export default function Laporan() {
                   value={tahun}
                   onChange={(e) => setTahun(e.target.value)}
                   className="input-field"
+                />
+              </div>
+            </div>
+            <div className="space-y-3 mb-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Nomor Surat</label>
+                <input
+                  type="text"
+                  value={nomorSurat}
+                  onChange={(e) => setNomorSurat(e.target.value)}
+                  className="input-field"
+                  placeholder="Contoh: 001/PMI-CLG/2026"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Lampiran Surat</label>
+                <input
+                  type="text"
+                  value={lampiranSurat}
+                  onChange={(e) => setLampiranSurat(e.target.value)}
+                  className="input-field"
+                  placeholder="Contoh: 1 Berkas"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Perihal Surat</label>
+                <input
+                  type="text"
+                  value={perihalSurat}
+                  onChange={(e) => setPerihalSurat(e.target.value)}
+                  className="input-field"
+                  placeholder="Contoh: Laporan Semester"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Tujuan Surat</label>
+                <textarea
+                  value={tujuanSurat}
+                  onChange={(e) => setTujuanSurat(e.target.value)}
+                  className="input-field"
+                  rows={2}
+                  placeholder="Contoh: Pengurus PMI Provinsi Banten, di Bandung"
                 />
               </div>
             </div>
