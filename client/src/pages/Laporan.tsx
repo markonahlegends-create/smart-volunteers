@@ -81,34 +81,44 @@ export default function Laporan() {
   });
 
   const handleDownloadSemester = async () => {
-    const blob = await kegiatanApi.downloadSemester({
-      semester: parseInt(semester),
-      tahun: parseInt(tahun),
-      nomor_surat: nomorSurat,
-      lampiran_surat: lampiranSurat,
-      perihal_surat: perihalSurat,
-      tujuan_surat: tujuanSurat,
-    });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `Laporan-Semester-${semester}-${tahun}.docx`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    try {
+      const blob = await kegiatanApi.downloadSemester({
+        semester: parseInt(semester),
+        tahun: parseInt(tahun),
+        nomor_surat: nomorSurat,
+        lampiran_surat: lampiranSurat,
+        perihal_surat: perihalSurat,
+        tujuan_surat: tujuanSurat,
+      });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Laporan-Semester-${semester}-${tahun}.docx`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error: any) {
+      console.error('Download semester error:', error);
+      alert('Gagal mengunduh laporan semester: ' + (error.response?.data?.message || error.message || 'Unknown error'));
+    }
   };
 
   const handleDownloadKegiatan = async () => {
-    const blob = await kegiatanApi.downloadKegiatan(parseInt(semester), parseInt(tahun), bidang || undefined);
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `Laporan-Kegiatan-Semester-${semester}-${tahun}.xlsx`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    try {
+      const blob = await kegiatanApi.downloadKegiatan(parseInt(semester), parseInt(tahun), bidang || undefined);
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `Laporan-Kegiatan-Semester-${semester}-${tahun}.xlsx`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error: any) {
+      console.error('Download kegiatan error:', error);
+      alert('Gagal mengunduh laporan kegiatan: ' + (error.response?.data?.message || error.message || 'Unknown error'));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
