@@ -14,7 +14,8 @@ const loginSchema = z.object({
 
 export const login = async (req: Request, res: Response) => {
   try {
-    const { login, password, captcha } = loginSchema.parse(req.body);
+    const rawBody = req.body;
+    const { login, password, captcha } = loginSchema.parse(rawBody);
 
     const user = await prisma.user.findFirst({
       where: { email: login },
@@ -45,6 +46,7 @@ export const login = async (req: Request, res: Response) => {
       },
     });
   } catch (error: any) {
+    console.error('LOGIN_ERROR', error, { body: req.body });
     if (error instanceof z.ZodError) {
       return res.status(400).json({ message: error.errors[0]?.message || 'Data tidak valid' });
     }
