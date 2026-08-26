@@ -57,3 +57,4 @@ apps-script-final.js
 apps-script-fixed.js
 
 .vercel
+.env*
